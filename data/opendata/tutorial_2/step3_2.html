@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body{
+	background:#fefefe;
+}
+
+svg #dropshadow{
+	fill:#eee;
+}
+
+svg #council_area{
+	fill:#f7f3ec;
+	stroke:#fff;
+	stroke-width: 2px;
+}
+
+svg .school{
+	fill: none;
+	stroke:#549bf6;
+	stroke-width: 2px;
+	cursor: pointer;
+}
+
+</style>
+<body>
+
+<!--
+
+
+NB: This fle will only work as expected if served from a webserver. See the Intro to tutorial 2 for more details.
+
+-->
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+
+<script>
+
+var gssCode = "S12000040";
+var mapjson = gssCode + "_topo.json";
+
+var width = 800,
+	height = 800;
+
+var projection = d3.geo.albers()
+	.center([0.795, 55.89])
+	.rotate([4.4, 0])
+	.parallels([50, 60])
+	.scale(180000)
+	.translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+	.projection(projection);
+
+var svg = d3.select("body").append("svg")
+	.attr("width", width)
+	.attr("height", height);
+
+// visualisation
+
+queue()
+	.defer(d3.json, mapjson)
+	.defer(d3.csv, "schools.csv")
+	.await(ready);
+
+function ready(error, councilArea, schools){
+
+	var mesh = topojson.mesh(councilArea, councilArea.objects[gssCode + "_geo"], function(a, b) {return a==b;});
+
+	// draw map in background as draopshadow
+
+	svg.append("path")
+	  .datum(mesh)
+	  .attr("id", "dropshadow")
+	  .attr("transform", "translate(5,8)")
+	  .attr("d", path);
+
+	// draw map
+	svg.append("path")
+	  .datum(mesh)
+	  .attr("id", "council_area")
+	  .attr("d", path);
+
+	// draw schools in foreground
+	 var school = svg.append("g")
+		.attr("class", "schools")
+		.selectAll("g")
+		.data(schools)
+		.enter().append("g")
+		.attr("class", "school");
+
+	 var circle = school.append("circle")
+		.attr("transform", function(d) {
+			var location = projection([+d.longitude, +d.latitude]);
+			return "translate(" + location[0]+ "," + location[1]+ ")";
+		})
+		.attr("r", function(d){
+			return getRadiusForSchool(d);
+		});
+
+}
+
+function getRadiusForSchool(school){
+	return Math.sqrt(parseInt(school.pupils)/1.8);
+}
+
+</script>
+</body>

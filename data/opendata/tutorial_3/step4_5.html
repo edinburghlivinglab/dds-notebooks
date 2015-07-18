@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body{
+	background:#fefefe;
+}
+
+svg #dropshadow{
+	fill:#eee;
+}
+
+svg #council_area{
+	fill:#f7f3ec;
+	stroke:#fff;
+	stroke-width: 2px;
+}
+
+svg .school{
+	fill: none;
+	stroke:#549bf6;
+	stroke-width: 2px;
+	cursor: pointer;
+}
+
+</style>
+<body>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+
+<script>
+
+var gssCode = "S12000046";
+var mapjson = "http://www.opendatascotland.org/boundaries/data_zones_by_council/" + gssCode + "_topo.json";
+
+var query = "  \
+\
+SELECT ?school ?school_label ?latitude ?longitude (SUM( ?pupils_per_dz ) as ?pupils) \
+\
+WHERE { \
+	?school <http://data.ordnancesurvey.co.uk/ontology/postcode/postcode> ?pc . \
+	?pc <http://data.ordnancesurvey.co.uk/ontology/postcode/district> <http://statistics.data.gov.uk/id/statistical-geography/%{gssCode}> . \
+	?pc <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ?latitude . \
+	?pc <http://www.w3.org/2003/01/geo/wgs84_pos#long> ?longitude . \
+	?school <http://www.w3.org/2000/01/rdf-schema#label> ?school_label . \
+\
+	GRAPH <http://data.opendatascotland.org/graph/education/pupils-by-school-and-datazone> { \
+		?obs <http://data.opendatascotland.org/def/statistical-dimensions/education/school> ?school . \
+		?obs <http://data.opendatascotland.org/def/education/numberOfPupils> ?pupils_per_dz . \
+	} \
+\
+} \
+GROUP BY ?school ?school_label ?latitude ?longitude \
+ORDER BY DESC(?pupils) \
+";
+
+var schoolDataSource = "http://data.opendatascotland.org/sparql.csv?query=" + encodeURIComponent(query) + "&gssCode=" + gssCode;
+
+var width = 800,
+	height = 800;
+
+var projection = d3.geo.albers()
+	.center([0.165, 55.84])
+	.rotate([4.4, 0])
+	.parallels([50, 60])
+	.scale(250000)
+	.translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+	.projection(projection);
+
+var svg = d3.select("body").append("svg")
+	.attr("width", width)
+	.attr("height", height);
+
+// visualisation
+
+queue()
+	.defer(d3.json, mapjson)
+	.defer(d3.csv, schoolDataSource)
+	.await(ready);
+
+function ready(error, councilArea, schools){
+
+	var mesh = topojson.mesh(councilArea, councilArea.objects[gssCode + "_geo"], function(a, b) {return a==b;});
+
+	// draw map in background as draopshadow
+
+	svg.append("path")
+	  .datum(mesh)
+	  .attr("id", "dropshadow")
+	  .attr("transform", "translate(5,8)")
+	  .attr("d", path);
+
+	// draw map
+	svg.append("path")
+	  .datum(mesh)
+	  .attr("id", "council_area")
+	  .attr("d", path);
+
+	// draw schools in foreground
+	 var school = svg.append("g")
+		.attr("class", "schools")
+		.selectAll("g")
+		.data(schools)
+		.enter().append("g")
+		.attr("class", "school");
+
+	 var circle = school.append("circle")
+		.attr("transform", function(d) {
+			var location = projection([+d.longitude, +d.latitude]);
+			return "translate(" + location[0]+ "," + location[1]+ ")";
+		})
+		.attr("r", function(d){
+			return getRadiusForSchool(d);
+		});
+
+}
+
+function getRadiusForSchool(school){
+	return Math.sqrt(parseInt(school.pupils)/1.8);
+}
+
+</script>
+</body>

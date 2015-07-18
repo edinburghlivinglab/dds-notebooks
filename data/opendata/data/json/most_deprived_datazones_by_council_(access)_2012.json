@@ -1,0 +1,233 @@
+{
+  "head": {
+    "vars": [ "label" , "dep_count" , "total_count" , "prop" , "council" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "label": { "type": "literal" , "value": "Eilean Siar" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "29" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "45" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.644444444444444444444444" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000013" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Shetland Islands" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "19" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "37" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.513513513513513513513513" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000027" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Orkney Islands" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "15" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "33" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.454545454545454545454545" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000023" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Highland" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "102" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "346" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.294797687861271676300578" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000017" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Aberdeenshire" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "103" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "358" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.287709497206703910614525" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000034" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Dumfries & Galloway" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "62" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "228" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.271929824561403508771929" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000006" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Argyll & Bute" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "38" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "144" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.263888888888888888888888" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000035" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Scottish Borders" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "34" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "159" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.213836477987421383647798" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000026" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Moray" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "26" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "140" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.185714285714285714285714" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000020" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Perth & Kinross" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "38" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "209" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.181818181818181818181818" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000024" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Angus" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "29" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "167" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.173652694610778443113772" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000041" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Stirling" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "17" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "131" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.129770992366412213740458" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000030" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "South Ayrshire" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "15" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "171" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.087719298245614035087719" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000028" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "East Lothian" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "12" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "142" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.084507042253521126760563" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000010" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "East Ayrshire" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "14" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "184" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.076086956521739130434782" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000008" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Midlothian" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "7" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "132" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.05303030303030303030303" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000019" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "South Lanarkshire" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "24" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "480" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.05" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000029" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "North Ayrshire" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "10" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "217" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.046082949308755760368663" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000021" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Fife" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "25" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "556" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.044964028776978417266187" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000015" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Inverclyde" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "5" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "127" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.03937007874015748031496" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000018" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Falkirk" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "8" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "238" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.033613445378151260504201" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000014" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "North Lanarkshire" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "7" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "491" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.014256619144602851323828" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000044" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Clackmannanshire" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "76" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.013157894736842105263157" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000005" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Renfrewshire" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "252" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.011904761904761904761904" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000038" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "West Lothian" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "245" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.008163265306122448979591" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000040" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "West Dunbartonshire" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "136" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.007352941176470588235294" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000039" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "East Renfrewshire" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "140" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.007142857142857142857142" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000011" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "East Dunbartonshire" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "155" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.006451612903225806451612" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000045" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Aberdeen City" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "314" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.006369426751592356687898" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000033" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "City of Edinburgh" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "0" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "650" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.0" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000036" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Dundee City" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "0" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "210" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.0" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000042" }
+      } ,
+      {
+        "label": { "type": "literal" , "value": "Glasgow City" } ,
+        "dep_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "0" } ,
+        "total_count": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "827" } ,
+        "prop": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "0.0" } ,
+        "council": { "type": "uri" , "value": "http://statistics.data.gov.uk/id/statistical-geography/S12000046" }
+      }
+    ]
+  }
+}

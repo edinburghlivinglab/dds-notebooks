@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body{
+	background:#fafafa;
+}
+
+svg{
+	background:#fff;
+}
+
+svg #council_area{
+	fill:#ddd;
+}
+
+</style>
+<body>
+
+<!--
+
+
+NB: This fle will only work as expected if served from a webserver. See the Intro to tutorial 2 for more details.
+
+-->
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+
+<script>
+
+var gssCode = "S12000040";
+var mapjson = gssCode + "_topo.json";
+
+var width = 800,
+	height = 800;
+
+var projection = d3.geo.albers()
+	.center([0.795, 55.89])
+	.rotate([4.4, 0])
+	.parallels([50, 60])
+	.scale(180000)
+	.translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+	.projection(projection);
+
+var svg = d3.select("body").append("svg")
+	.attr("width", width)
+	.attr("height", height);
+
+d3.json(mapjson, function(error, councilArea) {
+
+	var mesh = topojson.mesh(councilArea, councilArea.objects[gssCode + "_geo"], function(a, b) {return a==b;});
+
+	svg.append("path")
+		.datum(mesh)
+		.attr("id", "council_area")
+		.attr("d", path);
+});
+
+</script>
+</body>

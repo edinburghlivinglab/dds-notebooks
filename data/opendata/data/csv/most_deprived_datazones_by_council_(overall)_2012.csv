@@ -1,0 +1,33 @@
+label,dep_count,total_count,prop,council
+Glasgow City,233,827,0.281741233373639661426844,http://statistics.data.gov.uk/id/statistical-geography/S12000046
+Inverclyde,32,127,0.251968503937007874015748,http://statistics.data.gov.uk/id/statistical-geography/S12000018
+Dundee City,36,210,0.171428571428571428571428,http://statistics.data.gov.uk/id/statistical-geography/S12000042
+West Dunbartonshire,21,136,0.154411764705882352941176,http://statistics.data.gov.uk/id/statistical-geography/S12000039
+North Ayrshire,31,217,0.142857142857142857142857,http://statistics.data.gov.uk/id/statistical-geography/S12000021
+Renfrewshire,32,252,0.126984126984126984126984,http://statistics.data.gov.uk/id/statistical-geography/S12000038
+North Lanarkshire,58,491,0.118126272912423625254582,http://statistics.data.gov.uk/id/statistical-geography/S12000044
+East Ayrshire,20,184,0.10869565217391304347826,http://statistics.data.gov.uk/id/statistical-geography/S12000008
+Clackmannanshire,8,76,0.105263157894736842105263,http://statistics.data.gov.uk/id/statistical-geography/S12000005
+South Lanarkshire,39,480,0.08125,http://statistics.data.gov.uk/id/statistical-geography/S12000029
+South Ayrshire,11,171,0.064327485380116959064327,http://statistics.data.gov.uk/id/statistical-geography/S12000028
+City of Edinburgh,39,650,0.06,http://statistics.data.gov.uk/id/statistical-geography/S12000036
+Fife,24,556,0.043165467625899280575539,http://statistics.data.gov.uk/id/statistical-geography/S12000015
+Stirling,5,131,0.038167938931297709923664,http://statistics.data.gov.uk/id/statistical-geography/S12000030
+Falkirk,9,238,0.037815126050420168067226,http://statistics.data.gov.uk/id/statistical-geography/S12000014
+Dumfries & Galloway,8,228,0.035087719298245614035087,http://statistics.data.gov.uk/id/statistical-geography/S12000006
+Argyll & Bute,5,144,0.034722222222222222222222,http://statistics.data.gov.uk/id/statistical-geography/S12000035
+Aberdeen City,9,314,0.028662420382165605095541,http://statistics.data.gov.uk/id/statistical-geography/S12000033
+Highland,9,346,0.026011560693641618497109,http://statistics.data.gov.uk/id/statistical-geography/S12000017
+Scottish Borders,4,159,0.02515723270440251572327,http://statistics.data.gov.uk/id/statistical-geography/S12000026
+East Renfrewshire,3,140,0.021428571428571428571428,http://statistics.data.gov.uk/id/statistical-geography/S12000011
+West Lothian,4,245,0.016326530612244897959183,http://statistics.data.gov.uk/id/statistical-geography/S12000040
+Midlothian,2,132,0.015151515151515151515151,http://statistics.data.gov.uk/id/statistical-geography/S12000019
+East Dunbartonshire,2,155,0.012903225806451612903225,http://statistics.data.gov.uk/id/statistical-geography/S12000045
+Angus,2,167,0.011976047904191616766467,http://statistics.data.gov.uk/id/statistical-geography/S12000041
+Perth & Kinross,2,209,0.009569377990430622009569,http://statistics.data.gov.uk/id/statistical-geography/S12000024
+Aberdeenshire,2,358,0.00558659217877094972067,http://statistics.data.gov.uk/id/statistical-geography/S12000034
+East Lothian,0,142,0.0,http://statistics.data.gov.uk/id/statistical-geography/S12000010
+Eilean Siar,0,45,0.0,http://statistics.data.gov.uk/id/statistical-geography/S12000013
+Moray,0,140,0.0,http://statistics.data.gov.uk/id/statistical-geography/S12000020
+Orkney Islands,0,33,0.0,http://statistics.data.gov.uk/id/statistical-geography/S12000023
+Shetland Islands,0,37,0.0,http://statistics.data.gov.uk/id/statistical-geography/S12000027
