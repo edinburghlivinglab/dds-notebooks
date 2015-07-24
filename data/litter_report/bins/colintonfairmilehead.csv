@@ -1,0 +1,280 @@
+Site,Location,Ashtray,Type,Direction,Easting,Northing
+"Biggar Road","At bus terminus",Yes,"Derby Slimline",EB,324827.07,667749.84
+"Biggar Road","At bus stop Outside 26A",No,EB,NB,324800.94,667990.37
+"Biggar Road","At bus stop opposite 26A",Yes,Neopolitan,WB,324815.79,668004.03
+"Biggar Road","At bus stop opposite Swanston Drive",Yes,NB,NB,324836.56,667809.76
+"Biggar Road","Outside bank",Yes,"Derby Slimline",WB,324774.83,668231.45
+"Bonaly Avenue","At bus stop opposite 4",Yes,WB,EB,321371.29,668289.17
+"Bonaly Avenue","Outside shop at 2",No,"Derby Slimline",SB,321358.41,668276.64
+"Pentland Gardens",,Yes,NB,"Not Applicable",324033.86,669508.03
+"Bonaly Road","Bonaly Primary School",No,"Derby Standard","Not Applicable",321351.39,668089.74
+"Pentland Gardens",,Yes,WB,"Not Applicable",323995.29,669462.24
+"Frogston Road West","Outside number 125",Yes,Wybone,SB,324924.04,668163.14
+"Frogston Road West","Opposite 119",Yes,EB,SB,325034.34,668110.48
+"Frogston Road West","Bus stop opposite Marie Curie Hospice",No,Topsy,NB,325706.37,667971.93
+"Frogston Road West","Outside number 36",Yes,SB,NB,325203.91,668002.24
+"Frogston Road West","Bus stop at Margaret Rose Avenue",Yes,"Derby Slimline Green",NB,325393.12,667958.51
+"Frogston Road West","Bus stop at Margaret Rose Avenue",Yes,"Not Applicable",SB,325427.07,667972.31
+"Frogston Road West","Bus stop at Marie Curie Hospice",No,"Derby Round",SB,325697.93,667984.89
+"Woodhall Road","At Bus Shelter opposite 53",Yes,"Not Applicable",EB,321171.75,668614.43
+"Woodhall Road","Campbell pk ent",Yes,"Derby Slimline Green",EB,320487.1,668581.69
+"Woodhall Road","Outside number 06",Yes,"Not Applicable",EB,321551.64,668939.83
+"Woodhall Road","opp no 95",Yes,"Derby Slimline","Not Applicable",320817.62,668506.71
+"Woodhall Road","At Bus Shelter opposite Fennilaw Avenue",Yes,SB,EB,320995.84,668549.83
+"Buckstone Terrace","Opposite number 118 at the bus stop",Yes,"Derby Slimline",WB,324768.56,668329.11
+"Buckstone Terrace","Outside number 118 at the bus stop",Yes,SB,NB,324754.15,668318.14
+"Buckstone Terrace","Opposite Tusitala grill at bus shelter",Yes,"Derby Slimline",NB,324620.54,668562.46
+"Buckstone Terrace","Outside number 35",Yes,NB,WB,324546.42,668926.66
+"Buckstone Terrace","Outside number 42 at bus stop",Yes,"Derby Slimline",NB,324547.82,668832.08
+"Rustic Cottages","Oppisite rustic cottages",Yes,NB,EB,321738.1,669046.38
+"Bonaly Road","Bonaly scout camp area",Yes,"Derby Slimline",EB,321206.21,667690.84
+"Bridge Road","Outside  McKenzies rest",No,NB,EB,321562.49,668968.44
+"Bridge Road","Outside Post Office",No,"Derby Slimline",WB,321524.01,668950.67
+"Bridge Road","Outside Dantes",No,SB,EB,321482.57,668959.56
+"Camus Avenue","At South entrance",Yes,"Derby Slimline",SB,324231.85,668755.93
+"Colinton Mains Drive","Outside number68 at the bus stop",Yes,SB,EB,323008.02,669181.9
+"Colinton Mains Drive","Outside number 219 at bus stop",Yes,"Derby Slimline",WB,322938.74,669232.77
+"Colinton Mains Drive","Outside number 311",Yes,EB,SB,323259.63,669069.58
+"Colinton Mains Drive","At bus stop opposite Tesco",Yes,"Derby Standard Green",NB,322713.34,669470.57
+"Colinton Mains Drive","At bus stop outside Tesco",Yes,EB,EB,322708.04,669447.64
+"Colinton Mains Drive","At bus stop opposite 05",Yes,Neopolitan,EB,322636.95,669638.64
+"Firrhill Drive","iN PLAY AREA",No,EB,NB,323459.47,669445.46
+"Firrhill Drive","At the bridge leading to the walkway",Yes,Neopolitan,NB,323624.37,669475.62
+"Firrhill Drive","Opposite Greenlaw Hedge on walkway leading to the park",Yes,"Not Applicable",EB,323401.04,669473.48
+"Firrhill Drive","Off firhill drive East entrance",Yes,"Derby Slimline",EB,323596.93,669384.61
+"Firrhill Drive","At bridge over urn in Colinton mains public park",Yes,EB,SB,323405.69,669454.7
+"Hailes Avenue","Opposite number 334",Yes,"Derby Slimline",WB,321148.69,669599.22
+"New Swanston","Bus stop opposite Howe Park",Yes,WB,EB,323688.88,668242.52
+"New Swanston","At bus stop opposite
+terminus",Yes,"Derby Slimline",EB,323479.5,668249.7
+"Oxgangs Avenue","Opposite number 08",Yes,NB,NB,323594.95,669065.54
+"Oxgangs Avenue","opposite number 22",Yes,"Derby Slimline",NB,323693.93,669132.41
+"Oxgangs Avenue","Opposite number 52",Yes,NB,NB,323907.79,669411.33
+"Oxgangs Avenue","Outside number 02",Yes,"Derby Auto Slimline",WB,323443.03,668957.52
+"Oxgangs Broadway","In play area next to oxgangs community centre",Yes,WB,EB,323735.96,668734.75
+"Oxgangs Broadway","In shopping precinct",Yes,"Derby Slimline",EB,323688.38,668747.43
+"Oxgangs Broadway","In shopping precinct",No,NB,EB,323666.71,668743.73
+"Oxgangs Road","Opposite 04",Yes,Topsy,NB,324705.66,668278.43
+"Oxgangs Road","Outside number 52",Yes,EB,SB,324272.19,668341.73
+"Oxgangs Road","Opposite number 24",Yes,"Derby Double Green",WB,324491.94,668324.05
+"Oxgangs Road","Outside number 20",Yes,EB,SB,324534.94,668338.06
+"Oxgangs Road","Outside number 80",Yes,Topsy,EB,324037.49,668349.6
+"Oxgangs Road","Opposite Caystane View",Yes,EB,NB,324235.58,668329.07
+"Oxgangs Road","Outside number 77",Yes,Topsy,NB,323884.91,668333.86
+"Oxgangs Road","Bus stop at Hunters Tryst",Yes,WB,NB,323767.23,668374.39
+"Oxgangs Road","Outside number 108",Yes,Topsy,SB,323777.03,668379.58
+"Oxgangs Road","Bus stop at Oxgangs Path",Yes,EB,SB,323655.99,668585.61
+"Oxgangs Road","Outside number 04",Yes,"Derby Standard Green",SB,324691.81,668293.94
+"Oxgangs Road North","At entrance to Colinton Mains Park",Yes,SB,SB,323270.95,669179.79
+"Oxgangs Road North","West Exit from oxgangs road North entrance inside car park",Yes,"Wybone S/L",WB,323307.35,669223.8
+"Oxgangs Road North","outside Oxgangs Primary School",Yes,EB,WB,322889.06,669576.35
+"Oxgangs Road North","Outside Dental Surgery",Yes,"Derby Slimline",EB,323411.39,668895.22
+"Oxgangs Road North","Bus stop at Library",Yes,WB,SB,323590.65,668686.86
+"Oxgangs Road North","Bus stop opposite St Johns Church",Yes,"Derby Slimline",EB,323616.63,668619.61
+"Oxgangs Road North","Opposite number 312",Yes,SB,SB,323471.26,668833.58
+"Oxgangs Road North","Outside number 336",Yes,"Wybone S/L",EB,323546.71,668715.52
+"Oxgangs Road North","Opposite number 266",Yes,NB,SB,323342.4,669017.62
+"Oxgangs Road North","Outside Library in car park",Yes,"Wybone S/L",SB,323615.62,668682.46
+"Oxgangs Road North","Outside Chip shop",Yes,EB,NB,323305.18,669058.63
+"Pentland Drive","West entrance",Yes,"Derby Slimline",WB,324099.64,668864.26
+"Pentland View","In play area",Yes,EB,EB,324196.04,668854.97
+"Redford Road","At lamppost RCH 52",Yes,"Derby Standard Green",EB,323115.38,668559.01
+"Redford Road","At bus stop opposite cockit hat woods",Yes,NB,WB,323560.28,668547.4
+"Redford Road","At bus stop at cockit hat",No,"Derby Standard",EB,323558.36,668557.03
+"Redford Road","Path at cockit hat",No,NB,EB,323513.97,668556.04
+"Redford Road","Opposite number 261",No,"Derby Slimline",WB,323396.56,668540.25
+"Redford Road","At lamppost RCP 38 Oppisite the army barracks",No,EB,WB,322744.43,668633
+"Redford Road","At lamppost RCP 37 near Dreghorn barracks",Yes,"Derby Standard Green",EB,322730.61,668653.71
+"Redford Road","Outside Redwood house",Yes,EB,EB,322470.16,668747.44
+"Redford Road","Outside bowling club",Yes,"Derby Standard Green",SB,321989.68,668978.31
+"Spylaw Street","Outside Spylaw Kirk",No,SB,"Not Applicable",321537.82,669042.43
+"Spylaw Street","Outside Royal Bank",No,"Derby Standard",EB,321410.55,668968.44
+"Swanston Park","at path",Yes,WB,NB,324065.37,668237.33
+"West Mill Road","In play area",Yes,Topsy,WB,321184.82,668788.9
+"Woodfield Avenue","East Entrance",Yes,EB,NB,320708.58,668668.47
+"Torduff Road","On corner of Torduff Road at bottom of hill","Not Applicable",Wybone,EB,321124.52,667992.14
+"Howe Park","On footpath overlooking the bus stop on new swanston",No,EB,NB,323721.52,668236.5
+"Comiston Springs Avenue","At entrance to park down stairs",Yes,Neopolitan,"Not Applicable",324194.35,669467.81
+"Colinton Mains Gardens","Opposite number 22 and 24 on grass",Yes,NB,SB,322788.65,669570.99
+"Buckstone Circle","At the entrance to the playpark",Yes,Neopolitan,WB,325243.82,668590.2
+"Bridge Road","In spylaw park opposite the house against the wall",Yes,NB,SB,321270.78,668946.69
+"Redford Road","Bus stop opposite number 261 redford road",No,Topsy,"Not Applicable",323427.43,668550.09
+Auchingane,"At bus terminus nextt to the walkway at muirside  New swanston",No,NB,NB,323446.22,668227.68
+"Buckstone Road","At walkway entrance opposite buckstone loan",Yes,Neopolitan,NB,324847.23,668917.92
+"Oxgangs Road North","Near footpath leading up to the school",Yes,WB,NB,322625,669716.3
+"Pentland Drive","On the walkway leading to oxgangs Broadway at side of the school",No,Barnsley,NB,323904.68,668805.84
+"Oxgangs Road North","At footpath leading to the school",Yes,EB,NB,322927.11,669765.44
+"Oxgangs Street","At the bus stop",Yes,Amberol,SB,323584.25,668767.41
+"Oxgangs Road North","Footpath leading up to the school",Yes,EB,NB,322805.87,669624.78
+"Bonaly Rise","On the footpath at bonaly rise",Yes,Amberol,WB,321701.49,668038.32
+"Colinton Mains Drive","At bus stop near Colinton mains loan",Yes,EB,WB,322869.23,669269.19
+"Hailes Avenue","On grass",No,"Derby Slimline","Not Applicable",321177.96,669527.96
+"Colinton Mains Drive","At the bus stop outside number 156",Yes,NB,WB,323240.81,669074.09
+"Firrhill Crescent","At bridge at top of the footpath at Colinton mains public park",No,"Derby Slimline",NB,323157.51,669424.69
+"Oxgangs Terrace","At the walkway leading to the redford woods / naffa",Yes,SB,EB,322916.17,668889.95
+"Buckstone Circle Play Area","At gate in playpark",No,"Derby Slimline",SB,325333.71,668580.29
+"Woodhall Road","At bus stop outside number 6 Woodhall road",No,WB,SB,321486.34,668902.36
+"Woodhall Road","Oppisite number 27 on walkway and steps",No,"Derby Slimline",NB,321400.56,668855.04
+"Camus Avenue","Against 7 fence leading to the woods opposite the playpark",No,SB,SB,324180.96,668933.24
+"Swanston Road","Outside car park entrance",Yes,"Derby Slimline",NB,324003.33,667415.3
+"West Mill Road","On the beginning of the water of Leith walkway",Yes,EB,SB,321059.44,668835.77
+"Westgarth Avenue","At bus terminal on westgarth road",Yes,"Derby Slimline",NB,321776.52,668851.44
+"Oxgangs Hill","On the walkway leading to cockmylane park",Yes,NB,SB,323961.04,669129.25
+"Oxgangs Drive","Against the fence in Colinton mains public park from the walkway leading from oxgangs drive entrance",Yes,"Derby Slimline",NB,323440.76,669209.59
+"Firrhill Drive","On walkway next to the community centre",Yes,NB,SB,323618.77,669463.03
+"Torphin Road","At bus terminal torphin road",Yes,Wybone,NB,320659.48,668139.27
+"Oxgangs Path East","Outside the community centre door",Yes,NB,NB,323764.15,668712.57
+"Swanston Road","Opposite entrance to the golf rangeon verge",Yes,"Derby Slimline",NB,324003.29,667815.05
+"Colinton Mains Drive","Opposite number 29 and 31",Yes,SB,EB,322674.26,669544.76
+"Redford Place","At the entrance to the walkway",Yes,"Derby Slimline",EB,322792.57,668888.37
+"Colinton Mains Drive","Bus stop outside the school",Yes,SB,NB,322709.05,669483.24
+"Oxgangs Broadway","At top of the steps at shops",Yes,"Derby Slimline",EB,323715.95,668774.43
+"Oxgangs Road North","Next to lamppost FGF22",No,SB,NB,322935.27,669581.61
+"Firrhill Drive","Footpath crossing in Colinton mains public park from firrhill park entrance",Yes,"Wybone S/L",SB,323506.86,669375.73
+"Oxgangs Road North","Outside number 228 and in front of scotmid shop",Yes,SB,EB,323292.54,669113.03
+"Buckstone Circle","At entrance to the woods  opposite buckstone howe",Yes,"Derby Standard Green",NB,325224.67,668553.01
+"Redford Bank",,Yes,WB,EB,322525.62,668996.81
+"Buckstone Hill","On grass area Oppisite number 33 buckstone hill",No,Neopolitan,NB,325007.72,668987.95
+"Oxgangs Road North","Outside school gate",Yes,WB,NB,322959.2,669513.83
+"Oxgangs Brae","On grass area Oppisite the community centre near the shops",Yes,Wybone,NB,323681.74,668721.15
+"Spylaw Park","On footpath leading to the playpark",Yes,EB,EB,321210.89,668845.02
+"Oxgangs Broadway","At the top of the steps leading to the shops",Yes,"Derby Slimline",WB,323651.06,668746.74
+,,,SB,,,
+,,,"Derby Slimline",,,
+,,,EB,,,
+,,,"Derby Slimline",,,
+,,,SB,,,
+,,,"Wybone S/L",,,
+,,,EB,,,
+,,,"Derby Slimline",,,
+,,,SB,,,
+,,,"Derby Slimline",,,
+,,,SB,,,
+,,,"Derby Slimline",,,
+,,,NB,,,
+,,,"Derby Standard Green",,,
+,,,WB,,,
+,,,"Derby Standard",,,
+,,,EB,,,
+,,,Neopolitan,,,
+,,,EB,,,
+,,,Neopolitan,,,
+,,,WB,,,
+,,,Neopolitan,,,
+,,,EB,,,
+,,,Neopolitan,,,
+,,,EB,,,
+,,,Neopolitan,,,
+,,,WB,,,
+,,,Neopolitan,,,
+,,,WB,,,
+,,,Neopolitan,,,
+,,,EB,,,
+,,,Neopolitan,,,
+,,,EB,,,
+,,,Neopolitan,,,
+,,,SB,,,
+,,,Topsy,,,
+,,,"Not Applicable",,,
+,,,Topsy,,,
+,,,EB,,,
+,,,Wybone,,,
+,,,NB,,,
+,,,"Derby Standard Green",,,
+,,,WB,,,
+,,,"Derby Standard Green",,,
+,,,NB,,,
+,,,EB,,,
+,,,"Half Edinburgh",,,
+,,,NB,,,
+,,,"Half Edinburgh",,,
+,,,"Not Applicable",,,
+,,,"Derby Slimline Green",,,
+,,,SB,,,
+,,,"Wybone S/L",,,
+,,,WB,,,
+,,,"Derbt Slimline",,,
+,,,SB,,,
+,,,"Derby Standard Green",,,
+,,,"Not Applicable",,,
+,,,Neopolitan,,,
+,,,NB,,,
+,,,Neopolitan,,,
+,,,NB,,,
+,,,Neopolitan,,,
+,,,NB,,,
+,,,"Wybone S/L",,,
+,,,NB,,,
+,,,Barnsley,,,
+,,,NB,,,
+,,,Neopolitan,,,
+,,,SB,,,
+,,,Wybone,,,
+,,,NB,,,
+,,,"Derby Slimline Green",,,
+,,,WB,,,
+,,,"Wybone S/L",,,
+,,,WB,,,
+,,,"Derby Slimline",,,
+,,,"Not Applicable",,,
+,,,Topsy,,,
+,,,WB,,,
+,,,"Derby Slimline",,,
+,,,NB,,,
+,,,"Half Edinburgh",,,
+,,,EB,,,
+,,,"Derby Standard Green",,,
+,,,SB,,,
+,,,Barnsley,,,
+,,,SB,,,
+,,,Neopolitan,,,
+,,,NB,,,
+,,,Neopolitan,,,
+,,,SB,,,
+,,,"Derby Standard",,,
+,,,NB,,,
+,,,Neopolitan,,,
+,,,SB,,,
+,,,"Derby Slimline",,,
+,,,NB,,,
+,,,Topsy,,,
+,,,SB,,,
+,,,"Wybone S/L",,,
+,,,NB,,,
+,,,"Derby Standard Green",,,
+,,,SB,,,
+,,,"Derby Slimline",,,
+,,,NB,,,
+,,,Wybone,,,
+,,,NB,,,
+,,,"Wybone S/L",,,
+,,,NB,,,
+,,,Neopolitan,,,
+,,,EB,,,
+,,,"Wybone S/L",,,
+,,,EB,,,
+,,,"Derby Standard Green",,,
+,,,NB,,,
+,,,"Derby Slimline",,,
+,,,EB,,,
+,,,"Wybone S/L",,,
+,,,NB,,,
+,,,Neopolitan,,,
+,,,SB,,,
+,,,"Derby Standard Green",,,
+,,,EB,,,
+,,,"Wybone S/L",,,
+,,,NB,,,
+,,,Neopolitan,,,
+,,,EB,,,
+,,,"Wybone S/L",,,
+,,,NB,,,
+,,,Neopolitan,,,
+,,,NB,,,
+,,,Wybone,,,
+,,,NB,,,
+,,,"Wybone S/L",,,
+,,,EB,,,
+,,,"Derby Standard Green",,,
+,,,WB,,,
+,,,"Wybone S/L",,,
