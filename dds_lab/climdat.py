@@ -18,6 +18,7 @@ from os import listdir
 from os.path import isfile, join
 from itertools import product
 from collections import OrderedDict
+from scipy.ndimage.filters import convolve1d
 
 
 
@@ -144,6 +145,9 @@ class ClimPlots:
         self.txt = txt
         self.path = path
         self.prod_dict = OrderedDict()
+        self.html_tags =read_tags(self.path)
+        self.uniform_mask = np.ones(6) / 6.0
+        self.radius = len(self.uniform_mask)
 
     @staticmethod
     def make_pairs(html_tags):
@@ -153,15 +157,30 @@ class ClimPlots:
                                               p,
                                               1995)
 
+    def causal_avg_filter(self, data):
+        """
+        Causal moving average filter. Causes a low pass filter
+        on the underlying frequency spectrum of the animals 
+        motion.
+        """
+        # Non causal moving average.
+        non_causal = convolve1d(data,
+                                self.uniform_mask)
+        # shift impulse response for causality
+        causal = (non_causal[int(self.radius/2):len(non_causal) - int(self.radius/2.0) -1]
+                  if self.radius % 2 == 1
+                  else non_causal[(self.radius/2) :len(non_causal) - (self.radius/2.0) ])
+        return causal
+
 
     def plot_pairs(self):
-        html_tags = read_tags(self.path)
+        html_tags = self.html_tags
         prod_dict = OrderedDict()
         #print(txts)
         #print(len(txts))
         # txts = txts[l:j]
         # COMMENT THIS LINE TO SEE ALL 64 plots
-        txts = ['edinburgh_snow_cover.txt','edinburgh_tmp_min.txt','edinburgh_tmp.txt']
+        txts = self.txt
         #print(txts)
         square_flag = False
         for p in product(txts, repeat=2):
@@ -225,3 +244,33 @@ class ClimPlots:
 
         g = gridplot([[None]*(k2 -1 - round((i + 1) / k2))+f_vals[i: i +1 + round((i + 1) / k2)][::-1] for i in range(0, n, k2)][::-1])
         return g
+
+    def plot_time_series(self, moving_avg=False):
+        t_fig_dict = {}
+        n_dict = parse_time_series(self.html_tags, self.txt)
+        series = []
+        for k in list(sorted(n_dict.keys())):
+            v = n_dict[k]
+            t_fig_dict[k] = figure(title=k.split(",")[-1][0:-1],
+                                   tools=[HoverTool()])
+            # print(v)
+            # print(k)
+            tmp = list(v.items())
+            tmp.sort()
+            # print(tmp)
+            np.array(tmp)
+            # print(tmp)
+            date = np.array(tmp)[:,0]
+            vals = np.array(tmp)[:,1]
+            if moving_avg:
+                vals_a = self.causal_avg_filter(vals)
+                date_a = date[self.radius:]
+                # print(len(vals_a), len(date_a))
+                t_fig_dict[k].line(date_a, vals_a, legend=k + " avg data", color='blue',line_width=6)
+            t_fig_dict[k].line(date, vals, legend=k + " raw data", color='red')
+            #t_fig_dict[k].scatter(date, vals)
+
+        v=vplot(*list(t_fig_dict.values()))
+        # v = vplot(*list(series))
+        #series
+        return v
