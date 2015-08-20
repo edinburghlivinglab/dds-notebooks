@@ -37,22 +37,7 @@
     minZoom: 10
 })
             .setView([ 55.944, -3.192], 15);
-    var featureGroup = L.featureGroup().addTo(map);
 
-    var circle_options = {
-      color: '#fff',      // Stroke color
-      opacity: 1,         // Stroke opacity
-      weight: 1,         // Stroke weight
-      fillColor: '#F00',  // Fill color
-      fillOpacity: 1    // Fill opacity
-  };
-
-   var circle_one = L.circle([ 55.944, -3.192], 20, circle_options).addTo(featureGroup);
-    var drawControl = new L.Control.Draw({
-    edit: {
-      featureGroup: featureGroup
-    }
-  }).addTo(map);
 
     map.on('draw:created', function(e) {
       featureGroup.addLayer(e.layer);
