@@ -3,6 +3,11 @@ from bokeh.models import HoverTool, ColumnDataSource, Circle
 from collections import OrderedDict
 
 def test_binary_tree(adjencency_list):
+    """
+    Hardcoded bokeh 3 level completely balanced binary Tree
+    Attempting to automate to n level trees in the function
+    bellow.
+    """
     fig = figure(
     title='DDS Help Tree',
     tools= 'box_zoom,box_select,resize,reset' # Note no hover
@@ -46,3 +51,44 @@ def test_binary_tree(adjencency_list):
     ])
     fig.add_tools( HoverTool(tooltips=tooltips, renderers=[circle_renderer]))
     return fig, adjencency_list
+
+
+def balanced_tree_by_height(height=0):
+    """
+    Complete binary tree function plotter. Created with
+    the hope of automating with adjencency_list input
+    based trees. Manhatan distances are used in placing the nodes
+    in order to keep everything discrete. Trying to avoid recursion.
+    """
+    # Base nodes (Circle):
+    y = [0]
+    x = [0]
+    initial_x_manhatan = -(height -1)
+    level_dist = initial_x_manhatan
+    level = -1
+    # BFS like plot by level
+    for node_power in range(1, height):
+        print(node_power)
+        number_of_nodes = 2**(node_power)
+        for node_x in range(0, number_of_nodes):
+            x.append(initial_x_manhatan)
+            y.append(level)
+            initial_x_manhatan += (height -1) / number_of_nodes
+        level -= 1
+        initial_x_manhatan = -(height - level) + 2
+        level_dist = initial_x_manhatan
+    fig = figure()
+    print(x)
+    print(y)
+    source = ColumnDataSource(
+        data=dict(
+            xname=x,
+            yname=y
+        )
+    )
+    circle = Circle(x="xname",
+                    y="yname" ,
+                    radius=0.29,
+                    fill_color='#e9f1f8')
+    circle_renderer = fig.add_glyph(source, circle)
+    return fig
