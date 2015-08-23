@@ -1,6 +1,8 @@
 from bokeh.plotting import show, figure
 from bokeh.models import HoverTool, ColumnDataSource, Circle
 from collections import OrderedDict
+import numpy as np
+from queue import Queue
 
 def test_binary_tree(adjencency_list):
     """
@@ -9,14 +11,14 @@ def test_binary_tree(adjencency_list):
     bellow.
     """
     fig = figure(
-    title='DDS Help Tree',
-    tools= 'box_zoom,box_select,resize,reset' # Note no hover
+    title="DDS Help Tree",
+    tools= "box_zoom,box_select,resize,reset" # Note no hover
     )
     names = ["Gavin Gray", "Ewan Klein", "Francisco Vargas", "S3", "S1", "S2", "S4"]
     info = ["TA", "Lectuer", "TA", "Student", "Student", "Student", "Student"]
     fig.xgrid.grid_line_color = None
     fig.ygrid.grid_line_color = None
-    fig.axis.major_label_text_font_size = '0pt'  
+    fig.axis.major_label_text_font_size = "0pt"  
     fig.axis.major_tick_line_color = None
     fig.axis[0].ticker.num_minor_ticks = 0
     fig.axis[1].ticker.num_minor_ticks = 0
@@ -37,7 +39,7 @@ def test_binary_tree(adjencency_list):
     )
     fig.annulus(x='xname', y='yname', inner_radius=0.29, outer_radius=0.295,source=source)
 
-    circle = Circle(x='xname', y='yname', radius=0.29, fill_color='#e9f1f8')
+    circle = Circle(x="xname", y="yname", radius=0.29, fill_color="#e9f1f8")
     circle_renderer = fig.add_glyph(source, circle)
 
     x1, y1 = (-0.1, -0.04)
@@ -46,8 +48,8 @@ def test_binary_tree(adjencency_list):
     fig.text(x=[x1 + 3] , y=[y1 +2] , text=["EK"])
 
     tooltips = OrderedDict([
-        ('name', '@name'),
-        ('info', '@info'),
+        ("name", "@name"),
+        ("info", "@info"),
     ])
     fig.add_tools( HoverTool(tooltips=tooltips, renderers=[circle_renderer]))
     return fig, adjencency_list
@@ -88,6 +90,41 @@ def balanced_tree_by_height(height=0):
     circle = Circle(x="xname",
                     y="yname" ,
                     radius=0.29,
-                    fill_color='#e9f1f8')
+                    fill_color="#e9f1f8")
     circle_renderer = fig.add_glyph(source, circle)
     return fig
+
+
+def find_height(node_key, adjencency_list):
+    """
+    Finds height of adjencency_list representation
+    of tree. Uncertain about complexity... thinking O(nodes)
+    atm. Not that it matters since there wont be massive
+    trees.
+    """
+    if node_key not in adjencency_list:
+        return 0
+    else:
+        # So much for avoiding nasty recursion
+        return max([(find_height(x, adjencency_list) + 1)
+                     for x in adjencency_list[node_key]])
+
+
+def find_root(adjencency_list):
+    """
+    O(number_of_nodes ^ 2)
+    """
+    nodes = []
+    heights = []
+    for node_key in adjencency_list:
+        nodes.append(node_key)
+        heights.append(find_height(node_key, adjencency_list))
+    return nodes[np.argmax(heights)]
+
+        
+def get_tree_plot(adjencency_list):
+    """
+    BFS-traversal and plot of tree.
+    """
+    root = find_root(adjencency_list)
+
