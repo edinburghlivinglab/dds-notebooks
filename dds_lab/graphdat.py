@@ -59,6 +59,7 @@ def balanced_tree_by_height(height=0):
     the hope of automating with adjencency_list input
     based trees. Manhatan distances are used in placing the nodes
     in order to keep everything discrete. Trying to avoid recursion.
+    TODO: Lines connecting nodes
     """
     # Base nodes (Circle):
     y = [0]
@@ -66,20 +67,18 @@ def balanced_tree_by_height(height=0):
     initial_x_manhatan = -(height -1)
     level_dist = initial_x_manhatan
     level = -1
-    # BFS like plot by level
+    # BFS-traversal like plot by level
     for node_power in range(1, height):
-        print(node_power)
         number_of_nodes = 2**(node_power)
         for node_x in range(0, number_of_nodes):
             x.append(initial_x_manhatan)
             y.append(level)
-            initial_x_manhatan += (height -1) / number_of_nodes
+            initial_x_manhatan += 2*abs(level_dist) / (number_of_nodes -1)
         level -= 1
         initial_x_manhatan = -(height - level) + 2
         level_dist = initial_x_manhatan
     fig = figure()
-    print(x)
-    print(y)
+
     source = ColumnDataSource(
         data=dict(
             xname=x,
