@@ -6,7 +6,7 @@ from bokeh.embed import file_html
 from bokeh.models.glyphs import Circle, Text
 from bokeh.models import (
     BasicTicker, ColumnDataSource, Grid, GridPlot, LinearAxis,
-    DataRange1d, PanTool, Plot, WheelZoomTool,HoverTool
+    DataRange1d, PanTool, Plot, WheelZoomTool, HoverTool
 )
 from bokeh.charts import TimeSeries
 from bokeh.resources import INLINE
@@ -26,7 +26,7 @@ def read_tags(path):
     This function takes in a unix path of type String and
     returns a list of html tags each of type String
     """
-    txts = [ f for f in listdir(path) if(isfile(join(path,f)) and 'txt' in f) ]
+    txts = [f for f in listdir(path) if(isfile(join(path, f)) and 'txt' in f)]
     html_tags = {}
     for x in txts:
         html_tags[x] = list(set(open(path + x, 'r').read().split(">,<")))
@@ -39,8 +39,8 @@ def read_tags(path):
 # Year, value parsing functions to parse an individual tag
 # i.e.:
 # <span style="max-width: 962px; max-height: 992px;">Year: 1961<br>Value: 1011.88<br>Series: City of Edinburgh<br></span>
-year = lambda x:(int(re.search(r'(?<=Year:\s)(\d+)', x).group(0))
-                     if re.search(r'(?<=Year:\s)(\d+)', x) else None)
+year = lambda x: (int(re.search(r'(?<=Year:\s)(\d+)', x).group(0))
+                  if re.search(r'(?<=Year:\s)(\d+)', x) else None)
 
 val = lambda x: (float(re.search(r'(?<=Value:\s)\d+\.?\d*', x).group(0))
                  if re.search(r'(?<=Value:\s)\d+\.?\d*', x) else None)
@@ -48,11 +48,12 @@ val = lambda x: (float(re.search(r'(?<=Value:\s)\d+\.?\d*', x).group(0))
 # Function that combines the previous two and applys them to a list in order to yield (year, value)
 # pairs.
 extract = lambda y: dict(zip(filter(lambda x: x is not None,
-                          map(year, y)),
-                         (filter(lambda x: x is not None,
-                          map(val, y)))))
+                                    map(year, y)),
+                             (filter(lambda x: x is not None,
+                                     map(val, y)))))
 
-def parse_time_series(html_tags_files,txt):
+
+def parse_time_series(html_tags_files, txt):
     """
     This function parses individual timeseries data in to
     a dictionary which contains the year as keys
@@ -62,7 +63,7 @@ def parse_time_series(html_tags_files,txt):
     for p in txt:
         prod_dict[str(p)] = extract(html_tags_files[str(p)])
     return prod_dict
-        
+
 
 def pair_data(html_tags1, html_tags2, order, split_by=2010):
 
@@ -71,10 +72,10 @@ def pair_data(html_tags1, html_tags2, order, split_by=2010):
     # ways to pair them on later on
     first_pair = extract(html_tags1)
     second_pair = extract(html_tags2)
-    
+
     first_y = []
     second_y = []
-    
+
     order = list(order)
     # Determine which pair is larger and pair up relative to
     # that pair in order to not miss tags
@@ -86,24 +87,24 @@ def pair_data(html_tags1, html_tags2, order, split_by=2010):
         order[0] = order[1]
         order[1] = tmp_name
         del tmp
-       
+
     # Pairing up process taking advantage of the dictionary data structure
     for k, v in second_pair.items():
         if k in first_pair:
             first_y.append((k, first_pair[k]))
-            second_y.append((k,v))
-    
+            second_y.append((k, v))
+
     # Make sure to sort by one axis
     final = list(zip(first_y, second_y))
     final.sort(key=lambda x: x[0][1])
-    
+
     # Split set by  3 year ranges (interesting thought)
     if split_by:
         first_third = []
         second_third = []
         third_third = []
         for x in final:
-            # Playing with splits             
+            # Playing with splits
             if(x[0][0] >= split_by):
                 first_third.append(x)
             # TODO: Make it a param and not a hardcoded val.
@@ -111,38 +112,38 @@ def pair_data(html_tags1, html_tags2, order, split_by=2010):
                 second_third.append(x)
             else:
                 third_third.append(x)
-                
+
         # Maybe change return to dict format to increase readability.
-        return (np.array(first_third)[:,0],
-                np.array(first_third)[:,1],
-                np.array(second_third)[:,0],
-                np.array(second_third)[:,1],
-                np.array(third_third)[:,0],
-                np.array(third_third)[:,1],
+        return (np.array(first_third)[:, 0],
+                np.array(first_third)[:, 1],
+                np.array(second_third)[:, 0],
+                np.array(second_third)[:, 1],
+                np.array(third_third)[:, 0],
+                np.array(third_third)[:, 1],
                 first_pair,
                 second_pair,
                 order)
-            
+
     # Raw return (no ranges)
-    return (np.array(final)[:,0],
-            np.array(final)[:,1],
+    return (np.array(final)[:, 0],
+            np.array(final)[:, 1],
             first_pair,
             second_pair,
             order)
 
 
 class ClimPlots:
+
     """
     Container class for the SEPA climate variable data set
     and the 
     """
 
-
-    def __init__(self, txt, path ="../data/SPRI/climate_timeseries/"):
+    def __init__(self, txt, path="../data/SPRI/climate_timeseries/"):
         self.txt = txt
         self.path = path
         self.prod_dict = OrderedDict()
-        self.html_tags =read_tags(self.path)
+        self.html_tags = read_tags(self.path)
         self.uniform_mask = np.ones(6) / 6.0
         self.radius = len(self.uniform_mask)
 
@@ -154,9 +155,9 @@ class ClimPlots:
         """
         for p in product(self.txts, repeat=2):
             self.prod_dict[str(p)] = pair_data(html_tags[p[0]],
-                                              html_tags[p[1]],
-                                              p,
-                                              1995)
+                                               html_tags[p[1]],
+                                               p,
+                                               1995)
 
     def causal_avg_filter(self, data):
         """
@@ -167,11 +168,10 @@ class ClimPlots:
         non_causal = convolve1d(data,
                                 self.uniform_mask)
         # shift impulse response for causality
-        causal = (non_causal[int(self.radius/2):len(non_causal) - int(self.radius/2.0) -1]
+        causal = (non_causal[int(self.radius/2):len(non_causal) - int(self.radius/2.0) - 1]
                   if self.radius % 2 == 1
-                  else non_causal[(self.radius/2) :len(non_causal) - (self.radius/2.0) ])
+                  else non_causal[(self.radius/2):len(non_causal) - (self.radius/2.0)])
         return causal
-
 
     def plot_pairs(self):
         """
@@ -197,13 +197,13 @@ class ClimPlots:
 
         for k, v in prod_dict.items():
 
-            v[-1][0] = v[-1][0].replace(".txt","").replace("_", " ")
-            v[-1][1] = v[-1][1].replace(".txt","").replace("_", " ") 
-            fig_dict[k] = figure(width=300, plot_height=300,title=str(v[-1][0]) +" vs "+str(v[-1][1]),
-                                title_text_font_size='8pt',
-                                tools="reset,hover",
-                                x_axis_label=v[-1][0],
-                                y_axis_label=v[-1][1])
+            v[-1][0] = v[-1][0].replace(".txt", "").replace("_", " ")
+            v[-1][1] = v[-1][1].replace(".txt", "").replace("_", " ")
+            fig_dict[k] = figure(width=300, plot_height=300, title=str(v[-1][0]) + " vs "+str(v[-1][1]),
+                                 title_text_font_size='8pt',
+                                 tools="reset,hover",
+                                 x_axis_label=v[-1][0],
+                                 y_axis_label=v[-1][1])
 
             fig_dict[k].xaxis.axis_label_text_font_size = '8pt'
             fig_dict[k].yaxis.axis_label_text_font_size = '8pt'
@@ -213,44 +213,47 @@ class ClimPlots:
             # update with notebook widgets
             cds_dict[k+'1'] = ColumnDataSource(
                 data=dict(
-                    x=np.array(v[0])[:,1],
-                    y=np.array(v[1])[:,1],
-                    desc=np.array(v[1])[:,0]
+                    x=np.array(v[0])[:, 1],
+                    y=np.array(v[1])[:, 1],
+                    desc=np.array(v[1])[:, 0]
                 )
             )
             cds_dict[k+'2'] = ColumnDataSource(
                 data=dict(
-                    x=np.array(v[2])[:,1],
-                    y=np.array(v[3])[:,1],
-                    desc2=np.array(v[3])[:,0]
+                    x=np.array(v[2])[:, 1],
+                    y=np.array(v[3])[:, 1],
+                    desc2=np.array(v[3])[:, 0]
                 )
             )
             cds_dict[k+'3'] = ColumnDataSource(
                 data=dict(
-                    x=np.array(v[4])[:,1],
-                    y=np.array(v[5])[:,1],
-                    desc=np.array(v[5])[:,0]
+                    x=np.array(v[4])[:, 1],
+                    y=np.array(v[5])[:, 1],
+                    desc=np.array(v[5])[:, 0]
                 )
             )
 
             # All 3 plots
             hover = HoverTool()
-            s1=fig_dict[k].scatter(np.array(v[0])[:,1], np.array(v[1])[:,1],
-                                   fill_color='red',size=13,source=cds_dict[k +'1'])
-            s1.select(dict(type=HoverTool)).tooltips = {"x":"$x", "y":"$y", "year": "@desc"}
-            s2=fig_dict[k].scatter(np.array(v[2])[:,1], np.array(v[3])[:,1],
-                                   fill_color='green',size=10,source=cds_dict[k +'2'])
-            s2.select(dict(type=HoverTool)).tooltips = {"x":"$x", "y":"$y", "year": "@desc"}
-            s3=fig_dict[k].scatter(np.array(v[4])[:,1], np.array(v[5])[:,1],
-                                   fill_color='blue',size=7,source=cds_dict[k+'3'])
-            s1.select(dict(type=HoverTool)).tooltips = {"x":"$x", "y":"$y", "year": "@desc"}
-            
+            s1 = fig_dict[k].scatter(np.array(v[0])[:, 1], np.array(v[1])[:, 1],
+                                     fill_color='red', size=13, source=cds_dict[k + '1'])
+            s1.select(dict(type=HoverTool)).tooltips = {
+                "x": "$x", "y": "$y", "year": "@desc"}
+            s2 = fig_dict[k].scatter(np.array(v[2])[:, 1], np.array(v[3])[:, 1],
+                                     fill_color='green', size=10, source=cds_dict[k + '2'])
+            s2.select(dict(type=HoverTool)).tooltips = {
+                "x": "$x", "y": "$y", "year": "@desc"}
+            s3 = fig_dict[k].scatter(np.array(v[4])[:, 1], np.array(v[5])[:, 1],
+                                     fill_color='blue', size=7, source=cds_dict[k+'3'])
+            s1.select(dict(type=HoverTool)).tooltips = {
+                "x": "$x", "y": "$y", "year": "@desc"}
+
         # List of figures
         f_vals = list(fig_dict.values())
 
         # Creates gird for k2 x k2 grid plot by default k2 should be 3
-        g = gridplot([([None]*(k2 -1 - round((i + 1) / k2)) + f_vals[i: i +1
-                       + round((i + 1) / k2)][::-1])
+        g = gridplot([([None]*(k2 - 1 - round((i + 1) / k2)) + f_vals[i: i + 1
+                                                                      + round((i + 1) / k2)][::-1])
                       for i in range(0, n, k2)][::-1])
         return g
 
@@ -276,8 +279,8 @@ class ClimPlots:
 
             np.array(tmp)
 
-            date = np.array(tmp)[:,0]
-            vals = np.array(tmp)[:,1]
+            date = np.array(tmp)[:, 0]
+            vals = np.array(tmp)[:, 1]
             if moving_avg:
                 # Moving averaged filter data
                 vals_a = self.causal_avg_filter(vals)
@@ -286,13 +289,13 @@ class ClimPlots:
                 # Plot moving averaged filtered data
                 t_fig_dict[k].line(date_a, vals_a,
                                    legend=k + " avg data",
-                                   color='blue',line_width=6)
+                                   color='blue', line_width=6)
             # Plot raw data
             t_fig_dict[k].line(date, vals,
-                               legend=k + " raw data",color='red')
+                               legend=k + " raw data", color='red')
 
         # Unpack the fig instances in dict plot as a vertical stack of
         # horizontal plots
-        v=vplot(*list(t_fig_dict.values()))
+        v = vplot(*list(t_fig_dict.values()))
 
         return v
