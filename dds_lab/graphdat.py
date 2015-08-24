@@ -112,7 +112,7 @@ def find_height(node_key, adjencency_list):
 
 def find_root(adjencency_list):
     """
-    O(number_of_nodes ^ 2)
+    O(number_of_nodes * T_{find_height}(number_of_nodes))
     """
     nodes = []
     heights = []
@@ -124,7 +124,70 @@ def find_root(adjencency_list):
         
 def get_tree_plot(adjencency_list):
     """
-    BFS-traversal and plot of tree.
+    BFS-traversal (level order) and plot of tree.
     """
-    root = find_root(adjencency_list)
+    x = []
+    y = []
 
+    q = Queue()
+    o = OrderedDict()
+    root = find_root(adjencency_list)
+    height = find_height(root, adjencency_list)
+    q.put(root)
+
+    # Creating a level ordered adjecency list
+    # using a queue to keep track of pointers
+    while(not q.empty()):
+        current = q.get()
+        try:
+            if(current in adjencency_list):
+                q.put(list(adjencency_list[current])[0])
+                # Creating ad_list in level order
+                if current in o:
+                    o[current].append(list(adjencency_list[current])[0])
+                else:
+                    o[current] = [list(adjencency_list[current])[0]]
+            if(current in adjencency_list):
+                q.put(list(adjencency_list[current])[1])
+                # Creating ad_list in level order
+                if current in o:
+                    o[current].append(list(adjencency_list[current])[1])
+                else:
+                    o[current] = [list(adjencency_list[current])[1]]
+        except IndexError:
+            pass
+
+    x = []
+    y = []
+    x.append(0)
+    y.append(0)
+    initial_x_manhatan = -(height - 1)
+    level_dist = initial_x_manhatan
+    level = -1
+
+    for lev in o.keys():
+        number_of_nodes = len(o[lev])
+        for level_memeber in o[lev]:
+            # Copy ideas from balanced tree by height.
+            x.append(initial_x_manhatan)
+            y.append(level)
+            initial_x_manhatan += 2*abs(level_dist) / (number_of_nodes -1)
+        level -= 1
+        initial_x_manhatan = -(height - level) + 2
+        level_dist = initial_x_manhatan
+
+    fig = figure()
+
+    source = ColumnDataSource(
+        data=dict(
+            xname=x,
+            yname=y
+        )
+    )
+    circle = Circle(x="xname",
+                    y="yname" ,
+                    radius=0.29,
+                    fill_color="#e9f1f8")
+    circle_renderer = fig.add_glyph(source, circle)
+
+    return fig, adjencency_list
