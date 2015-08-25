@@ -126,7 +126,7 @@ def find_root(adjencency_list):
     return nodes[np.argmax(heights)]
 
 
-def level_dict(adj_list, curr_elems, parent=None, order=0):
+def level_dict(adj_list, curr_elems, order=0):
     """
     Turns an adjencency_list list for a binary tree
     and its given root in to a dict of levels
@@ -135,22 +135,13 @@ def level_dict(adj_list, curr_elems, parent=None, order=0):
         return {}
     d = OrderedDict()
     new_elems = []
-    for elem, dad in curr_elems:
-        # if dad is not None:
-
-        # else:
-        d.setdefault(order, []).append((dad, elem))
-        # print (elem)
-        # print (list(adj_list.get(elem, [])), elem)
+    for elem, parent in curr_elems:
+        d.setdefault(order, []).append((elem, parent))
         to_add = list(adj_list.get(elem, []))
         new_elems.extend(zip(to_add, [elem]*len(to_add)))
-        # print("adjencency_list.get(): " + str(adj_list.get(elem, [])))
-        # print("elem: " + str(elem))
-        # print("new elemes: " + str(new_elems))
 
     d.update(level_dict(adj_list,
                         new_elems,
-                        parent=curr_elems,
                         order=order + 1)
             )
     return d
@@ -165,11 +156,11 @@ def get_tree_plot(adjencency_list):
 
     q = Queue()
     root = find_root(adjencency_list)
+    # This is level numebers counting from one
+    # so not actually height
     height = find_height(root, adjencency_list) + 1
     q.put(root)
     o = level_dict(adjencency_list, [(root, None)])
-    print(o)
-    # print(height)
 
     x = []
     y = []
