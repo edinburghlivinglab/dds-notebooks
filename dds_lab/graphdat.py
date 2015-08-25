@@ -1,5 +1,5 @@
 from bokeh.plotting import show, figure
-from bokeh.models import HoverTool, ColumnDataSource, Circle
+from bokeh.models import HoverTool, ColumnDataSource, Circle, Text
 from collections import OrderedDict
 import numpy as np
 from queue import Queue
@@ -135,6 +135,13 @@ def get_tree_plot(adjencency_list, names, info):
     linesx = []
     linesy = []
     fig = figure()
+    textsx = []
+    textsy = []
+    texts = []
+    print(type(root))
+    textsx.append(0 - 0.18)
+    textsy.append(0-0.07)
+    texts.append(root)
     for lev in o.keys():
         number_of_nodes = len(o[lev])
         left_right = [level_dist, -level_dist] * number_of_nodes
@@ -144,6 +151,9 @@ def get_tree_plot(adjencency_list, names, info):
                 x.append(initial_x_manhatan)
                 y.append(level)
                 dist_dict[level_memeber] = float(initial_x_manhatan)
+                textsx.append(dist_dict[level_memeber] - 0.18)
+                textsy.append(level - 0.07)
+                texts.append(level_memeber)
                 fig.line([dist_dict[level_memeber], 0],
                          [level, level + 1])
                 initial_x_manhatan += 2*abs(const) / (number_of_nodes - 1)
@@ -153,6 +163,9 @@ def get_tree_plot(adjencency_list, names, info):
                 dist_dict[level_memeber] = float(xdist)
                 x.append(xdist)
                 y.append(level)
+                textsx.append(dist_dict[level_memeber] - 0.18)
+                textsy.append(level - 0.07)
+                texts.append(level_memeber)
                 fig.line([dist_dict[level_memeber], dist_dict[parent]],
                          [level, level + 1])
                 side_index += 1
@@ -181,7 +194,7 @@ def get_tree_plot(adjencency_list, names, info):
     )
     circle = Circle(x="xname",
                     y="yname",
-                    radius=0.25,
+                    radius=0.3,
                     fill_color="#e9f1f8")
     circle_renderer = fig.add_glyph(source, circle)
     tooltips = OrderedDict([
@@ -189,5 +202,6 @@ def get_tree_plot(adjencency_list, names, info):
         ("info", "@info"),
     ])
     fig.add_tools(HoverTool(tooltips=tooltips, renderers=[circle_renderer]))
+    fig.text(x=textsx,y=textsy,text=texts)
 
     return fig, adjencency_list
