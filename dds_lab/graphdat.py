@@ -167,6 +167,7 @@ def get_tree_plot(adjencency_list):
     x.append(0)
     y.append(0)
     initial_x_manhatan = -(height - 1)
+    const = initial_x_manhatan
     level_dist = initial_x_manhatan
     level = 0
     # Keeping track of parents
@@ -175,30 +176,34 @@ def get_tree_plot(adjencency_list):
 
     for lev in o.keys():
         number_of_nodes = len(o[lev])
-        left_right = [-1, 1] * number_of_nodes
+        left_right = [level_dist, -level_dist] * number_of_nodes
         side_index = 0
         for level_memeber, parent in o[lev]:
-            # Copy ideas from balanced tree by height.
             if lev == 1:
                 x.append(initial_x_manhatan)
                 y.append(level)
-                dist_dict[level_memeber] = initial_x_manhatan
-                initial_x_manhatan += 2*abs(level_dist) / (number_of_nodes - 1)
+                dist_dict[level_memeber] = float(initial_x_manhatan)
+                initial_x_manhatan += 2*abs(const) / (number_of_nodes - 1)
             elif lev !=0:
-                # print(lev)
-                # print(dist_dict)
                 side_factor = left_right[side_index]
                 xdist = dist_dict[parent] + side_factor
-                dist_dict[level_memeber] = xdist
+                dist_dict[level_memeber] = float(xdist)
                 x.append(xdist)
                 y.append(level)
                 side_index += 1
         level -= 1
-        # if lev != 0:
-        #     initial_x_manhatan = -(height - level) + 2
-        #     level_dist = initial_x_manhatan
+        level_dist /= 1.5
 
     fig = figure()
+    fig.xgrid.grid_line_color = None
+    fig.ygrid.grid_line_color = None
+    fig.axis.major_label_text_font_size = "0pt"
+    fig.axis.major_tick_line_color = None
+    fig.axis[0].ticker.num_minor_ticks = 0
+    fig.axis[1].ticker.num_minor_ticks = 0
+    fig.outline_line_color = "white"
+    fig.xaxis.axis_line_color = "white"
+    fig.yaxis.axis_line_color = "white"
 
     source = ColumnDataSource(
         data=dict(
@@ -208,7 +213,7 @@ def get_tree_plot(adjencency_list):
     )
     circle = Circle(x="xname",
                     y="yname",
-                    radius=0.29,
+                    radius=0.25,
                     fill_color="#e9f1f8")
     circle_renderer = fig.add_glyph(source, circle)
 
