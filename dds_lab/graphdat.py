@@ -116,6 +116,7 @@ def get_tree_plot(adjencency_list, names, info):
 
     q = Queue()
     root = find_root(adjencency_list)
+    # print adjencency_list
     # This is level numebers counting from one
     # so not actually height
     height = find_height(root, adjencency_list) + 1
