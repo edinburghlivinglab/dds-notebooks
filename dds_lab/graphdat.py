@@ -169,19 +169,34 @@ def get_tree_plot(adjencency_list):
     initial_x_manhatan = -(height - 1)
     level_dist = initial_x_manhatan
     level = 0
+    # Keeping track of parents
+    dist_dict = {}
+    print(o)
 
     for lev in o.keys():
         number_of_nodes = len(o[lev])
-        for level_memeber in o[lev]:
+        left_right = [-1, 1] * number_of_nodes
+        side_index = 0
+        for level_memeber, parent in o[lev]:
             # Copy ideas from balanced tree by height.
-            if lev != 0:
+            if lev == 1:
                 x.append(initial_x_manhatan)
                 y.append(level)
+                dist_dict[level_memeber] = initial_x_manhatan
                 initial_x_manhatan += 2*abs(level_dist) / (number_of_nodes - 1)
+            elif lev !=0:
+                # print(lev)
+                # print(dist_dict)
+                side_factor = left_right[side_index]
+                xdist = dist_dict[parent] + side_factor
+                dist_dict[level_memeber] = xdist
+                x.append(xdist)
+                y.append(level)
+                side_index += 1
         level -= 1
-        if lev != 0:
-            initial_x_manhatan = -(height - level) + 2
-            level_dist = initial_x_manhatan
+        # if lev != 0:
+        #     initial_x_manhatan = -(height - level) + 2
+        #     level_dist = initial_x_manhatan
 
     fig = figure()
 
