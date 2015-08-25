@@ -147,7 +147,7 @@ def level_dict(adj_list, curr_elems, order=0):
     return d
 
 
-def get_tree_plot(adjencency_list):
+def get_tree_plot(adjencency_list, names, info):
     """
     BFS-traversal (level order) and plot of tree.
     """
@@ -172,8 +172,9 @@ def get_tree_plot(adjencency_list):
     level = 0
     # Keeping track of parents
     dist_dict = {}
-    print(o)
-
+    linesx = []
+    linesy = []
+    fig = figure()
     for lev in o.keys():
         number_of_nodes = len(o[lev])
         left_right = [level_dist, -level_dist] * number_of_nodes
@@ -183,6 +184,8 @@ def get_tree_plot(adjencency_list):
                 x.append(initial_x_manhatan)
                 y.append(level)
                 dist_dict[level_memeber] = float(initial_x_manhatan)
+                fig.line([dist_dict[level_memeber], 0],
+                         [level, level + 1])
                 initial_x_manhatan += 2*abs(const) / (number_of_nodes - 1)
             elif lev !=0:
                 side_factor = left_right[side_index]
@@ -190,11 +193,13 @@ def get_tree_plot(adjencency_list):
                 dist_dict[level_memeber] = float(xdist)
                 x.append(xdist)
                 y.append(level)
+                fig.line([dist_dict[level_memeber], dist_dict[parent]],
+                         [level, level + 1])
                 side_index += 1
         level -= 1
         level_dist /= 1.5
 
-    fig = figure()
+    
     fig.xgrid.grid_line_color = None
     fig.ygrid.grid_line_color = None
     fig.axis.major_label_text_font_size = "0pt"
@@ -205,10 +210,13 @@ def get_tree_plot(adjencency_list):
     fig.xaxis.axis_line_color = "white"
     fig.yaxis.axis_line_color = "white"
 
+
     source = ColumnDataSource(
         data=dict(
             xname=x,
-            yname=y
+            yname=y,
+            names=names,
+            info=info
         )
     )
     circle = Circle(x="xname",
@@ -216,5 +224,10 @@ def get_tree_plot(adjencency_list):
                     radius=0.25,
                     fill_color="#e9f1f8")
     circle_renderer = fig.add_glyph(source, circle)
+    tooltips = OrderedDict([
+        ("name", "@names"),
+        ("info", "@info"),
+    ])
+    fig.add_tools(HoverTool(tooltips=tooltips, renderers=[circle_renderer]))
 
     return fig, adjencency_list
