@@ -62,11 +62,11 @@ def hotel_vor_gen():
     # popen()
     open(hotel + "/vor.json", 'w').write(out_json)
 
-def neigh_vor_gen():
+def neigh_vor_gen(fil):
     """
     Creates voronoi tessalation of neighbourhood data
     """
-    df = pd.read_csv(hood + "/allotments.csv")
+    df = pd.read_csv(hood + "/" + fil)
     geo_hotel = df
     print(df)
     points = np.array([list(map(float, x.split(",")))[::-1] for x in df["Location"]])
@@ -77,8 +77,8 @@ def neigh_vor_gen():
     vor_json = gen_feature_collection(ids, pols)
     out_json = dumps(vor_json)
     # popen()
-    open(hood + "/vor.json", 'w').write(out_json)
+    open(hood + ("/%svor.json" % fil.split(".")[0]), 'w').write(out_json)
 
     
 if __name__ == '__main__':
-    neigh_vor_gen()
+    neigh_vor_gen("offices.csv")
