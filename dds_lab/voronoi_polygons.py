@@ -1,13 +1,13 @@
 import numpy as np
 from scipy.spatial import Voronoi
 import geojson as gj
-from dds_lab.datasets import hotel
+from dds_lab.datasets import hotel, hood
 from json import loads, dumps
 import shapely.geometry
 import shapely.ops
 import shapely
 from os import popen
-
+import pandas as pd
 
 def gen_feature_collection(ids, polygons):
     """
@@ -61,6 +61,23 @@ def hotel_vor_gen():
     out_json = dumps(vor_json)
     # popen()
     open(hotel + "/vor.json", 'w').write(out_json)
+
+def neigh_vor_gen():
+    """
+    Creates voronoi tessalation of neighbourhood data
+    """
+    df = pd.read_csv(hood + "/allotments.csv")
+    geo_hotel = df
+    print(df)
+    points = np.array([list(map(float, x.split(","))) for x in df["Location"]])
+    ids = [x for x in df["Name"]]
+    print(points)
+    pols = gen_voronoi_polygons(points)
+
+    vor_json = gen_feature_collection(ids, pols)
+    out_json = dumps(vor_json)
+    # popen()
+    open(hood + "/vor.json", 'w').write(out_json)
 
     
 if __name__ == '__main__':

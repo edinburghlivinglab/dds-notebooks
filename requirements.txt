@@ -52,6 +52,7 @@ ipykernel>=4.0.3
 jupyter-client>=4.0.0
 notebook>=4.0.4
 folium>=0.1.5
+shapely
 
 
 
