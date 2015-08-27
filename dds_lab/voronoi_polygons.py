@@ -10,6 +10,10 @@ from os import popen
 
 
 def gen_feature_collection(ids, polygons):
+    """
+    Constructs geojson with areas specified by
+    polygons
+    """
     iterable = zip(ids, polygons)
     feature_list = []
     for i, poly in iterable:
@@ -22,13 +26,12 @@ def gen_feature_collection(ids, polygons):
         feature_list.append(feature)
         # print(feature)
     return gj.FeatureCollection(feature_list)
-    
-if __name__ == '__main__':
-    print(hotel + "/hotel.json")
-    jstring = open(hotel + "/hotel.json", 'r').read()
-    geo_hotel = loads(jstring)
-    points = np.array([x["geometry"]["coordinates"] for x in geo_hotel["features"]])
-    ids = [x["properties"]["id"] for x in geo_hotel["features"]]
+
+def gen_voronoi_polygons(points):
+    """
+    Ouputs polygons specifying voronoi tessalation
+    of points
+    """
     vor = Voronoi(points)
     lines = [
         shapely.geometry.LineString(vor.vertices[line])
@@ -41,10 +44,24 @@ if __name__ == '__main__':
         tmp = list(map(list, list(pol.exterior.coords)))
         tmp.append(tmp[0])
         pols.append(tmp)
-    # print(p?ols)
-    # print(points)
+    return pols
+
+def hotel_vor_gen():
+    """
+    Creates voronoi tessalation of hotel data
+    """
+    jstring = open(hotel + "/hotel.json", 'r').read()
+    geo_hotel = loads(jstring)
+    points = np.array([x["geometry"]["coordinates"] for x in geo_hotel["features"]])
+    ids = [x["properties"]["id"] for x in geo_hotel["features"]]
+    
+    pols = gen_voronoi_polygons(points)
 
     vor_json = gen_feature_collection(ids, pols)
     out_json = dumps(vor_json)
     # popen()
     open(hotel + "/vor.json", 'w').write(out_json)
+
+    
+if __name__ == '__main__':
+    hotel_vor_gen()
