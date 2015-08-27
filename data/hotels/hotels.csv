@@ -1,0 +1,233 @@
+ID,HOTEL,OWNER,STREETNO1,STREET,STREETNO2,STREETNO3,POSTCODE,EASTING,GRADE,NORTHING,ROOMS
+1,Premier Inn Edinburgh Park,Whitbread,1,Lochside Way,,,,318337,n/a,671350,120
+2,Marriott Dalmahoy Hotel & Country Club,,,"Long Dalmahoy, Kirknewton",,,EH278EB,314388,4* HO,668725,203
+3,Caledonian Hotel,Hilton,4,Lothian Road    (/Princes Street),,,EH12AB,324700,5* HO,673620,235
+4,Glenisla Hotel,,12,Lygon Road,,,EH165QB,327023,3,670992,10
+5,Thistle Hotel,,59,Manor Place,,,EH37EG,324080,3,673700,11
+6,Ceilidh-Donia Hotel [formerly Marchhall Hotel],,14,Marchhall Crescent,-,16,EH165HL,327106,3,672057,17
+7,St. Christopher's Inn [formerly Station Hotel],St. Christopher's Inns,9,Market Street,to,13,EH11DE,325762,n/a,673737,
+8,Motel One,,18,Market Street / 6 Cockburn Street,to,21,EH11BL,325690,n/a,673712,208
+9,Ivy Guest House,,7,Mayfield Gardens,,,EH92AX,326777,n/a,671797,8
+10,Ben Doran Guest House,,11,Mayfield Gardens,,,EH92AX,326783,4*GH,671780,10
+11,Allison House Hotel,,17,Mayfield Gardens,,,EH92AX,326798,4* GH,671757,11
+12,Barony Guest House,,23,Mayfield Gardens,,,EH92BX,326847,4*GH,671670,9
+13,Glenalmond Guest House,,25,Mayfield Gardens,,,EH92BX,326854,GH 4*,671654,10
+14,Arrandale Guest House,,28,Mayfield Gardens,,,EH92BZ,326836,3*GH,671583,6
+15,Alba Hills Guest House [formerly Rimswell House Hotel],,33,Mayfield Gardens,to,35,EH92BX,326887,n/a,671596,9
+16,International Guest House,,37,Mayfield Gardens,,,EH92BX,326892,n/a,671583,9
+17,Lauderville Guest House,,52,Mayfield Road,,,EH92NH,326561,n/a,671539,10
+18,Best Western Kings Manor Hotel,S. Solley Hotels Ltd.,100,Milton Road East,,,EH152NP,331671,4,672924,95
+19,Thrums Hotel,,14,Minto Street,to,15,EH91RQ,326654,3* GH,672014,14
+20,Edinburgh's Minto Hotel,,16,Minto Street,to,18,EH99RQ,326679,3,671978,23
+21,Ellwyn Hotel,,37,Moira Terrace,to,39,EH76TD,329209,n/a,674305,12
+22,Premier Inn Edinburgh Haymarket,Whitbread Bowland Inns,1,Morrison Link,,,EH38DN,324283,n/a,673199,282
+23,The Avenue Hotel,,4,Murrayfield Avenue,,,EH126AX,322832,2,673300,6
+24,Craigelachie Hotel,,21,Murrayfield Avenue,,,EH126AU,322662,4* GH,673356,8
+25,Beverley Hotel,,40,Murrayfield Avenue,,,EH126AY,322741,4* GH,673424,8
+26,Holyrood Aparthotel,Hotel Connections,1,Nether Bakehouse,,,EH88PE,326530,4* SA,673707,40
+27,Premier Inn Edinburgh Newcraighall,Whitbread Group,91,Newcraighall Road,,,EH16,331720,n/a,671860,42
+28,Hawes Inn,Innkeeper's Lodge,,Newhalls Road,,,EH309TA,313537,1,678289,14
+29,Premier Inn Edinburgh Leith,Whitbread Group,51,Newhaven Place,-,53,EH64TX,325527,n/a,677483,84
+30,Southside Guest House,,8,Newington Road,,,EH91QS,326410,4* GH,672385,8
+31,Barcelo Edinburgh Carlton Hotel,Dawnay Shore Hotels,19,North Bridge,,,EH11SD,325935,5,673762,189
+32,Scotsman Hotel,,20,North Bridge,,,EH11TR,325865,n/a,673760,68
+33,Holiday Inn Express,Holiday Inn / Somerston Hotels (Edinburgh Waterfront),101,Ocean Drive,,,EH66LA,326510,3* HO,676834,145
+34,Arden Guest House,,126,Old Dalkeith Road,,,EH16  4SD,328338,n/a,670482,8
+35,Aaron Lodge,,128,Old Dalkeith Road,,,EH164SD,328338,n/a,670480,10
+36,West End Hotel,,37,Palmerston Place,,,EH125AU,324000,n/a,673625,8
+37,Holiday Inn Express,,16,Picardy Place,to,22,EH13JT,326031,n/a,674430,150
+38,Edinburgh House Hotel [formerly Balfour House Hotel],,92,Pilrig Street,,,EH65AY,326324,n/a,675471,24
+39,Lindsay Guest House,,108,Polwarth Terrace,,,EH111NN,323519,3*GH,671637,7
+40,Ard Na Said Guest House,,5,Priestfield Road,,,EH165HH,327142,4*GH,672005,6
+41,Dorstan House Hotel,,7,Priestfield Road,,,EH165HJ,327177,3* GH,672030,14
+42,Prestonfield House Hotel,,,Priestfield Road,,,EH165UT,327803,5* HO,672105,24
+43,Balmoral Hotel,,1,Princes Street,,,EH22EQ,325820,5* HO,673954,168
+44,Royal British Hotel,Cairn Hotel Group,20,Princes Street,,,EH22AN,325741,3,674004,72
+45,Travelodge Edinburgh Central Princes Street,Arcadia Group Ltd.,30,Princes Street,-,31,EH22BY,325665,n/a,673978,95
+46,Old Waverley Hotel,Paramount Hotel Group,42,Princes Street,to,44,EH22BY,325602,3* HO,673960,66
+47,Robert Burns Hotel  [formerly at Craigalon House],,39,Abercorn Terrace,,,EH152DG,331156,n/a,673531,16
+48,Royal Scots Club,,30,Abercromby Place,,,EH36QE,325308,3*HO,674353,25
+49,Links Hotel,,4,Alvanley Terrace,-,6,EH91DU,324965,n/a,672264,22
+50,Ardmillan Hotel [formerly Nirvana Hotel],,9,Ardmillan Terrace,to,10,EH112JW,323505,2* SH,672377,7
+51,Travelodge Edinburgh West End [formerly Belford Hotel],Menzies Hotels plc / Travelodge,69,Belford Road,,,EH43DG,323766,4* HO,673728,173
+52,Smart City Hostel,Europa Inns (UK) Ltd.,40,Blackfriars Street,to,50,EH11NE,326039,n/a,673550,49
+53,Best Western Braid Hills Hotel,,134,Braid Road,,,EH106JD,324308,3* HO,669988,68
+54,Staycity.com Edinburgh,AMA (New Town) Ltd.,9,Brandfield Street,",",13,EH38AS,324355,SA,672925,74
+55,Mercure Point Hotel,,34,Bread Street,to,58,EH39AF,324946,3* HO,673167,139
+56,Broughton Hotel,,37,Broughton Place,,,EH13RR,325972,3* GH,674624,6
+57,No. 11 [formerly Clan Campbell Hotel],,11,Brunswick Street,,,EH75JB,326452,3* SH,674600,10
+58,Best Western Bruntsfield Hotel,Queensferry Hotels,69,Bruntsfield Place,,,EH104HH,324768,4* HO,672336,74
+59,Premier Inn Edinburgh South Queensferry [formerly Queen's Crossing (Travel Inn)],Whitbread Group,2,Builyeon Road,,,EH309--,312426,n/a,677705,40
+60,Parliament House Hotel,Adam Hotels,15,Calton Hill,,,EH13BJ,326035,3* HO,674100,53
+61,Canon Court Apartments,,20,Canonmills,,,EH35HA,325268,4* SA,675061,32
+62,Castle View Guest House,,30,Castle Street,,,EH23HT,324993,3*GH,673883,18
+63,The Witchery,,,"Castlehill, Royal Mile",,,EH12NF,325419,n/a,673502,8
+64,Roxburghe Hotel,Paragon Hotels / Macdonald Hotels,38,Charlotte Square,,,EH24HG,324786,4* HO,673838,198
+65,Chester Residence,,9,Chester Street,,,EH37RF,324170,SA 5*,673697,5
+66,Claremont Hotel,,14,Claremont Crescent,to,15,EH74HX,325695,1* SH,675187,24
+67,Best Western Edinburgh Capital,Portland Hotels,187,Clermiston Road,,,EH126UG,320193,3* HO,674390,111
+68,Guards Hotel [formerly Clifton Private Hotel],,1,Clifton Terrace,,,EH125DR,324076,2,673261,11
+69,West End Hostel,Shielcroft Ltd.,3,Clifton Terrace,to,4,EH125DR,324057,n/a,673248,8
+70,Tune Hotel Edinburgh Haymarket,TP Hotel (Edinburgh) Ltd.,7,Clifton Terrace,-,8,EH12 5DR,324019,n/a,673236,179
+71,Haymarket & Buchan Hotel,,1,Coates Gardens,-,3,EH125LG,323789,3* HO,673247,25
+72,Piries Hotel,,4,Coates Gardens,to,8,EH125LB,323825,3* HO,673266,32
+73,Boisdale Hotel,,9,Coates Gardens,,,EH125LG,323787,3* GH,673281,10
+74,Lairg Hotel,,11,Coates Gardens,,,EH125LG,323788,3*GH,673293,10
+75,Argus Hotel,,14,Coates Gardens,,,EH125LB,323824,3,673295,11
+76,No. 32 [formerly Beresford Hotel],,32,Coates Gardens,,,EH125LE,323822,3* GH,673369,10
+77,St Valery Guest House,,36,Coates Gardens,,,EH125LE,323822,n/a,673386,11
+78,Edinburgh Backpackers Hostel,,65,Cockburn Street,,,EH11BU,325881,HS,673704,150
+79,Kingsburgh House,,2,Corstorphine Road,,,EH126HN,322565,5*GH,673227,6
+80,Hampton Hotel,,14,Corstorphine Road,,,EH126HN,322471,3* SH,673214,6
+81,Murrayfield Hotel,Festival Inns,18,Corstorphine Road,,,EH126HN,322430,1* HO,673211,37
+82,Western Manor House Hotel,,92,Corstorphine Road,,,EH126JG,321730,n/a,673110,11
+83,Holiday Inn,,132,Corstorphine Road,,,EH126UA,320950,4* HO,672912,303
+84,Budget Backpackers Hostel,,37,Cowgate,to,39,EH11JR,325617,n/a,673410,44
+85,Cowgate Tourist Hostel,,94,Cowgate,-,112,EH11JN,325750,HS,673473,170
+86,Central Hotel [formerly Tailors' Hall Hotel],Festival Inns Ltd.,137,Cowgate,,,EH11JS,325797,2* IN,673440,42
+87,Express by Holiday Inn,,300,Cowgate,,,EH11NQ,326119,n/a,673553,78
+88,Ben Craig Guest House,,3,Craigmillar Park,,,EH165PG,326950,5*GH,671480,9
+89,Kildonan Lodge Hotel,,27,Craigmillar Park,,,EH165PE,327086,4* SH,671230,12
+90,Northumberland Hotel,,31,Craigmillar Park,to,33,EH165PE,327123,3* SH,671170,18
+91,Travelodge Edinburgh Cameron Toll,,41,Craigmillar Park,-,43,EH165PD,327183,n/a,671064,115
+92,94DR [formerly MW Guest House],,94,Dalkeith Road,,,EH165AF,326957,4*GH,672108,6
+93,Rosehall Hotel,,101,Dalkeith Road,,,EH165AJ,327029,3* SH,672082,10
+94,Gifford House,,103,Dalkeith Road,,,EH165AJ,327034,4*GH,672072,6
+95,Belford Backpackers Hostel,,7,Douglas Gardens,,,EH43DA,323880,HS,673772,98
+96,Travelodge Edinburgh Dreghorn,Granada,46,Dreghorn Link,to,48,EH139QR,322981,n/a,668180,72
+97,The Bonham,The Town House Company,34,Drumsheugh Gardens,to,35,EH37RN,324180,4* HO,673823,48
+98,Ardblair Guest House,,1,Duddingston Crescent,,,EH15 3AS,330364,3* GH,672829,8
+99,Walton Hotel,,79,Dundas Street,,,EH36SD,325193,4* GH,674626,10
+100,Mackenzie Guest House,,2,East Hermitage Place,,,EH68AA,327842,4*GH,675752,5
+101,Hilton Edinburgh Airport Hotel [formerly Stakis],,,Edinburgh Airport / Ingliston,,,EH288LL,315179,4* HO,673164,134
+102,Travelodge Edinburgh Haymarket [formerly Greens Hotel],London & Edinburgh Inns Ltd / Travelodge,24,Eglinton Crescent,,,EH125BY,323787,n/a,673448,72
+103,Elder York Guest House,,38,Elder Street,,,EH13DX,325743,3*GH,674288,13
+104,Ellersly House Hotel,Ramada Jarvis (Jarvis Hotels),4,Ellersly Road,,,EH126HZ,322170,2* HO,673362,57
+105,Royal Ettrick Hotel,Festival Hotels Ltd,13,Ettrick Road,,,EH105BJ,323811,3,671958,18
+106,Dene Guest House,,7,Eyre Place,,,EH35ES,325150,3*GH,674860,11
+107,Ardenlee Guest House,,9,Eyre Place,,,EH35ES,325163,3*GH,674863,9
+108,Abercraig Guest House [formerly Relax Guest House],,11,Eyre Place,,,EH35ES,325173,2*GH,674866,10
+109,A Haven Townhouse,Minotel,180,Ferry Road,,,EH64NS,325893,3* HO,676317,14
+110,Bonnington Guest House,,202,Ferry Road,,,EH64NW,325735,4*GH,676287,7
+111,Victoria Park Hotel,,221,Ferry Road,,,EH64NN,325737,n/a,676228,10
+112,Ravensdown Guest House,,248,Ferry Road,,,EH53AN,325032,3*GH,676104,7
+113,Dakota,,,"Ferrymuir, South Queensferry",,,EH309QZ,312725,n/a,677640,132
+114,Sheraton Grand Hotel,,1,Festival Square,,,EH39SR,324688,5* HO,673313,261
+115,Hotel Du Vin,,2,Forrest Rd / 11B Bristo Place,,,EH12QN,325758,n/a,673202,47
+116,Regent House Hotel [formerly Victoria Hotel],,3,Forth Street,,,EH13JX,325921,n/a,674476,18
+117,Frederick House Hotel,,42,Frederick Street,,,EH21EX,325108,n/a,674022,45
+118,Rick's Edinburgh Hotel,Montpeliers Edinburgh Ltd.,55,Frederick Street,A,,EH21LH,325125,n/a,674094,10
+119,Missoni Hotel / Rezidor,,1,George IV Bridge / Lawnmarket / Melbourne Place,,,EH1,325604,n/a,673522,136
+120,Le Monde,Saltire Taverns,16,George Street,,,EH22SL,325412,5*,674024,18
+121,George Hotel,,19,George Street,to,21,EH22PB,325393,4* HO,674081,241
+122,Tigerlily,Montpeliers (Edinburgh) Ltd.,125,George Street,,,EH24JN,324836,n/a,673924,33
+123,Edinburgh Marriott [formerly Royal Scot],Whitbread,111,Glasgow Road,,,EH128NF,318140,4* HO,672671,245
+124,Travelodge Edinburgh Airport,,72,"Glasgow Road (land adjacent to), Edinburgh",,,,313074,n/a,672604,97
+125,Nira Caledonia [formerly Christopher North House Hotel],,4,Gloucester Place,to,10,EH36EF,324738,3* SH,674408,27
+126,Teviotdale House,,53,Grange Loan,,,EH92ER,326264,4* GH,671681,7
+127,Apex International Hotel,,31,Grassmarket,to,35,EH12HS,325366,4* HO,673313,171
+128,Apex City Hotel,,61,Grassmarket,,,EH12JF,325445,4* HO,673326,119
+129,Grassmarket Hotel [formerly Thistle Inn Hotel],Festival Inns,94,Grassmarket,,,EH12JR,325463,2,673416,45
+130,Howard Hotel,The Town House Company,34,Great King Street,,,EH36QH,325242,5* SH,674552,18
+131,The Glasshouse,Eton Group,2,Greenside Place,,,EH13AA,326050,5* HO,674360,65
+132,Ballantrae West End Hotel,Ballantrae Hotel Group,6,Grosvenor Crescent,,,EH125EP,324024,3,673465,10
+133,Grosvenor Gardens Guest House,,1,Grosvenor Gardens,,,EH125JU,323926,3* GH,673291,8
+134,Hilton Edinburgh Grosvenor Hotel [formerly Stakis],,11,Grosvenor Street,to,17,EH125EF,324086,3* HO,673342,186
+135,Ritz Hotel,,14,Grosvenor Street,to,18,EH125EG,324050,2* HO,673314,36
+136,iQ Grove [term-time student accommodation],Kay Haven Developments Ltd.,55,Grove Street,,,EH38AB,324425,SA,673038,321
+137,Brooks Hotel [formerly Herald House Hotel],,70,Grove Street,,,EH38AP,324436,2* HO,672908,45
+138,Grove Executive [Fountain Court Apartments],Triple Crown,113,Grove Street,",",117,EH38AA,324447,SA,672956,24
+139,Fountain Court Apartments,,123,Grove Street,,,EH38AA,324457,4*SA,672925,100
+140,Scottish Youth Hostels Association,,9,Haddington Place,,,EH7 4AL,326235,n/a,674735,301
+141,Dunstane City Hotel,,5,Hampton Terrace,,,,323355,n/a,673171,18
+142,The Lodge Hotel,,6,Hampton Terrace,,,EH125JD,323340,4* GH,673176,12
+143,Kirklea Guest House,,11,Harrison Road,,,EH111EG,323466,3*GH,672182,6
+144,Apex European Hotel,Apex Hotels,90,Haymarket Terrace,,,EH125LQ,323719,4* HO,673251,66
+145,Merith House Hotel,,2,Hermitage Place,to,3,EH68AF,327443,1,675744,10
+146,Culane House Hotel,,9,Hermitage Place,,,EH68AF,327394,n/a,675736,10
+147,Park View House Hotel,,14,Hermitage Place,,,EH68AF,327345,n/a,675725,16
+148,Radisson SAS [formerly Crowne Plaza],Radisson SAS,80,High Street,,,EH11TH,325993,4* HO,673642,228
+149,Brodies Hostel,,93,High Street,,,EH11SG,326024,HS,673692,130
+150,Stag Head Hotel,,8,"High Street, South Queensferry",,,EH309PP,312963,n/a,678388,5
+151,Orocco Pier Hotel [formerly Queensferry Arms Hotel],,17,"High Street, South Queensferry",,,EH309PP,312985,2,678362,15
+152,Ten Hill Place,Royal College of Surgeons of Edinburgh,10,Hill Place,,,EH89DS,326165,n/a,673216,78
+153,Two Hillside Crescent,,2,Hillside Crescent,,,EH7  5DY,326376,n/a,674526,5
+154,Salisbury Green Hotel,Edinburgh University,18,Holyrood Park Road / Dalkeith Road,,,EH165AW,326938,3* HO,672291,36
+155,Holyrood Hotel,Macdonald Hotels,81,Holyrood Road,,,EH88UA,326598,4* HO,673728,157
+156,Hudson Hotel,Festival Hotels Ltd.,7,Hope Street,to,11,EH24EL,324674,n/a,673739,33
+157,Cameron Hotel,,17,Hopetoun Crescent,,,EH74AY,326210,n/a,674955,
+158,Hotel Ibis,,6,Hunter Square,,,EH11QW,325904,2* HO,673592,97
+159,Norton House Hotel,Hand Picked Hotels,,Ingliston,,,EH288LX,313617,4* HO,671925,83
+160,Quality Hotel (formerly Royal Highland Lodge),Ingliston Hotels Ltd.,101,Ingliston Road / Royal Highland Showground,,,EH288NF,314210,3* HO,673115,100
+161,Inverleith Hotel [formerly Lovat Hotel],,5,Inverleith Terrace,,,EH35NS,325023,3* SH,675203,10
+162,Jurys Inn,Jurys,43,Jeffrey Street,,,EH11DH,326013,3* HO,673761,186
+163,Rockville House Hotel,,2,Joppa Pans,,,EH152HF,332150,n/a,673393,6
+164,Seahaven Hotel,,89,Joppa Road,to,91,EH152HB,331640,1,673384,13
+165,Kew House,,1,Kew Terrace,,,EH125JE,323280,n/a,673173,6
+166,Premier Inn Edinburgh Airport (Newbridge),Whitbread,2,Kirkliston Road,A,,EH288SN,312032,n/a,673264,119
+167,Riccarton Arms Hotel,,198,Lanark Road West,,,EH145NX,318210,2* IN,667810,5
+168,Northfield House Hotel,,115,Lasswade Road,,,EH166UD,327995,n/a,668850,4
+169,Marriott Residence Inn Edinburgh,,1,Lauriston Place,,,EH39EE,325600,SA 5*,673028,112
+170,Best Western Edinburgh City Hotel [formerly Simpson Hotel],Bonnington House Ltd.,79,Lauriston Place,,,EH39HY,325090,n/a,673027,52
+171,Novotel,Accor,80,Lauriston Place,,,EH39DG,325160,4* HO,673110,180
+172,Premier Inn Edinburgh City Lauriston Place,Whitbread Group,82,Lauriston Place,,,EH39HZ,325140,2,673085,112
+173,The Knight Residence,,12,Lauriston Street,,,EH39DJ,325048,5*SA,673138,25
+174,Travelodge Edinburgh Learmonth,Festival Inns,18,Learmonth Terrace,to,20,EH41PW,323953,4,674287,68
+175,Thistle Hotel Edinburgh,Thistle Hotels (Mount Charlotte),107,Leith Street,,,EH13SW,325920,3* HO,674130,143
+176,Hotel Twenty [formerly Richmond House Hotel],,20,Leopold Place,,,EH75LB,326349,2 SH,674520,12
+177,Adelphi Hotel [formerly Camore Hotel],,7,Links Gardens,,,EH67JH,327585,2,676032,10
+178,Abbot's House Hotel,,10,Links Place,,,EH67EZ,327460,n/a,676167,45
+179,Lochend Serviced Apartments,,147,Lochend Road,,,EH76ET,327663,SA 4*,675120,42
+180,Novotel,Branded Hotel and Leisure Company Ltd. (applicants),15,Lochside Avenue,,,EH129DJ,318200,HO 4*,671190,170
+181,Ramada Jarvis Mount Royal Hotel,,53,Princes Street,,,EH22DG,325511,3* HO,673938,158
+182,Royal Overseas League,,100,Princes Street,,,EH2 3AB,325152,3*SH,673834,20
+183,Premier Inn Princes Street,,121,Princes Street,"122,",123,EH24AD,324362,n/a,673717,103
+184,easyHotel,Parcotel Ltd,125,Princes Street,A,,,324891,n/a,673753,29
+185,Travelodge,,30,Queen Street,-,31,EH2 1JX,325161,n/a,674135,85
+186,Queen's Guest House,,45,Queen Street,,,EH23NH,325019,n/a,674097,13
+187,Holiday Inn Edinburgh West,,107,Queensferry Road,,,EH43HL,322491,3* HO,674340,101
+188,Caledonian Backpackers Hostel,,3,Queensferry Street,,,EH24PA,324615,HS,673682,270
+189,Travelodge Edinburgh Central Rose Street,,39,Rose Street,-,47,EH22NH,325293,n/a,325293,40
+190,Glenora Guest House,,14,Rosebery Crescent,,,EH125JY,323937,4* GH,673246,11
+191,B+B Edinburgh [formerly Melvin House Hotel],,3,Rothesay Terrace,,,EH37RY,324057,n/a,673770,22
+192,The Edinburgh Residence,,7,Rothesay Terrace,,,EH37RY,324060,5*TH,673772,29
+193,Halcyon Hotel,,8,Royal Terrace,,,EH75AB,326419,1* GH,674379,14
+194,Abbey Hotel [formerly Greenside Hotel],,9,Royal Terrace,,,EH75AB,326427,3* SH,674379,14
+195,Adria Hotel,,11,Royal Terrace,to,12,EH75AB,326453,3* GH,674378,17
+196,Royal Terrace Hotel,Principal Hotels,17,Royal Terrace,to,22,EH75AQ,326522,4* HO,674375,107
+197,Ailsa Craig Hotel,,24,Royal Terrace,,,EH75AH,326562,3* SH,674370,18
+198,Terrace Hotel,,37,Royal Terrace,,,EH75AH,326685,2,674363,14
+199,Rutland Hotel,Signature Pub Group,3,Rutland Street,,,EH12AE,324666,n/a,673640,12
+200,Salisbury Hotel,,43,Salisbury Road,-,45,EH165AA,326568,4*SH,672264,18
+201,Cityroomz,Sleeperz Hotels,25,Shandwick Place,A,,EH24RG,324595,2,673606,74
+202,Edinburgh Nights Hostel [formerly City Centre Guest House Hostel],Mr. Tullis,85,Shandwick Place,-,87,EH24SD,324529,HS,673555,74
+203,Bank Hotel,Festival Inns Ltd.,1,South Bridge,to,3,EH11LL,325956,2* IN,673636,9
+204,Channings,The Town House Company,12,South Learmonth Gardens,to,16,EH41EZ,323999,4* HO,674360,41
+205,MW Town House,,11,Spence Street,,,EH165AG,326987,4*GH,672075,8
+206,Fraser Suites,,12,St Giles Street,-,26,EH1  1PT,325664,n/a,673646,75
+207,Alba Executive Apartments,,58,St. Alban's Road,-,62,EH92LX,326098,SA 5*,671410,11
+208,Tudorbank Lodge,,18,St. John's Road,,,EH126NY,320377,n/a,672887,6
+209,The White Lady [formerly the Agenda Hotel; formerly the Westbury Hotel],,92,St. John's Road,to,98,EH128AT,319995,n/a,672962,29
+210,Innkeepers Lodge Edinburgh West [formerly Harp Hotel],,116,St. John's Road,,,EH128AX,319926,n/a,672967,25
+211,Corstorphine Lodge Hotel,,186,St. John's Road,,,EH12  8SG,319574,3,673023,8
+212,Travelodge Edinburgh Central,,33,St. Mary's Street,,,EH11TA,326180,n/a,673568,201
+213,Gillis Centre,Archdiocese of St. Andrews and Edinburgh,100,Strathearn Road,,,EH91BB,325084,n/a,671892,20
+214,Malmaison,,1,Tower Place,,,EH67DB,327187,4* HO,676706,100
+215,Princes Street Suites,,16,Waterloo Place,,,,325990,SA,674029,37
+216,Travelodge Edinburgh Central,Craypool Investments,17,Waterloo Place,-,19,EH13BG,325938,n/a,674055,96
+217,Apex Waterloo Place,,23,Waterloo Place,to,27,EH13BH,326011,n/a,674078,182
+218,Cumberland Hotel,,1,West Coates,,,EH125JQ,323408,3* SH,673248,10
+219,Dunstane House Hotel,,4,West Coates,,,EH125JQ,323334,4* SH,673238,20
+220,Duthus Lodge Guest House,,5,West Coates,,,EH125JG,323297,3*GH,673239,4
+221,Original Raj Hotel,,6,West Coates,,,EH125JG,323590,n/a,673191,17
+222,Edinburgh Waterfront Apartments / Hot-el-Apartments,,,Western Harbour View,,,,325859,SA,677683,26
+223,Premier Inn Edinburgh East,Whitbread,228,Willowbrae Road,,,EH8 7NG,329070,n/a,673199,47
+224,Lyncliff Hotel,,4,Windsor Street,,,EH75JR,326258,n/a,674537,10
+225,Cairn Hotel,,10,Windsor Street,to,18,EH75JR,326276,3,674575,62
+226,Blue Rainbow Apartments [formerly Royal Garden Apartments],Blue Rainbow Apartments,,"York Buildings, Queen Street",,,EH21JB,325579,n/a,674298,30
+227,Ballantrae Albany Hotel [formerly Albany Hotel],,11,York Lane / 39-47 Albany Street,to,13,EH13QY,325791,n/a,674445,21
+228,Ballantrae Hotel,Ballantrae Hotel Group,8,York Place,,,EH13EP,325648,3* SH,674322,
+229,York House Hotel,,27,York Place,,,,325780,n/a,674307,20
+230,The Place [formerly York Place B&B],Cameron Guest House Group,34,York Place,-,38,EH13HU,325790,n/a,674310,48
+231,Hotel Indigo Edinburgh,Sojourn Hotels LLP / IHG / Indigo Hotels,51,York Place,-,59,EH13JD,325886,n/a,674338,60
+232,Fountain Court Stewart Apartments,GSS Developments (Aberdeen) Ltd.,10,Young Street,-,12,EH2 4JB,324854,n/a,673972,31
