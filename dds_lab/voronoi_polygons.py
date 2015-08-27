@@ -69,7 +69,7 @@ def neigh_vor_gen():
     df = pd.read_csv(hood + "/allotments.csv")
     geo_hotel = df
     print(df)
-    points = np.array([list(map(float, x.split(","))) for x in df["Location"]])
+    points = np.array([list(map(float, x.split(",")))[::-1] for x in df["Location"]])
     ids = [x for x in df["Name"]]
     print(points)
     pols = gen_voronoi_polygons(points)
@@ -81,4 +81,4 @@ def neigh_vor_gen():
 
     
 if __name__ == '__main__':
-    hotel_vor_gen()
+    neigh_vor_gen()
