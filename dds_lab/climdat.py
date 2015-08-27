@@ -19,6 +19,7 @@ from os.path import isfile, join
 from itertools import product
 from collections import OrderedDict
 from scipy.ndimage.filters import convolve1d
+from dds_lab.datasets import climate
 
 
 def read_tags(path):
@@ -139,7 +140,7 @@ class ClimPlots:
     and the 
     """
 
-    def __init__(self, txt, path="../data/SPRI/climate_timeseries/"):
+    def __init__(self, txt, path=climate):
         self.txt = txt
         self.path = path
         self.prod_dict = OrderedDict()
