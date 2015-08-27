@@ -53,7 +53,7 @@ def hotel_vor_gen():
     jstring = open(hotel + "/hotel.json", 'r').read()
     geo_hotel = loads(jstring)
     points = np.array([x["geometry"]["coordinates"] for x in geo_hotel["features"]])
-    ids = [x["properties"]["id"] for x in geo_hotel["features"]]
+    ids = [x["properties"]["hotel"] for x in geo_hotel["features"]]
     
     pols = gen_voronoi_polygons(points)
 
@@ -81,4 +81,4 @@ def neigh_vor_gen(fil):
 
     
 if __name__ == '__main__':
-    neigh_vor_gen("offices.csv")
+    hotel_vor_gen()

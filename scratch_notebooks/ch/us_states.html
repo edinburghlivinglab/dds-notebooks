@@ -44,7 +44,7 @@
 
       queue()
           .defer(d3.json, 'data.json')
-          .defer(d3.json, 'vor.json')
+          .defer(d3.json, 'uees-states.json')
           .await(makeMap)
 
       function onEachFeature(feature, layer) {
@@ -71,11 +71,11 @@
 
           
           var color = d3.scale.threshold()
-              .domain([0, 20.0, 80.0, 100.0, 200.0])
+              .domain([3.0, 7.0, 8.0, 9.0, 9.0])
               .range(['#FFFFCC', '#D9F0A3', '#ADDD8E', '#78C679', '#41AB5D', '#238443']);
           
 
-          var map = L.map('map').setView([55.944, -3.192], 10);
+          var map = L.map('map').setView([48, -102], 3);
 
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
               maxZoom: 18,
@@ -107,14 +107,14 @@
     legend.addTo(map);
 
     var x = d3.scale.linear()
-    .domain([0, 220])
+    .domain([0, 9])
     .range([0, 400]);
 
     var xAxis = d3.svg.axis()
         .scale(x)
         .orient("top")
         .tickSize(1)
-        .tickValues([0, 20.0, 80.0, 100.0, 200.0]);
+        .tickValues([3.0, 7.0, 8.0, 9.0, 9.0]);
 
     var svg = d3.select(".legend.leaflet-control").append("svg")
         .attr("id", 'legend')
@@ -142,7 +142,7 @@
     g.call(xAxis).append("text")
         .attr("class", "caption")
         .attr("y", 21)
-        .text('meh');
+        .text('Unemployment Rate (%)');
           
 
           
