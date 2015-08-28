@@ -72,7 +72,7 @@
           
           var color = d3.scale.threshold()
               .domain([0, 20.0, 80.0, 100.0, 200.0])
-              .range(['#FFFFCC', '#D9F0A3', '#ADDD8E', '#78C679', '#41AB5D', '#238443']);
+              .range(['#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#ffff33']);
           
 
           var map = L.map('map').setView([55.944, -3.192], 12);
@@ -90,7 +90,7 @@
         weight: 1,
         opacity: 0.2,
         color: 'black',
-        fillOpacity: 0.7
+        fillOpacity: 0.3
     };
 }
           
@@ -142,7 +142,7 @@
     g.call(xAxis).append("text")
         .attr("class", "caption")
         .attr("y", 21)
-        .text('meh');
+        .text('Number of rooms');
           
 
           
