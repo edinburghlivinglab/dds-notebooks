@@ -6,7 +6,7 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
 
-   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-dvf/0.2/leaflet-dvf.markers.min.js"></script>
    
    
    
@@ -71,11 +71,11 @@
 
           
           var color = d3.scale.threshold()
-              .domain([0, 20.0, 80.0, 100.0, 200.0])
-              .range(['#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#ffff33']);
+              .domain([4.0, 20.0, 80.0, 100.0, 200.0])
+              .range(['#F1EEF6', '#D4B9DA', '#C994C7', '#DF65B0', '#E7298A', '#CE1256']);
           
 
-          var map = L.map('map').setView([55.944, -3.192], 12);
+          var map = L.map('map').setView([55.944, -3.192], 13);
 
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
               maxZoom: 18,
@@ -88,9 +88,9 @@
     return {
         fillColor: color(matchKey(feature.id, data_1)),
         weight: 1,
-        opacity: 0.2,
+        opacity: 0.4,
         color: 'black',
-        fillOpacity: 0.3
+        fillOpacity: 0.5
     };
 }
           
@@ -114,7 +114,7 @@
         .scale(x)
         .orient("top")
         .tickSize(1)
-        .tickValues([0, 20.0, 80.0, 100.0, 200.0]);
+        .tickValues([4.0, 20.0, 80.0, 100.0, 200.0]);
 
     var svg = d3.select(".legend.leaflet-control").append("svg")
         .attr("id", 'legend')
@@ -145,6 +145,3254 @@
         .text('Number of rooms');
           
 
+          
+          var polygon_1 = new L.RegularPolygonMarker(new L.LatLng(55.928264478237, -3.3085209589787), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_1.bindPopup("Hotel name:Premier Inn Edinburgh Park");
+      polygon_1._popup.options.maxWidth = 300;
+          map.addLayer(polygon_1)
+          
+          var polygon_2 = new L.RegularPolygonMarker(new L.LatLng(55.903998751748, -3.3708695980688), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_2.bindPopup("Hotel name:Marriott Dalmahoy Hotel & Country Club");
+      polygon_2._popup.options.maxWidth = 300;
+          map.addLayer(polygon_2)
+          
+          var polygon_3 = new L.RegularPolygonMarker(new L.LatLng(55.949694792106, -3.2073462224516), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_3.bindPopup("Hotel name:Caledonian Hotel");
+      polygon_3._popup.options.maxWidth = 300;
+          map.addLayer(polygon_3)
+          
+          var polygon_4 = new L.RegularPolygonMarker(new L.LatLng(55.92644653505, -3.1694450277671), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_4.bindPopup("Hotel name:Glenisla Hotel");
+      polygon_4._popup.options.maxWidth = 300;
+          map.addLayer(polygon_4)
+          
+          var polygon_5 = new L.RegularPolygonMarker(new L.LatLng(55.950315754167, -3.2172943782603), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_5.bindPopup("Hotel name:Thistle Hotel");
+      polygon_5._popup.options.maxWidth = 300;
+          map.addLayer(polygon_5)
+          
+          var polygon_6 = new L.RegularPolygonMarker(new L.LatLng(55.936025932864, -3.1684049970672), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_6.bindPopup("Hotel name:Ceilidh-Donia Hotel [formerly Marchhall Hotel]");
+      polygon_6._popup.options.maxWidth = 300;
+          map.addLayer(polygon_6)
+          
+          var polygon_7 = new L.RegularPolygonMarker(new L.LatLng(55.950911198214, -3.1903767384276), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_7.bindPopup("Hotel name:St. Christopher's Inn [formerly Station Hotel]");
+      polygon_7._popup.options.maxWidth = 300;
+          map.addLayer(polygon_7)
+          
+          var polygon_8 = new L.RegularPolygonMarker(new L.LatLng(55.950675487028, -3.1915225365915), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_8.bindPopup("Hotel name:Motel One");
+      polygon_8._popup.options.maxWidth = 300;
+          map.addLayer(polygon_8)
+          
+          var polygon_9 = new L.RegularPolygonMarker(new L.LatLng(55.933640333855, -3.1735995682182), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_9.bindPopup("Hotel name:Ivy Guest House");
+      polygon_9._popup.options.maxWidth = 300;
+          map.addLayer(polygon_9)
+          
+          var polygon_10 = new L.RegularPolygonMarker(new L.LatLng(55.933488539435, -3.1734989349003), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_10.bindPopup("Hotel name:Ben Doran Guest House");
+      polygon_10._popup.options.maxWidth = 300;
+          map.addLayer(polygon_10)
+          
+          var polygon_11 = new L.RegularPolygonMarker(new L.LatLng(55.933284219337, -3.1732526502383), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_11.bindPopup("Hotel name:Allison House Hotel");
+      polygon_11._popup.options.maxWidth = 300;
+          map.addLayer(polygon_11)
+          
+          var polygon_12 = new L.RegularPolygonMarker(new L.LatLng(55.932510173132, -3.172444918395), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_12.bindPopup("Hotel name:Barony Guest House");
+      polygon_12._popup.options.maxWidth = 300;
+          map.addLayer(polygon_12)
+          
+          var polygon_13 = new L.RegularPolygonMarker(new L.LatLng(55.932367512888, -3.1723285617538), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_13.bindPopup("Hotel name:Glenalmond Guest House");
+      polygon_13._popup.options.maxWidth = 300;
+          map.addLayer(polygon_13)
+          
+          var polygon_14 = new L.RegularPolygonMarker(new L.LatLng(55.93172698601, -3.1725973319176), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_14.bindPopup("Hotel name:Arrandale Guest House");
+      polygon_14._popup.options.maxWidth = 300;
+          map.addLayer(polygon_14)
+          
+          var polygon_15 = new L.RegularPolygonMarker(new L.LatLng(55.931851529214, -3.1717847613967), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_15.bindPopup("Hotel name:Alba Hills Guest House [formerly Rimswell House Hotel]");
+      polygon_15._popup.options.maxWidth = 300;
+          map.addLayer(polygon_15)
+          
+          var polygon_16 = new L.RegularPolygonMarker(new L.LatLng(55.931735512602, -3.1717012264531), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_16.bindPopup("Hotel name:International Guest House");
+      polygon_16._popup.options.maxWidth = 300;
+          map.addLayer(polygon_16)
+          
+          var polygon_17 = new L.RegularPolygonMarker(new L.LatLng(55.931289773073, -3.176985857421), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_17.bindPopup("Hotel name:Lauderville Guest House");
+      polygon_17._popup.options.maxWidth = 300;
+          map.addLayer(polygon_17)
+          
+          var polygon_18 = new L.RegularPolygonMarker(new L.LatLng(55.944485526731, -3.0955665390786), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_18.bindPopup("Hotel name:Best Western Kings Manor Hotel");
+      polygon_18._popup.options.maxWidth = 300;
+          map.addLayer(polygon_18)
+          
+          var polygon_19 = new L.RegularPolygonMarker(new L.LatLng(55.935570851411, -3.1756269410221), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_19.bindPopup("Hotel name:Thrums Hotel");
+      polygon_19._popup.options.maxWidth = 300;
+          map.addLayer(polygon_19)
+          
+          var polygon_20 = new L.RegularPolygonMarker(new L.LatLng(55.935251285066, -3.1752170619076), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_20.bindPopup("Hotel name:Edinburgh's Minto Hotel");
+      polygon_20._popup.options.maxWidth = 300;
+          map.addLayer(polygon_20)
+          
+          var polygon_21 = new L.RegularPolygonMarker(new L.LatLng(55.956534297462, -3.1353397913607), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_21.bindPopup("Hotel name:Ellwyn Hotel");
+      polygon_21._popup.options.maxWidth = 300;
+          map.addLayer(polygon_21)
+          
+          var polygon_22 = new L.RegularPolygonMarker(new L.LatLng(55.945847467451, -3.2139036462763), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_22.bindPopup("Hotel name:Premier Inn Edinburgh Haymarket");
+      polygon_22._popup.options.maxWidth = 300;
+          map.addLayer(polygon_22)
+          
+          var polygon_23 = new L.RegularPolygonMarker(new L.LatLng(55.946523691547, -3.2371592352378), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_23.bindPopup("Hotel name:The Avenue Hotel");
+      polygon_23._popup.options.maxWidth = 300;
+          map.addLayer(polygon_23)
+          
+          var polygon_24 = new L.RegularPolygonMarker(new L.LatLng(55.946999365568, -3.2398966031065), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_24.bindPopup("Hotel name:Craigelachie Hotel");
+      polygon_24._popup.options.maxWidth = 300;
+          map.addLayer(polygon_24)
+          
+          var polygon_25 = new L.RegularPolygonMarker(new L.LatLng(55.947622905381, -3.2386514922739), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_25.bindPopup("Hotel name:Beverley Hotel");
+      polygon_25._popup.options.maxWidth = 300;
+          map.addLayer(polygon_25)
+          
+          var polygon_26 = new L.RegularPolygonMarker(new L.LatLng(55.950759880193, -3.1780730669651), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_26.bindPopup("Hotel name:Holyrood Aparthotel");
+      polygon_26._popup.options.maxWidth = 300;
+          map.addLayer(polygon_26)
+          
+          var polygon_27 = new L.RegularPolygonMarker(new L.LatLng(55.934934454803, -3.0945125266574), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_27.bindPopup("Hotel name:Premier Inn Edinburgh Newcraighall");
+      polygon_27._popup.options.maxWidth = 300;
+          map.addLayer(polygon_27)
+          
+          var polygon_28 = new L.RegularPolygonMarker(new L.LatLng(55.989751544554, -3.3875457819701), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_28.bindPopup("Hotel name:Hawes Inn");
+      polygon_28._popup.options.maxWidth = 300;
+          map.addLayer(polygon_28)
+          
+          var polygon_29 = new L.RegularPolygonMarker(new L.LatLng(55.984524249012, -3.1951761213422), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_29.bindPopup("Hotel name:Premier Inn Edinburgh Leith");
+      polygon_29._popup.options.maxWidth = 300;
+          map.addLayer(polygon_29)
+          
+          var polygon_30 = new L.RegularPolygonMarker(new L.LatLng(55.938866168307, -3.1796330797927), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_30.bindPopup("Hotel name:Southside Guest House");
+      polygon_30._popup.options.maxWidth = 300;
+          map.addLayer(polygon_30)
+          
+          var polygon_31 = new L.RegularPolygonMarker(new L.LatLng(55.951162494095, -3.1876139364764), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_31.bindPopup("Hotel name:Barcelo Edinburgh Carlton Hotel");
+      polygon_31._popup.options.maxWidth = 300;
+          map.addLayer(polygon_31)
+          
+          var polygon_32 = new L.RegularPolygonMarker(new L.LatLng(55.951133722104, -3.1887340719718), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_32.bindPopup("Hotel name:Scotsman Hotel");
+      polygon_32._popup.options.maxWidth = 300;
+          map.addLayer(polygon_32)
+          
+          var polygon_33 = new L.RegularPolygonMarker(new L.LatLng(55.978846112422, -3.1792474306334), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_33.bindPopup("Hotel name:Holiday Inn Express");
+      polygon_33._popup.options.maxWidth = 300;
+          map.addLayer(polygon_33)
+          
+          var polygon_34 = new L.RegularPolygonMarker(new L.LatLng(55.922063166679, -3.148269758069), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_34.bindPopup("Hotel name:Arden Guest House");
+      polygon_34._popup.options.maxWidth = 300;
+          map.addLayer(polygon_34)
+          
+          var polygon_35 = new L.RegularPolygonMarker(new L.LatLng(55.922045200709, -3.1482692267574), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_35.bindPopup("Hotel name:Aaron Lodge");
+      polygon_35._popup.options.maxWidth = 300;
+          map.addLayer(polygon_35)
+          
+          var polygon_36 = new L.RegularPolygonMarker(new L.LatLng(55.949629391162, -3.2185539548121), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_36.bindPopup("Hotel name:West End Hotel");
+      polygon_36._popup.options.maxWidth = 300;
+          map.addLayer(polygon_36)
+          
+          var polygon_37 = new L.RegularPolygonMarker(new L.LatLng(55.957177819329, -3.1862605285838), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_37.bindPopup("Hotel name:Holiday Inn Express");
+      polygon_37._popup.options.maxWidth = 300;
+          map.addLayer(polygon_37)
+          
+          var polygon_38 = new L.RegularPolygonMarker(new L.LatLng(55.96657400831, -3.1818539437537), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_38.bindPopup("Hotel name:Edinburgh House Hotel [formerly Balfour House Hotel]");
+      polygon_38._popup.options.maxWidth = 300;
+          map.addLayer(polygon_38)
+          
+          var polygon_39 = new L.RegularPolygonMarker(new L.LatLng(55.931695380621, -3.2256900203569), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_39.bindPopup("Hotel name:Lindsay Guest House");
+      polygon_39._popup.options.maxWidth = 300;
+          map.addLayer(polygon_39)
+          
+          var polygon_40 = new L.RegularPolygonMarker(new L.LatLng(55.935564284711, -3.1678148081827), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_40.bindPopup("Hotel name:Ard Na Said Guest House");
+      polygon_40._popup.options.maxWidth = 300;
+          map.addLayer(polygon_40)
+          
+          var polygon_41 = new L.RegularPolygonMarker(new L.LatLng(55.935794165715, -3.1672614406487), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_41.bindPopup("Hotel name:Dorstan House Hotel");
+      polygon_41._popup.options.maxWidth = 300;
+          map.addLayer(polygon_41)
+          
+          var polygon_42 = new L.RegularPolygonMarker(new L.LatLng(55.936562400913, -3.1572632565958), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_42.bindPopup("Hotel name:Prestonfield House Hotel");
+      polygon_42._popup.options.maxWidth = 300;
+          map.addLayer(polygon_42)
+          
+          var polygon_43 = new L.RegularPolygonMarker(new L.LatLng(55.952869434773, -3.1895079586176), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_43.bindPopup("Hotel name:Balmoral Hotel");
+      polygon_43._popup.options.maxWidth = 300;
+          map.addLayer(polygon_43)
+          
+          var polygon_44 = new L.RegularPolygonMarker(new L.LatLng(55.95330635877, -3.1907865780927), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_44.bindPopup("Hotel name:Royal British Hotel");
+      polygon_44._popup.options.maxWidth = 300;
+          map.addLayer(polygon_44)
+          
+          var polygon_45 = new L.RegularPolygonMarker(new L.LatLng(55.953061041273, -3.1919962104416), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_45.bindPopup("Hotel name:Travelodge Edinburgh Central Princes Street");
+      polygon_45._popup.options.maxWidth = 300;
+          map.addLayer(polygon_45)
+          
+          var polygon_46 = new L.RegularPolygonMarker(new L.LatLng(55.952889589589, -3.1929999019494), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_46.bindPopup("Hotel name:Old Waverley Hotel");
+      polygon_46._popup.options.maxWidth = 300;
+          map.addLayer(polygon_46)
+          
+          var polygon_47 = new L.RegularPolygonMarker(new L.LatLng(55.949864680954, -3.1039655849607), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_47.bindPopup("Hotel name:Robert Burns Hotel  [formerly at Craigalon House]");
+      polygon_47._popup.options.maxWidth = 300;
+          map.addLayer(polygon_47)
+          
+          var polygon_48 = new L.RegularPolygonMarker(new L.LatLng(55.956374159657, -3.1978160130174), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_48.bindPopup("Hotel name:Royal Scots Club");
+      polygon_48._popup.options.maxWidth = 300;
+          map.addLayer(polygon_48)
+          
+          var polygon_49 = new L.RegularPolygonMarker(new L.LatLng(55.93755564189, -3.2027261368564), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_49.bindPopup("Hotel name:Links Hotel");
+      polygon_49._popup.options.maxWidth = 300;
+          map.addLayer(polygon_49)
+          
+          var polygon_50 = new L.RegularPolygonMarker(new L.LatLng(55.938340359269, -3.2261240354381), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_50.bindPopup("Hotel name:Ardmillan Hotel [formerly Nirvana Hotel]");
+      polygon_50._popup.options.maxWidth = 300;
+          map.addLayer(polygon_50)
+          
+          var polygon_51 = new L.RegularPolygonMarker(new L.LatLng(55.95051750579, -3.2223292117602), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_51.bindPopup("Hotel name:Travelodge Edinburgh West End [formerly Belford Hotel]");
+      polygon_51._popup.options.maxWidth = 300;
+          map.addLayer(polygon_51)
+          
+          var polygon_52 = new L.RegularPolygonMarker(new L.LatLng(55.949274171883, -3.1858906891198), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_52.bindPopup("Hotel name:Smart City Hostel");
+      polygon_52._popup.options.maxWidth = 300;
+          map.addLayer(polygon_52)
+          
+          var polygon_53 = new L.RegularPolygonMarker(new L.LatLng(55.917007761122, -3.2126020137173), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_53.bindPopup("Hotel name:Best Western Braid Hills Hotel");
+      polygon_53._popup.options.maxWidth = 300;
+          map.addLayer(polygon_53)
+          
+          var polygon_54 = new L.RegularPolygonMarker(new L.LatLng(55.943397545365, -3.2126741702431), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_54.bindPopup("Hotel name:Staycity.com Edinburgh");
+      polygon_54._popup.options.maxWidth = 300;
+          map.addLayer(polygon_54)
+          
+          var polygon_55 = new L.RegularPolygonMarker(new L.LatLng(55.945664122975, -3.2032817488827), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_55.bindPopup("Hotel name:Mercure Point Hotel");
+      polygon_55._popup.options.maxWidth = 300;
+          map.addLayer(polygon_55)
+          
+          var polygon_56 = new L.RegularPolygonMarker(new L.LatLng(55.958911386213, -3.1872586112597), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_56.bindPopup("Hotel name:Broughton Hotel");
+      polygon_56._popup.options.maxWidth = 300;
+          map.addLayer(polygon_56)
+          
+          var polygon_57 = new L.RegularPolygonMarker(new L.LatLng(55.958769609019, -3.1795657911225), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_57.bindPopup("Hotel name:No. 11 [formerly Clan Campbell Hotel]");
+      polygon_57._popup.options.maxWidth = 300;
+          map.addLayer(polygon_57)
+          
+          var polygon_58 = new L.RegularPolygonMarker(new L.LatLng(55.938171581728, -3.2058990414228), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_58.bindPopup("Hotel name:Best Western Bruntsfield Hotel");
+      polygon_58._popup.options.maxWidth = 300;
+          map.addLayer(polygon_58)
+          
+          var polygon_59 = new L.RegularPolygonMarker(new L.LatLng(55.984304402078, -3.4051585658515), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_59.bindPopup("Hotel name:Premier Inn Edinburgh South Queensferry [formerly Queen's Crossing (Travel Inn)]");
+      polygon_59._popup.options.maxWidth = 300;
+          map.addLayer(polygon_59)
+          
+          var polygon_60 = new L.RegularPolygonMarker(new L.LatLng(55.95421410703, -3.18610580741), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_60.bindPopup("Hotel name:Parliament House Hotel");
+      polygon_60._popup.options.maxWidth = 300;
+          map.addLayer(polygon_60)
+          
+          var polygon_61 = new L.RegularPolygonMarker(new L.LatLng(55.96272773255, -3.1986530833987), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_61.bindPopup("Hotel name:Canon Court Apartments");
+      polygon_61._popup.options.maxWidth = 300;
+          map.addLayer(polygon_61)
+          
+          var polygon_62 = new L.RegularPolygonMarker(new L.LatLng(55.952103132002, -3.2027288103622), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_62.bindPopup("Hotel name:Castle View Guest House");
+      polygon_62._popup.options.maxWidth = 300;
+          map.addLayer(polygon_62)
+          
+          var polygon_63 = new L.RegularPolygonMarker(new L.LatLng(55.948747070667, -3.1958029699952), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_63.bindPopup("Hotel name:The Witchery");
+      polygon_63._popup.options.maxWidth = 300;
+          map.addLayer(polygon_63)
+          
+          var polygon_64 = new L.RegularPolygonMarker(new L.LatLng(55.951666515782, -3.2060303293984), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_64.bindPopup("Hotel name:Roxburghe Hotel");
+      polygon_64._popup.options.maxWidth = 300;
+          map.addLayer(polygon_64)
+          
+          var polygon_65 = new L.RegularPolygonMarker(new L.LatLng(55.950303031776, -3.2158526973261), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_65.bindPopup("Hotel name:Chester Residence");
+      polygon_65._popup.options.maxWidth = 300;
+          map.addLayer(polygon_65)
+          
+          var polygon_66 = new L.RegularPolygonMarker(new L.LatLng(55.963925882815, -3.1918496662966), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_66.bindPopup("Hotel name:Claremont Hotel");
+      polygon_66._popup.options.maxWidth = 300;
+          map.addLayer(polygon_66)
+          
+          var polygon_67 = new L.RegularPolygonMarker(new L.LatLng(55.955883214576, -3.2797257306688), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_67.bindPopup("Hotel name:Best Western Edinburgh Capital");
+      polygon_67._popup.options.maxWidth = 300;
+          map.addLayer(polygon_67)
+          
+          var polygon_68 = new L.RegularPolygonMarker(new L.LatLng(55.946371706151, -3.2172346623211), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_68.bindPopup("Hotel name:Guards Hotel [formerly Clifton Private Hotel]");
+      polygon_68._popup.options.maxWidth = 300;
+          map.addLayer(polygon_68)
+          
+          var polygon_69 = new L.RegularPolygonMarker(new L.LatLng(55.946251925635, -3.2175351426603), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_69.bindPopup("Hotel name:West End Hostel");
+      polygon_69._popup.options.maxWidth = 300;
+          map.addLayer(polygon_69)
+          
+          var polygon_70 = new L.RegularPolygonMarker(new L.LatLng(55.946138120553, -3.2181400467157), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_70.bindPopup("Hotel name:Tune Hotel Edinburgh Haymarket");
+      polygon_70._popup.options.maxWidth = 300;
+          map.addLayer(polygon_70)
+          
+          var polygon_71 = new L.RegularPolygonMarker(new L.LatLng(55.946200475588, -3.2218248923046), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_71.bindPopup("Hotel name:Haymarket & Buchan Hotel");
+      polygon_71._popup.options.maxWidth = 300;
+          map.addLayer(polygon_71)
+          
+          var polygon_72 = new L.RegularPolygonMarker(new L.LatLng(55.946376860377, -3.2212539931134), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_72.bindPopup("Hotel name:Piries Hotel");
+      polygon_72._popup.options.maxWidth = 300;
+          map.addLayer(polygon_72)
+          
+          var polygon_73 = new L.RegularPolygonMarker(new L.LatLng(55.946505570267, -3.2218665271546), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_73.bindPopup("Hotel name:Boisdale Hotel");
+      polygon_73._popup.options.maxWidth = 300;
+          map.addLayer(polygon_73)
+          
+          var polygon_74 = new L.RegularPolygonMarker(new L.LatLng(55.946613521534, -3.2218539146696), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_74.bindPopup("Hotel name:Lairg Hotel");
+      polygon_74._popup.options.maxWidth = 300;
+          map.addLayer(polygon_74)
+          
+          var polygon_75 = new L.RegularPolygonMarker(new L.LatLng(55.946637200369, -3.2212782019173), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_75.bindPopup("Hotel name:Argus Hotel");
+      polygon_75._popup.options.maxWidth = 300;
+          map.addLayer(polygon_75)
+          
+          var polygon_76 = new L.RegularPolygonMarker(new L.LatLng(55.94730160368, -3.2213311456834), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_76.bindPopup("Hotel name:No. 32 [formerly Beresford Hotel]");
+      polygon_76._popup.options.maxWidth = 300;
+          map.addLayer(polygon_76)
+          
+          var polygon_77 = new L.RegularPolygonMarker(new L.LatLng(55.947454309765, -3.2213359536564), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_77.bindPopup("Hotel name:St Valery Guest House");
+      polygon_77._popup.options.maxWidth = 300;
+          map.addLayer(polygon_77)
+          
+          var polygon_78 = new L.RegularPolygonMarker(new L.LatLng(55.950633155433, -3.1884625012835), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_78.bindPopup("Hotel name:Edinburgh Backpackers Hostel");
+      polygon_78._popup.options.maxWidth = 300;
+          map.addLayer(polygon_78)
+          
+          var polygon_79 = new L.RegularPolygonMarker(new L.LatLng(55.945824969147, -3.2414122741891), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_79.bindPopup("Hotel name:Kingsburgh House");
+      polygon_79._popup.options.maxWidth = 300;
+          map.addLayer(polygon_79)
+          
+          var polygon_80 = new L.RegularPolygonMarker(new L.LatLng(55.945693025102, -3.242913216981), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_80.bindPopup("Hotel name:Hampton Hotel");
+      polygon_80._popup.options.maxWidth = 300;
+          map.addLayer(polygon_80)
+          
+          var polygon_81 = new L.RegularPolygonMarker(new L.LatLng(55.945659454883, -3.243568649127), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_81.bindPopup("Hotel name:Murrayfield Hotel");
+      polygon_81._popup.options.maxWidth = 300;
+          map.addLayer(polygon_81)
+          
+          var polygon_82 = new L.RegularPolygonMarker(new L.LatLng(55.944638609428, -3.2547443084012), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_82.bindPopup("Hotel name:Western Manor House Hotel");
+      polygon_82._popup.options.maxWidth = 300;
+          map.addLayer(polygon_82)
+          
+          var polygon_83 = new L.RegularPolygonMarker(new L.LatLng(55.94273228102, -3.2671714035129), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_83.bindPopup("Hotel name:Holiday Inn");
+      polygon_83._popup.options.maxWidth = 300;
+          map.addLayer(polygon_83)
+          
+          var polygon_84 = new L.RegularPolygonMarker(new L.LatLng(55.947951373839, -3.1926078227605), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_84.bindPopup("Hotel name:Budget Backpackers Hostel");
+      polygon_84._popup.options.maxWidth = 300;
+          map.addLayer(polygon_84)
+          
+          var polygon_85 = new L.RegularPolygonMarker(new L.LatLng(55.948537880497, -3.1904960655793), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_85.bindPopup("Hotel name:Cowgate Tourist Hostel");
+      polygon_85._popup.options.maxWidth = 300;
+          map.addLayer(polygon_85)
+          
+          var polygon_86 = new L.RegularPolygonMarker(new L.LatLng(55.948248715005, -3.1897345640258), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_86.bindPopup("Hotel name:Central Hotel [formerly Tailors' Hall Hotel]");
+      polygon_86._popup.options.maxWidth = 300;
+          map.addLayer(polygon_86)
+          
+          var polygon_87 = new L.RegularPolygonMarker(new L.LatLng(55.949313439848, -3.184610788594), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_87.bindPopup("Hotel name:Express by Holiday Inn");
+      polygon_87._popup.options.maxWidth = 300;
+          map.addLayer(polygon_87)
+          
+          var polygon_88 = new L.RegularPolygonMarker(new L.LatLng(55.930819098126, -3.1707452087786), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_88.bindPopup("Hotel name:Ben Craig Guest House");
+      polygon_88._popup.options.maxWidth = 300;
+          map.addLayer(polygon_88)
+          
+          var polygon_89 = new L.RegularPolygonMarker(new L.LatLng(55.928594033927, -3.1685013961567), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_89.bindPopup("Hotel name:Kildonan Lodge Hotel");
+      polygon_89._popup.options.maxWidth = 300;
+          map.addLayer(polygon_89)
+          
+          var polygon_90 = new L.RegularPolygonMarker(new L.LatLng(55.928060673592, -3.1678931578515), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_90.bindPopup("Hotel name:Northumberland Hotel");
+      polygon_90._popup.options.maxWidth = 300;
+          map.addLayer(polygon_90)
+          
+          var polygon_91 = new L.RegularPolygonMarker(new L.LatLng(55.927117582636, -3.1669045112283), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_91.bindPopup("Hotel name:Travelodge Edinburgh Cameron Toll");
+      polygon_91._popup.options.maxWidth = 300;
+          map.addLayer(polygon_91)
+          
+          var polygon_92 = new L.RegularPolygonMarker(new L.LatLng(55.936461421829, -3.1708033644137), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_92.bindPopup("Hotel name:94DR [formerly MW Guest House]");
+      polygon_92._popup.options.maxWidth = 300;
+          map.addLayer(polygon_92)
+          
+          var polygon_93 = new L.RegularPolygonMarker(new L.LatLng(55.936238811916, -3.1696440481079), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_93.bindPopup("Hotel name:Rosehall Hotel");
+      polygon_93._popup.options.maxWidth = 300;
+          map.addLayer(polygon_93)
+          
+          var polygon_94 = new L.RegularPolygonMarker(new L.LatLng(55.936149742638, -3.1695613220887), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_94.bindPopup("Hotel name:Gifford House");
+      polygon_94._popup.options.maxWidth = 300;
+          map.addLayer(polygon_94)
+          
+          var polygon_95 = new L.RegularPolygonMarker(new L.LatLng(55.950930836055, -3.22051658365), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_95.bindPopup("Hotel name:Belford Backpackers Hostel");
+      polygon_95._popup.options.maxWidth = 300;
+          map.addLayer(polygon_95)
+          
+          var polygon_96 = new L.RegularPolygonMarker(new L.LatLng(55.900556177524, -3.2333122979375), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_96.bindPopup("Hotel name:Travelodge Edinburgh Dreghorn");
+      polygon_96._popup.options.maxWidth = 300;
+          map.addLayer(polygon_96)
+          
+          var polygon_97 = new L.RegularPolygonMarker(new L.LatLng(55.951436434666, -3.2157280806548), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_97.bindPopup("Hotel name:The Bonham");
+      polygon_97._popup.options.maxWidth = 300;
+          map.addLayer(polygon_97)
+          
+          var polygon_98 = new L.RegularPolygonMarker(new L.LatLng(55.943444328511, -3.1164637443044), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_98.bindPopup("Hotel name:Ardblair Guest House");
+      polygon_98._popup.options.maxWidth = 300;
+          map.addLayer(polygon_98)
+          
+          var polygon_99 = new L.RegularPolygonMarker(new L.LatLng(55.958808543034, -3.19973325236), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_99.bindPopup("Hotel name:Walton Hotel");
+      polygon_99._popup.options.maxWidth = 300;
+          map.addLayer(polygon_99)
+          
+          var polygon_100 = new L.RegularPolygonMarker(new L.LatLng(55.969328941888, -3.1576165537656), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_100.bindPopup("Hotel name:Mackenzie Guest House");
+      polygon_100._popup.options.maxWidth = 300;
+          map.addLayer(polygon_100)
+          
+          var polygon_101 = new L.RegularPolygonMarker(new L.LatLng(55.944011156003, -3.3596176576842), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_101.bindPopup("Hotel name:Hilton Edinburgh Airport Hotel [formerly Stakis]");
+      polygon_101._popup.options.maxWidth = 300;
+          map.addLayer(polygon_101)
+          
+          var polygon_102 = new L.RegularPolygonMarker(new L.LatLng(55.948005682701, -3.2219137797183), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_102.bindPopup("Hotel name:Travelodge Edinburgh Haymarket [formerly Greens Hotel]");
+      polygon_102._popup.options.maxWidth = 300;
+          map.addLayer(polygon_102)
+          
+          var polygon_103 = new L.RegularPolygonMarker(new L.LatLng(55.955857783742, -3.1908328916325), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_103.bindPopup("Hotel name:Elder York Guest House");
+      polygon_103._popup.options.maxWidth = 300;
+          map.addLayer(polygon_103)
+          
+          var polygon_104 = new L.RegularPolygonMarker(new L.LatLng(55.946973754573, -3.2477741446608), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_104.bindPopup("Hotel name:Ellersly House Hotel");
+      polygon_104._popup.options.maxWidth = 300;
+          map.addLayer(polygon_104)
+          
+          var polygon_105 = new L.RegularPolygonMarker(new L.LatLng(55.934625239669, -3.2211082766755), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_105.bindPopup("Hotel name:Royal Ettrick Hotel");
+      polygon_105._popup.options.maxWidth = 300;
+          map.addLayer(polygon_105)
+          
+          var polygon_106 = new L.RegularPolygonMarker(new L.LatLng(55.960903804017, -3.2004868864421), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_106.bindPopup("Hotel name:Dene Guest House");
+      polygon_106._popup.options.maxWidth = 300;
+          map.addLayer(polygon_106)
+          
+          var polygon_107 = new L.RegularPolygonMarker(new L.LatLng(55.960932780043, -3.2002795419082), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_107.bindPopup("Hotel name:Ardenlee Guest House");
+      polygon_107._popup.options.maxWidth = 300;
+          map.addLayer(polygon_107)
+          
+          var polygon_108 = new L.RegularPolygonMarker(new L.LatLng(55.960961287892, -3.2001202383973), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_108.bindPopup("Hotel name:Abercraig Guest House [formerly Relax Guest House]");
+      polygon_108._popup.options.maxWidth = 300;
+          map.addLayer(polygon_108)
+          
+          var polygon_109 = new L.RegularPolygonMarker(new L.LatLng(55.974107056295, -3.1889900239564), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_109.bindPopup("Hotel name:A Haven Townhouse");
+      polygon_109._popup.options.maxWidth = 300;
+          map.addLayer(polygon_109)
+          
+          var polygon_110 = new L.RegularPolygonMarker(new L.LatLng(55.973813132437, -3.1915127813946), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_110.bindPopup("Hotel name:Bonnington Guest House");
+      polygon_110._popup.options.maxWidth = 300;
+          map.addLayer(polygon_110)
+          
+          var polygon_111 = new L.RegularPolygonMarker(new L.LatLng(55.973283458638, -3.1914644484392), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_111.bindPopup("Hotel name:Victoria Park Hotel");
+      polygon_111._popup.options.maxWidth = 300;
+          map.addLayer(polygon_111)
+          
+          var polygon_112 = new L.RegularPolygonMarker(new L.LatLng(55.972059917307, -3.2027231782209), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_112.bindPopup("Hotel name:Ravensdown Guest House");
+      polygon_112._popup.options.maxWidth = 300;
+          map.addLayer(polygon_112)
+          
+          var polygon_113 = new L.RegularPolygonMarker(new L.LatLng(55.9837750852, -3.4003468378021), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_113.bindPopup("Hotel name:Dakota");
+      polygon_113._popup.options.maxWidth = 300;
+          map.addLayer(polygon_113)
+          
+          var polygon_114 = new L.RegularPolygonMarker(new L.LatLng(55.946935203637, -3.2074524855395), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_114.bindPopup("Hotel name:Sheraton Grand Hotel");
+      polygon_114._popup.options.maxWidth = 300;
+          map.addLayer(polygon_114)
+          
+          var polygon_115 = new L.RegularPolygonMarker(new L.LatLng(55.946104775401, -3.1902932962136), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_115.bindPopup("Hotel name:Hotel Du Vin");
+      polygon_115._popup.options.maxWidth = 300;
+          map.addLayer(polygon_115)
+          
+          var polygon_116 = new L.RegularPolygonMarker(new L.LatLng(55.957574060554, -3.1880345402961), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_116.bindPopup("Hotel name:Regent House Hotel [formerly Victoria Hotel]");
+      polygon_116._popup.options.maxWidth = 300;
+          map.addLayer(polygon_116)
+          
+          var polygon_117 = new L.RegularPolygonMarker(new L.LatLng(55.953369694324, -3.200926309775), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_117.bindPopup("Hotel name:Frederick House Hotel");
+      polygon_117._popup.options.maxWidth = 300;
+          map.addLayer(polygon_117)
+          
+          var polygon_118 = new L.RegularPolygonMarker(new L.LatLng(55.954019106107, -3.2006741523006), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_118.bindPopup("Hotel name:Rick's Edinburgh Hotel");
+      polygon_118._popup.options.maxWidth = 300;
+          map.addLayer(polygon_118)
+          
+          var polygon_119 = new L.RegularPolygonMarker(new L.LatLng(55.94895543335, -3.1928468709913), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_119.bindPopup("Hotel name:Missoni Hotel / Rezidor");
+      polygon_119._popup.options.maxWidth = 300;
+          map.addLayer(polygon_119)
+          
+          var polygon_120 = new L.RegularPolygonMarker(new L.LatLng(55.953434999104, -3.1960596218359), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_120.bindPopup("Hotel name:Le Monde");
+      polygon_120._popup.options.maxWidth = 300;
+          map.addLayer(polygon_120)
+          
+          var polygon_121 = new L.RegularPolygonMarker(new L.LatLng(55.953944064734, -3.1963796202617), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_121.bindPopup("Hotel name:George Hotel");
+      polygon_121._popup.options.maxWidth = 300;
+          map.addLayer(polygon_121)
+          
+          var polygon_122 = new L.RegularPolygonMarker(new L.LatLng(55.95244686518, -3.2052538403781), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_122.bindPopup("Hotel name:Tigerlily");
+      polygon_122._popup.options.maxWidth = 300;
+          map.addLayer(polygon_122)
+          
+          var polygon_123 = new L.RegularPolygonMarker(new L.LatLng(55.940096726719, -3.312073977038), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_123.bindPopup("Hotel name:Edinburgh Marriott [formerly Royal Scot]");
+      polygon_123._popup.options.maxWidth = 300;
+          map.addLayer(polygon_123)
+          
+          var polygon_124 = new L.RegularPolygonMarker(new L.LatLng(55.938604762181, -3.3931288227959), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_124.bindPopup("Hotel name:Travelodge Edinburgh Airport");
+      polygon_124._popup.options.maxWidth = 300;
+          map.addLayer(polygon_124)
+          
+          var polygon_125 = new L.RegularPolygonMarker(new L.LatLng(55.956779158798, -3.2069581469442), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_125.bindPopup("Hotel name:Nira Caledonia [formerly Christopher North House Hotel]");
+      polygon_125._popup.options.maxWidth = 300;
+          map.addLayer(polygon_125)
+          
+          var polygon_126 = new L.RegularPolygonMarker(new L.LatLng(55.932519840386, -3.1817771848623), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_126.bindPopup("Hotel name:Teviotdale House");
+      polygon_126._popup.options.maxWidth = 300;
+          map.addLayer(polygon_126)
+          
+          var polygon_127 = new L.RegularPolygonMarker(new L.LatLng(55.947041085817, -3.1965990608646), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_127.bindPopup("Hotel name:Apex International Hotel");
+      polygon_127._popup.options.maxWidth = 300;
+          map.addLayer(polygon_127)
+          
+          var polygon_128 = new L.RegularPolygonMarker(new L.LatLng(55.947170137318, -3.1953380224758), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_128.bindPopup("Hotel name:Apex City Hotel");
+      polygon_128._popup.options.maxWidth = 300;
+          map.addLayer(polygon_128)
+          
+          var polygon_129 = new L.RegularPolygonMarker(new L.LatLng(55.947981384159, -3.1950747832127), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_129.bindPopup("Hotel name:Grassmarket Hotel [formerly Thistle Inn Hotel]");
+      polygon_129._popup.options.maxWidth = 300;
+          map.addLayer(polygon_129)
+          
+          var polygon_130 = new L.RegularPolygonMarker(new L.LatLng(55.958151454356, -3.1989280666723), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_130.bindPopup("Hotel name:Howard Hotel");
+      polygon_130._popup.options.maxWidth = 300;
+          map.addLayer(polygon_130)
+          
+          var polygon_131 = new L.RegularPolygonMarker(new L.LatLng(55.956551950639, -3.1859370639178), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_131.bindPopup("Hotel name:The Glasshouse");
+      polygon_131._popup.options.maxWidth = 300;
+          map.addLayer(polygon_131)
+          
+          var polygon_132 = new L.RegularPolygonMarker(new L.LatLng(55.948195955167, -3.2181246028332), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_132.bindPopup("Hotel name:Ballantrae West End Hotel");
+      polygon_132._popup.options.maxWidth = 300;
+          map.addLayer(polygon_132)
+          
+          var polygon_133 = new L.RegularPolygonMarker(new L.LatLng(55.946617442875, -3.2196442816662), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_133.bindPopup("Hotel name:Grosvenor Gardens Guest House");
+      polygon_133._popup.options.maxWidth = 300;
+          map.addLayer(polygon_133)
+          
+          var polygon_134 = new L.RegularPolygonMarker(new L.LatLng(55.947100888281, -3.217097414129), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_134.bindPopup("Hotel name:Hilton Edinburgh Grosvenor Hotel [formerly Stakis]");
+      polygon_134._popup.options.maxWidth = 300;
+          map.addLayer(polygon_134)
+          
+          var polygon_135 = new L.RegularPolygonMarker(new L.LatLng(55.946843678122, -3.217665805386), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_135.bindPopup("Hotel name:Ritz Hotel");
+      polygon_135._popup.options.maxWidth = 300;
+          map.addLayer(polygon_135)
+          
+          var polygon_136 = new L.RegularPolygonMarker(new L.LatLng(55.944423619, -3.2115854171991), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_136.bindPopup("Hotel name:iQ Grove [term-time student accommodation]");
+      polygon_136._popup.options.maxWidth = 300;
+          map.addLayer(polygon_136)
+          
+          var polygon_137 = new L.RegularPolygonMarker(new L.LatLng(55.943257592941, -3.2113728786236), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_137.bindPopup("Hotel name:Brooks Hotel [formerly Herald House Hotel]");
+      polygon_137._popup.options.maxWidth = 300;
+          map.addLayer(polygon_137)
+          
+          var polygon_138 = new L.RegularPolygonMarker(new L.LatLng(55.943690495964, -3.211210269057), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_138.bindPopup("Hotel name:Grove Executive [Fountain Court Apartments]");
+      polygon_138._popup.options.maxWidth = 300;
+          map.addLayer(polygon_138)
+          
+          var polygon_139 = new L.RegularPolygonMarker(new L.LatLng(55.943413604141, -3.2110415107756), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_139.bindPopup("Hotel name:Fountain Court Apartments");
+      polygon_139._popup.options.maxWidth = 300;
+          map.addLayer(polygon_139)
+          
+          var polygon_140 = new L.RegularPolygonMarker(new L.LatLng(55.95994898064, -3.1830776085301), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_140.bindPopup("Hotel name:Scottish Youth Hostels Association");
+      polygon_140._popup.options.maxWidth = 300;
+          map.addLayer(polygon_140)
+          
+          var polygon_141 = new L.RegularPolygonMarker(new L.LatLng(55.945448702873, -3.2287505338575), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_141.bindPopup("Hotel name:Dunstane City Hotel");
+      polygon_141._popup.options.maxWidth = 300;
+          map.addLayer(polygon_141)
+          
+          var polygon_142 = new L.RegularPolygonMarker(new L.LatLng(55.945491221525, -3.228992064822), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_142.bindPopup("Hotel name:The Lodge Hotel");
+      polygon_142._popup.options.maxWidth = 300;
+          map.addLayer(polygon_142)
+          
+          var polygon_143 = new L.RegularPolygonMarker(new L.LatLng(55.936582517731, -3.2266928298917), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_143.bindPopup("Hotel name:Kirklea Guest House");
+      polygon_143._popup.options.maxWidth = 300;
+          map.addLayer(polygon_143)
+          
+          var polygon_144 = new L.RegularPolygonMarker(new L.LatLng(55.946225289611, -3.2229465537686), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_144.bindPopup("Hotel name:Apex European Hotel");
+      polygon_144._popup.options.maxWidth = 300;
+          map.addLayer(polygon_144)
+          
+          var polygon_145 = new L.RegularPolygonMarker(new L.LatLng(55.969196888191, -3.1640053576794), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_145.bindPopup("Hotel name:Merith House Hotel");
+      polygon_145._popup.options.maxWidth = 300;
+          map.addLayer(polygon_145)
+          
+          var polygon_146 = new L.RegularPolygonMarker(new L.LatLng(55.969117610613, -3.1647880499095), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_146.bindPopup("Hotel name:Culane House Hotel");
+      polygon_146._popup.options.maxWidth = 300;
+          map.addLayer(polygon_146)
+          
+          var polygon_147 = new L.RegularPolygonMarker(new L.LatLng(55.969011379493, -3.1655699284731), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_147.bindPopup("Hotel name:Park View House Hotel");
+      polygon_147._popup.options.maxWidth = 300;
+          map.addLayer(polygon_147)
+          
+          var polygon_148 = new L.RegularPolygonMarker(new L.LatLng(55.950093501773, -3.1866523876509), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_148.bindPopup("Hotel name:Radisson SAS [formerly Crowne Plaza]");
+      polygon_148._popup.options.maxWidth = 300;
+          map.addLayer(polygon_148)
+          
+          var polygon_149 = new L.RegularPolygonMarker(new L.LatLng(55.950547421388, -3.1861698325944), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_149.bindPopup("Hotel name:Brodies Hostel");
+      polygon_149._popup.options.maxWidth = 300;
+          map.addLayer(polygon_149)
+          
+          var polygon_150 = new L.RegularPolygonMarker(new L.LatLng(55.99053689758, -3.3967758810781), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_150.bindPopup("Hotel name:Stag Head Hotel");
+      polygon_150._popup.options.maxWidth = 300;
+          map.addLayer(polygon_150)
+          
+          var polygon_151 = new L.RegularPolygonMarker(new L.LatLng(55.990307358794, -3.3964149157311), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_151.bindPopup("Hotel name:Orocco Pier Hotel [formerly Queensferry Arms Hotel]");
+      polygon_151._popup.options.maxWidth = 300;
+          map.addLayer(polygon_151)
+          
+          var polygon_152 = new L.RegularPolygonMarker(new L.LatLng(55.946293302546, -3.1837819849235), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_152.bindPopup("Hotel name:Ten Hill Place");
+      polygon_152._popup.options.maxWidth = 300;
+          map.addLayer(polygon_152)
+          
+          var polygon_153 = new L.RegularPolygonMarker(new L.LatLng(55.958093225063, -3.1807625357572), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_153.bindPopup("Hotel name:Two Hillside Crescent");
+      polygon_153._popup.options.maxWidth = 300;
+          map.addLayer(polygon_153)
+          
+          var polygon_154 = new L.RegularPolygonMarker(new L.LatLng(55.938102400567, -3.1711570483292), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_154.bindPopup("Hotel name:Salisbury Green Hotel");
+      polygon_154._popup.options.maxWidth = 300;
+          map.addLayer(polygon_154)
+          
+          var polygon_155 = new L.RegularPolygonMarker(new L.LatLng(55.950958923602, -3.1769901316983), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_155.bindPopup("Hotel name:Holyrood Hotel");
+      polygon_155._popup.options.maxWidth = 300;
+          map.addLayer(polygon_155)
+          
+          var polygon_156 = new L.RegularPolygonMarker(new L.LatLng(55.95075966039, -3.2077957446342), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_156.bindPopup("Hotel name:Hudson Hotel");
+      polygon_156._popup.options.maxWidth = 300;
+          map.addLayer(polygon_156)
+          
+          var polygon_157 = new L.RegularPolygonMarker(new L.LatLng(55.961921356155, -3.1835382701959), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_157.bindPopup("Hotel name:Cameron Hotel");
+      polygon_157._popup.options.maxWidth = 300;
+          map.addLayer(polygon_157)
+          
+          var polygon_158 = new L.RegularPolygonMarker(new L.LatLng(55.949630630931, -3.1880634637368), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_158.bindPopup("Hotel name:Hotel Ibis");
+      polygon_158._popup.options.maxWidth = 300;
+          map.addLayer(polygon_158)
+          
+          var polygon_159 = new L.RegularPolygonMarker(new L.LatLng(55.932603846788, -3.3842214267678), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_159.bindPopup("Hotel name:Norton House Hotel");
+      polygon_159._popup.options.maxWidth = 300;
+          map.addLayer(polygon_159)
+          
+          var polygon_160 = new L.RegularPolygonMarker(new L.LatLng(55.943398897472, -3.3751115815467), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_160.bindPopup("Hotel name:Quality Hotel (formerly Royal Highland Lodge)");
+      polygon_160._popup.options.maxWidth = 300;
+          map.addLayer(polygon_160)
+          
+          var polygon_161 = new L.RegularPolygonMarker(new L.LatLng(55.963965059656, -3.2026162037989), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_161.bindPopup("Hotel name:Inverleith Hotel [formerly Lovat Hotel]");
+      polygon_161._popup.options.maxWidth = 300;
+          map.addLayer(polygon_161)
+          
+          var polygon_162 = new L.RegularPolygonMarker(new L.LatLng(55.951165540651, -3.1863648962679), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_162.bindPopup("Hotel name:Jurys Inn");
+      polygon_162._popup.options.maxWidth = 300;
+          map.addLayer(polygon_162)
+          
+          var polygon_163 = new L.RegularPolygonMarker(new L.LatLng(55.948766556657, -3.0880170585954), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_163.bindPopup("Hotel name:Rockville House Hotel");
+      polygon_163._popup.options.maxWidth = 300;
+          map.addLayer(polygon_163)
+          
+          var polygon_164 = new L.RegularPolygonMarker(new L.LatLng(55.948613343695, -3.0961795347546), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_164.bindPopup("Hotel name:Seahaven Hotel");
+      polygon_164._popup.options.maxWidth = 300;
+          map.addLayer(polygon_164)
+          
+          var polygon_165 = new L.RegularPolygonMarker(new L.LatLng(55.945454689625, -3.2299516435537), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_165.bindPopup("Hotel name:Kew House");
+      polygon_165._popup.options.maxWidth = 300;
+          map.addLayer(polygon_165)
+          
+          var polygon_166 = new L.RegularPolygonMarker(new L.LatLng(55.944343206611, -3.4100196202823), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_166.bindPopup("Hotel name:Premier Inn Edinburgh Airport (Newbridge)");
+      polygon_166._popup.options.maxWidth = 300;
+          map.addLayer(polygon_166)
+          
+          var polygon_167 = new L.RegularPolygonMarker(new L.LatLng(55.89644498583, -3.3094804624823), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_167.bindPopup("Hotel name:Riccarton Arms Hotel");
+      polygon_167._popup.options.maxWidth = 300;
+          map.addLayer(polygon_167)
+          
+          var polygon_168 = new L.RegularPolygonMarker(new L.LatLng(55.907351666314, -3.153321656562), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_168.bindPopup("Hotel name:Northfield House Hotel");
+      polygon_168._popup.options.maxWidth = 300;
+          map.addLayer(polygon_168)
+          
+          var polygon_169 = new L.RegularPolygonMarker(new L.LatLng(55.944517307246, -3.1927744537407), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_169.bindPopup("Hotel name:Marriott Residence Inn Edinburgh");
+      polygon_169._popup.options.maxWidth = 300;
+          map.addLayer(polygon_169)
+          
+          var polygon_170 = new L.RegularPolygonMarker(new L.LatLng(55.944429023355, -3.2009377434826), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_170.bindPopup("Hotel name:Best Western Edinburgh City Hotel [formerly Simpson Hotel]");
+      polygon_170._popup.options.maxWidth = 300;
+          map.addLayer(polygon_170)
+          
+          var polygon_171 = new L.RegularPolygonMarker(new L.LatLng(55.945185511065, -3.1998403152944), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_171.bindPopup("Hotel name:Novotel");
+      polygon_171._popup.options.maxWidth = 300;
+          map.addLayer(polygon_171)
+          
+          var polygon_172 = new L.RegularPolygonMarker(new L.LatLng(55.944957823412, -3.2001535132722), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_172.bindPopup("Hotel name:Premier Inn Edinburgh City Lauriston Place");
+      polygon_172._popup.options.maxWidth = 300;
+          map.addLayer(polygon_172)
+          
+          var polygon_173 = new L.RegularPolygonMarker(new L.LatLng(55.945419557145, -3.201640919307), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_173.bindPopup("Hotel name:The Knight Residence");
+      polygon_173._popup.options.maxWidth = 300;
+          map.addLayer(polygon_173)
+          
+          var polygon_174 = new L.RegularPolygonMarker(new L.LatLng(55.955568501623, -3.2194933457494), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_174.bindPopup("Hotel name:Travelodge Edinburgh Learmonth");
+      polygon_174._popup.options.maxWidth = 300;
+          map.addLayer(polygon_174)
+          
+          var polygon_175 = new L.RegularPolygonMarker(new L.LatLng(55.954465854557, -3.187955335025), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_175.bindPopup("Hotel name:Thistle Hotel Edinburgh");
+      polygon_175._popup.options.maxWidth = 300;
+          map.addLayer(polygon_175)
+          
+          var polygon_176 = new L.RegularPolygonMarker(new L.LatLng(55.958035184833, -3.181193236958), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_176.bindPopup("Hotel name:Hotel Twenty [formerly Richmond House Hotel]");
+      polygon_176._popup.options.maxWidth = 300;
+          map.addLayer(polygon_176)
+          
+          var polygon_177 = new L.RegularPolygonMarker(new L.LatLng(55.97180541432, -3.1618084360346), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_177.bindPopup("Hotel name:Adelphi Hotel [formerly Camore Hotel]");
+      polygon_177._popup.options.maxWidth = 300;
+          map.addLayer(polygon_177)
+          
+          var polygon_178 = new L.RegularPolygonMarker(new L.LatLng(55.972999210943, -3.1638471628032), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_178.bindPopup("Hotel name:Abbot's House Hotel");
+      polygon_178._popup.options.maxWidth = 300;
+          map.addLayer(polygon_178)
+          
+          var polygon_179 = new L.RegularPolygonMarker(new L.LatLng(55.963624798799, -3.1603137295702), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_179.bindPopup("Hotel name:Lochend Serviced Apartments");
+      polygon_179._popup.options.maxWidth = 300;
+          map.addLayer(polygon_179)
+          
+          var polygon_180 = new L.RegularPolygonMarker(new L.LatLng(55.926803984815, -3.3106643818873), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_180.bindPopup("Hotel name:Novotel");
+      polygon_180._popup.options.maxWidth = 300;
+          map.addLayer(polygon_180)
+          
+          var polygon_181 = new L.RegularPolygonMarker(new L.LatLng(55.952677853954, -3.1944507693388), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_181.bindPopup("Hotel name:Ramada Jarvis Mount Royal Hotel");
+      polygon_181._popup.options.maxWidth = 300;
+          map.addLayer(polygon_181)
+          
+          var polygon_182 = new L.RegularPolygonMarker(new L.LatLng(55.951687796547, -3.2001695806981), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_182.bindPopup("Hotel name:Royal Overseas League");
+      polygon_182._popup.options.maxWidth = 300;
+          map.addLayer(polygon_182)
+          
+          var polygon_183 = new L.RegularPolygonMarker(new L.LatLng(55.950512978492, -3.2127845287617), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_183.bindPopup("Hotel name:Premier Inn Princes Street");
+      polygon_183._popup.options.maxWidth = 300;
+          map.addLayer(polygon_183)
+          
+          var polygon_184 = new L.RegularPolygonMarker(new L.LatLng(55.950919422781, -3.2043255792788), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_184.bindPopup("Hotel name:easyHotel");
+      polygon_184._popup.options.maxWidth = 300;
+          map.addLayer(polygon_184)
+          
+          var polygon_185 = new L.RegularPolygonMarker(new L.LatLng(55.954393014582, -3.2001091565712), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_185.bindPopup("Hotel name:Travelodge");
+      polygon_185._popup.options.maxWidth = 300;
+          map.addLayer(polygon_185)
+          
+          var polygon_186 = new L.RegularPolygonMarker(new L.LatLng(55.954029506123, -3.2023721433736), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_186.bindPopup("Hotel name:Queen's Guest House");
+      polygon_186._popup.options.maxWidth = 300;
+          map.addLayer(polygon_186)
+          
+          var polygon_187 = new L.RegularPolygonMarker(new L.LatLng(55.95581069969, -3.2429171546144), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_187.bindPopup("Hotel name:Holiday Inn Edinburgh West");
+      polygon_187._popup.options.maxWidth = 300;
+          map.addLayer(polygon_187)
+          
+          var polygon_188 = new L.RegularPolygonMarker(new L.LatLng(55.950238381559, -3.2087243497674), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_188.bindPopup("Hotel name:Caledonian Backpackers Hostel");
+      polygon_188._popup.options.maxWidth = 300;
+          map.addLayer(polygon_188)
+          
+          var polygon_189 = new L.RegularPolygonMarker(new L.LatLng(55.952688, -3.198003), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_189.bindPopup("Hotel name:Travelodge Edinburgh Central Rose Street");
+      polygon_189._popup.options.maxWidth = 300;
+          map.addLayer(polygon_189)
+          
+          var polygon_190 = new L.RegularPolygonMarker(new L.LatLng(55.946214963434, -3.2194554894416), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_190.bindPopup("Hotel name:Glenora Guest House");
+      polygon_190._popup.options.maxWidth = 300;
+          map.addLayer(polygon_190)
+          
+          var polygon_191 = new L.RegularPolygonMarker(new L.LatLng(55.95094090627, -3.2176823323635), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_191.bindPopup("Hotel name:B+B Edinburgh [formerly Melvin House Hotel]");
+      polygon_191._popup.options.maxWidth = 300;
+          map.addLayer(polygon_191)
+          
+          var polygon_192 = new L.RegularPolygonMarker(new L.LatLng(55.950959346325, -3.2176348677519), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_192.bindPopup("Hotel name:The Edinburgh Residence");
+      polygon_192._popup.options.maxWidth = 300;
+          map.addLayer(polygon_192)
+          
+          var polygon_193 = new L.RegularPolygonMarker(new L.LatLng(55.956779344185, -3.1800338038654), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_193.bindPopup("Hotel name:Halcyon Hotel");
+      polygon_193._popup.options.maxWidth = 300;
+          map.addLayer(polygon_193)
+          
+          var polygon_194 = new L.RegularPolygonMarker(new L.LatLng(55.956780570752, -3.1799057065071), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_194.bindPopup("Hotel name:Abbey Hotel [formerly Greenside Hotel]");
+      polygon_194._popup.options.maxWidth = 300;
+          map.addLayer(polygon_194)
+          
+          var polygon_195 = new L.RegularPolygonMarker(new L.LatLng(55.956775573341, -3.1794891167919), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_195.bindPopup("Hotel name:Adria Hotel");
+      polygon_195._popup.options.maxWidth = 300;
+          map.addLayer(polygon_195)
+          
+          var polygon_196 = new L.RegularPolygonMarker(new L.LatLng(55.956759194708, -3.1783834577127), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_196.bindPopup("Hotel name:Royal Terrace Hotel");
+      polygon_196._popup.options.maxWidth = 300;
+          map.addLayer(polygon_196)
+          
+          var polygon_197 = new L.RegularPolygonMarker(new L.LatLng(55.956720403434, -3.1777416066389), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_197.bindPopup("Hotel name:Ailsa Craig Hotel");
+      polygon_197._popup.options.maxWidth = 300;
+          map.addLayer(polygon_197)
+          
+          var polygon_198 = new L.RegularPolygonMarker(new L.LatLng(55.956676330628, -3.175770203436), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_198.bindPopup("Hotel name:Terrace Hotel");
+      polygon_198._popup.options.maxWidth = 300;
+          map.addLayer(polygon_198)
+          
+          var polygon_199 = new L.RegularPolygonMarker(new L.LatLng(55.949869112554, -3.2078961260148), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_199.bindPopup("Hotel name:Rutland Hotel");
+      polygon_199._popup.options.maxWidth = 300;
+          map.addLayer(polygon_199)
+          
+          var polygon_200 = new L.RegularPolygonMarker(new L.LatLng(55.937803427905, -3.1770713514241), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_200.bindPopup("Hotel name:Salisbury Hotel");
+      polygon_200._popup.options.maxWidth = 300;
+          map.addLayer(polygon_200)
+          
+          var polygon_201 = new L.RegularPolygonMarker(new L.LatLng(55.949552551398, -3.2090232556924), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_201.bindPopup("Hotel name:Cityroomz");
+      polygon_201._popup.options.maxWidth = 300;
+          map.addLayer(polygon_201)
+          
+          var polygon_202 = new L.RegularPolygonMarker(new L.LatLng(55.949084059434, -3.2100655585023), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_202.bindPopup("Hotel name:Edinburgh Nights Hostel [formerly City Centre Guest House Hostel]");
+      polygon_202._popup.options.maxWidth = 300;
+          map.addLayer(polygon_202)
+          
+          var polygon_203 = new L.RegularPolygonMarker(new L.LatLng(55.950033898883, -3.1872430845481), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_203.bindPopup("Hotel name:Bank Hotel");
+      polygon_203._popup.options.maxWidth = 300;
+          map.addLayer(polygon_203)
+          
+          var polygon_204 = new L.RegularPolygonMarker(new L.LatLng(55.956231525874, -3.2187774286521), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_204.bindPopup("Hotel name:Channings");
+      polygon_204._popup.options.maxWidth = 300;
+          map.addLayer(polygon_204)
+          
+          var polygon_205 = new L.RegularPolygonMarker(new L.LatLng(55.936169548209, -3.170314309418), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_205.bindPopup("Hotel name:MW Town House");
+      polygon_205._popup.options.maxWidth = 300;
+          map.addLayer(polygon_205)
+          
+          var polygon_206 = new L.RegularPolygonMarker(new L.LatLng(55.950078596205, -3.191920566646), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_206.bindPopup("Hotel name:Fraser Suites");
+      polygon_206._popup.options.maxWidth = 300;
+          map.addLayer(polygon_206)
+          
+          var polygon_207 = new L.RegularPolygonMarker(new L.LatLng(55.930059974674, -3.1843592574725), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_207.bindPopup("Hotel name:Alba Executive Apartments");
+      polygon_207._popup.options.maxWidth = 300;
+          map.addLayer(polygon_207)
+          
+          var polygon_208 = new L.RegularPolygonMarker(new L.LatLng(55.942413048011, -3.2763353423725), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_208.bindPopup("Hotel name:Tudorbank Lodge");
+      polygon_208._popup.options.maxWidth = 300;
+          map.addLayer(polygon_208)
+          
+          var polygon_209 = new L.RegularPolygonMarker(new L.LatLng(55.943023244338, -3.2824717629215), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_209.bindPopup("Hotel name:The White Lady [formerly the Agenda Hotel; formerly the Westbury Hotel]");
+      polygon_209._popup.options.maxWidth = 300;
+          map.addLayer(polygon_209)
+          
+          var polygon_210 = new L.RegularPolygonMarker(new L.LatLng(55.943056655814, -3.2835776540048), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_210.bindPopup("Hotel name:Innkeepers Lodge Edinburgh West [formerly Harp Hotel]");
+      polygon_210._popup.options.maxWidth = 300;
+          map.addLayer(polygon_210)
+          
+          var polygon_211 = new L.RegularPolygonMarker(new L.LatLng(55.943500848793, -3.2892284304076), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_211.bindPopup("Hotel name:Corstorphine Lodge Hotel");
+      polygon_211._popup.options.maxWidth = 300;
+          map.addLayer(polygon_211)
+          
+          var polygon_212 = new L.RegularPolygonMarker(new L.LatLng(55.949457566998, -3.1836383472836), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_212.bindPopup("Hotel name:Travelodge Edinburgh Central");
+      polygon_212._popup.options.maxWidth = 300;
+          map.addLayer(polygon_212)
+          
+          var polygon_213 = new L.RegularPolygonMarker(new L.LatLng(55.934232619918, -3.2007182526002), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_213.bindPopup("Hotel name:Gillis Centre");
+      polygon_213._popup.options.maxWidth = 300;
+          map.addLayer(polygon_213)
+          
+          var polygon_214 = new L.RegularPolygonMarker(new L.LatLng(55.977799593372, -3.1683663099265), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_214.bindPopup("Hotel name:Malmaison");
+      polygon_214._popup.options.maxWidth = 300;
+          map.addLayer(polygon_214)
+          
+          var polygon_215 = new L.RegularPolygonMarker(new L.LatLng(55.953569389944, -3.1868067878124), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_215.bindPopup("Hotel name:Princes Street Suites");
+      polygon_215._popup.options.maxWidth = 300;
+          map.addLayer(polygon_215)
+          
+          var polygon_216 = new L.RegularPolygonMarker(new L.LatLng(55.953794921691, -3.187646501762), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_216.bindPopup("Hotel name:Travelodge Edinburgh Central");
+      polygon_216._popup.options.maxWidth = 300;
+          map.addLayer(polygon_216)
+          
+          var polygon_217 = new L.RegularPolygonMarker(new L.LatLng(55.954012785759, -3.1864840270224), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_217.bindPopup("Hotel name:Apex Waterloo Place");
+      polygon_217._popup.options.maxWidth = 300;
+          map.addLayer(polygon_217)
+          
+          var polygon_218 = new L.RegularPolygonMarker(new L.LatLng(55.946148827926, -3.2279240449044), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_218.bindPopup("Hotel name:Cumberland Hotel");
+      polygon_218._popup.options.maxWidth = 300;
+          map.addLayer(polygon_218)
+          
+          var polygon_219 = new L.RegularPolygonMarker(new L.LatLng(55.946047190082, -3.2291057534737), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_219.bindPopup("Hotel name:Dunstane House Hotel");
+      polygon_219._popup.options.maxWidth = 300;
+          map.addLayer(polygon_219)
+          
+          var polygon_220 = new L.RegularPolygonMarker(new L.LatLng(55.946050263029, -3.2296983138379), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_220.bindPopup("Hotel name:Duthus Lodge Guest House");
+      polygon_220._popup.options.maxWidth = 300;
+          map.addLayer(polygon_220)
+          
+          var polygon_221 = new L.RegularPolygonMarker(new L.LatLng(55.945665814173, -3.2249945086319), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_221.bindPopup("Hotel name:Original Raj Hotel");
+      polygon_221._popup.options.maxWidth = 300;
+          map.addLayer(polygon_221)
+          
+          var polygon_222 = new L.RegularPolygonMarker(new L.LatLng(55.986372261053, -3.1899114833841), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_222.bindPopup("Hotel name:Edinburgh Waterfront Apartments / Hot-el-Apartments");
+      polygon_222._popup.options.maxWidth = 300;
+          map.addLayer(polygon_222)
+          
+          var polygon_223 = new L.RegularPolygonMarker(new L.LatLng(55.946578600477, -3.1372741398011), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_223.bindPopup("Hotel name:Premier Inn Edinburgh East");
+      polygon_223._popup.options.maxWidth = 300;
+          map.addLayer(polygon_223)
+          
+          var polygon_224 = new L.RegularPolygonMarker(new L.LatLng(55.958173917334, -3.1826550479031), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_224.bindPopup("Hotel name:Lyncliff Hotel");
+      polygon_224._popup.options.maxWidth = 300;
+          map.addLayer(polygon_224)
+          
+          var polygon_225 = new L.RegularPolygonMarker(new L.LatLng(55.958518030373, -3.1823772275422), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_225.bindPopup("Hotel name:Cairn Hotel");
+      polygon_225._popup.options.maxWidth = 300;
+          map.addLayer(polygon_225)
+          
+          var polygon_226 = new L.RegularPolygonMarker(new L.LatLng(55.955922207882, -3.1934615772099), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_226.bindPopup("Hotel name:Blue Rainbow Apartments [formerly Royal Garden Apartments]");
+      polygon_226._popup.options.maxWidth = 300;
+          map.addLayer(polygon_226)
+          
+          var polygon_227 = new L.RegularPolygonMarker(new L.LatLng(55.957275508099, -3.1901076109435), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_227.bindPopup("Hotel name:Ballantrae Albany Hotel [formerly Albany Hotel]");
+      polygon_227._popup.options.maxWidth = 300;
+          map.addLayer(polygon_227)
+          
+          var polygon_228 = new L.RegularPolygonMarker(new L.LatLng(55.956148489958, -3.1923633958602), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_228.bindPopup("Hotel name:Ballantrae Hotel");
+      polygon_228._popup.options.maxWidth = 300;
+          map.addLayer(polygon_228)
+          
+          var polygon_229 = new L.RegularPolygonMarker(new L.LatLng(55.956034180564, -3.1902456962134), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_229.bindPopup("Hotel name:York House Hotel");
+      polygon_229._popup.options.maxWidth = 300;
+          map.addLayer(polygon_229)
+          
+          var polygon_230 = new L.RegularPolygonMarker(new L.LatLng(55.956062675409, -3.1900864052156), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_230.bindPopup("Hotel name:The Place [formerly York Place B&B]");
+      polygon_230._popup.options.maxWidth = 300;
+          map.addLayer(polygon_230)
+          
+          var polygon_231 = new L.RegularPolygonMarker(new L.LatLng(55.956329029248, -3.1885569793357), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_231.bindPopup("Hotel name:Hotel Indigo Edinburgh");
+      polygon_231._popup.options.maxWidth = 300;
+          map.addLayer(polygon_231)
+          
+          var polygon_232 = new L.RegularPolygonMarker(new L.LatLng(55.95288085596, -3.2049790524564), {
+    color: 'black',
+    opacity: 1,
+    weight: 2,
+    fillColor: 'blue',
+    fillOpacity: 1,
+    numberOfSides: 4,
+    rotation: 0,
+    radius: 2
+});
+          polygon_232.bindPopup("Hotel name:Fountain Court Stewart Apartments");
+      polygon_232._popup.options.maxWidth = 300;
+          map.addLayer(polygon_232)
           
 
           
