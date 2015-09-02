@@ -6,9 +6,10 @@ from bokeh.embed import file_html
 from bokeh.models.glyphs import Circle, Text
 from bokeh.models import (
     BasicTicker, ColumnDataSource, Grid, GridPlot, LinearAxis,
-    DataRange1d, PanTool, Plot, WheelZoomTool, HoverTool
+    DataRange1d, PanTool, Plot, WheelZoomTool, HoverTool, Line
 )
 from bokeh.charts import TimeSeries
+from bokeh.plotting_helpers import _update_legend
 from bokeh.resources import INLINE
 from bokeh.sampledata.iris import flowers
 from bokeh.plotting import *
@@ -263,15 +264,19 @@ class ClimPlots:
         Plots time series and moving average filter
         when moving_avg set to true
         """
-        t_fig_dict = {}
+        t_fig_dict = dict()
+
         # Parse individual time series
         n_dict = parse_time_series(self.html_tags, self.txt)
-        series = []
+
+        series = list()
+
+        cds_dict = dict()
+
         for k in list(sorted(n_dict.keys())):
             v = n_dict[k]
             # Creating fig inst in dict for plot k
-            t_fig_dict[k] = figure(title=k.split(",")[-1][0:-1],
-                                   tools=[HoverTool()],
+            t_fig_dict[k] = figure(title=k.split(",")[-1][0:-1],    
                                    height=315)
 
             # Sort by x-axis(dates) in order to ensure a
@@ -283,18 +288,41 @@ class ClimPlots:
 
             date = np.array(tmp)[:, 0]
             vals = np.array(tmp)[:, 1]
+
+            tooltips = OrderedDict([
+                ("time", "@x"),
+                ("value", "@y"),
+            ])
+            cds_dict[k+'1'] = ColumnDataSource(
+                data=dict(
+                    x=date,
+                    y=vals,
+                )
+            )
             if moving_avg:
                 # Moving averaged filter data
                 vals_a = self.causal_avg_filter(vals)
                 date_a = date[self.radius:]
 
+                cds_dict[k+'2'] = ColumnDataSource(
+                    data=dict(
+                        x=date_a,
+                        y=vals_a,
+                    )
+                )
                 # Plot moving averaged filtered data
-                t_fig_dict[k].line(date_a, vals_a,
-                                   legend=k + " avg data",
-                                   color='blue', line_width=6)
+                # k + " avg data"
+                line_a = Line(x="x", y="y",
+                              line_color='blue', line_width=6)
+                circle_renderer = t_fig_dict[k].add_glyph(cds_dict[k+'2'], line_a)
+                _update_legend(plot=t_fig_dict[k], legend_name=k + " avg data", glyph_renderer=circle_renderer)
+                t_fig_dict[k].add_tools(HoverTool(tooltips=tooltips, renderers=[circle_renderer]))
             # Plot raw data
-            t_fig_dict[k].line(date, vals,
-                               legend=k + " raw data", color='red')
+            line_r = Line(x="x", y="y",
+                          line_color='red')
+            circle_renderer2 = t_fig_dict[k].add_glyph(cds_dict[k+'1'], line_r)
+            _update_legend(plot=t_fig_dict[k], legend_name=k + " raw data", glyph_renderer=circle_renderer2)
+            t_fig_dict[k].add_tools(HoverTool(tooltips=tooltips, renderers=[circle_renderer2]))
 
         # Unpack the fig instances in dict plot as a vertical stack of
         # horizontal plots
