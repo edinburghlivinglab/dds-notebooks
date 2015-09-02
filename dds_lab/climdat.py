@@ -200,7 +200,7 @@ class ClimPlots:
 
             v[-1][0] = v[-1][0].replace(".txt", "").replace("_", " ")
             v[-1][1] = v[-1][1].replace(".txt", "").replace("_", " ")
-            fig_dict[k] = figure(width=300, plot_height=300, title=str(v[-1][0]) + " vs "+str(v[-1][1]),
+            fig_dict[k] = figure(width=260, plot_height=260, title=str(v[-1][0]) + " vs "+str(v[-1][1]),
                                  title_text_font_size='8pt',
                                  tools="reset,hover",
                                  x_axis_label=v[-1][0],
@@ -271,7 +271,8 @@ class ClimPlots:
             v = n_dict[k]
             # Creating fig inst in dict for plot k
             t_fig_dict[k] = figure(title=k.split(",")[-1][0:-1],
-                                   tools=[HoverTool()])
+                                   tools=[HoverTool()],
+                                   height=315)
 
             # Sort by x-axis(dates) in order to ensure a
             # sound plot
