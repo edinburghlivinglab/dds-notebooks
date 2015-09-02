@@ -374,7 +374,7 @@ class ClimPlots:
             )
 
             p = HeatMap(df, title='avg timeseries heat map',
-                        tools='hover', width=900, height=315, palette=palette)
+                        width=900, height=315, palette=palette)
             return p 
         # Plot raw data
         date = list(map(str, date))
@@ -387,7 +387,7 @@ class ClimPlots:
         )
 
         p = HeatMap(df, title='raw timeseries heat map',
-                    tools='hover', width=900, height=315, palette=palette)
+                    width=900, height=315, palette=palette)
         return p 
 
 
