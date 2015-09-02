@@ -334,7 +334,7 @@ class ClimPlots:
 
     def plot_time_series_heatMap(self, moving_avg=False):
         """
-        Plots time series and moving average filter
+        Plots time series Heat map or moving average filter
         when moving_avg set to true
         """
 
