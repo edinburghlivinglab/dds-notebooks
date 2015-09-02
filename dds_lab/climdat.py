@@ -8,7 +8,8 @@ from bokeh.models import (
     BasicTicker, ColumnDataSource, Grid, GridPlot, LinearAxis,
     DataRange1d, PanTool, Plot, WheelZoomTool, HoverTool, Line
 )
-from bokeh.charts import TimeSeries
+from bokeh.charts import TimeSeries, HeatMap
+from bokeh.palettes import YlOrRd9 as palette
 from bokeh.plotting_helpers import _update_legend
 from bokeh.resources import INLINE
 from bokeh.sampledata.iris import flowers
@@ -21,6 +22,7 @@ from itertools import product
 from collections import OrderedDict
 from scipy.ndimage.filters import convolve1d
 from dds_lab.datasets import climate
+import pandas as pd
 
 
 def read_tags(path):
@@ -329,3 +331,63 @@ class ClimPlots:
         v = vplot(*list(t_fig_dict.values()))
 
         return v
+
+    def plot_time_series_heatMap(self, moving_avg=False):
+        """
+        Plots time series and moving average filter
+        when moving_avg set to true
+        """
+
+        # Parse individual time series
+        n_dict = parse_time_series(self.html_tags, self.txt)
+
+        k = list(n_dict.keys())[0]
+        v = n_dict[k]
+
+        # Sort by x-axis(dates) in order to ensure a
+        # sound plot
+        tmp = list(v.items())
+        tmp.sort()
+
+        np.array(tmp)
+
+        date = np.array(tmp)[:, 0]
+        vals = np.array(tmp)[:, 1]
+
+        tooltips = OrderedDict([
+            ("time", "@x"),
+            ("value", "@y"),
+        ])
+
+        if moving_avg:
+            # Moving averaged filter data
+            vals_a = self.causal_avg_filter(vals)
+            date_a =list(map(str,date[self.radius:]))
+            # Plot moving averaged filtered data
+            # k + " avg data"
+            df = pd.DataFrame(
+                    dict(
+                        zip(date_a, vals_a)
+
+                    ),
+                    index=[k]
+            )
+
+            p = HeatMap(df, title='avg timeseries heat map',
+                        tools='hover', width=900, height=315, palette=palette)
+            return p 
+        # Plot raw data
+        date = list(map(str, date))
+        df = pd.DataFrame(
+                    dict(
+                        zip(date, vals)
+
+                    ),
+                    index=[k]
+        )
+
+        p = HeatMap(df, title='raw timeseries heat map',
+                    tools='hover', width=900, height=315, palette=palette)
+        return p 
+
+
