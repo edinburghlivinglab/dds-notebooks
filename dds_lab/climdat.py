@@ -279,7 +279,7 @@ class ClimPlots:
             v = n_dict[k]
             # Creating fig inst in dict for plot k
             t_fig_dict[k] = figure(title=k.split(",")[-1].replace(".txt","").replace("_", " "),    
-                                   height=315)
+                                   height=290)
 
             # Sort by x-axis(dates) in order to ensure a
             # sound plot
