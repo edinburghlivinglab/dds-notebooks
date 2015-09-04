@@ -203,7 +203,7 @@ class ClimPlots:
 
             v[-1][0] = v[-1][0].replace(".txt", "").replace("_", " ")
             v[-1][1] = v[-1][1].replace(".txt", "").replace("_", " ")
-            fig_dict[k] = figure(width=260, plot_height=260, title=str(v[-1][0]) + " vs "+str(v[-1][1]),
+            fig_dict[k] = figure(width=220, plot_height=220, title=str(v[-1][0]) + " vs "+str(v[-1][1]),
                                  title_text_font_size='8pt',
                                  tools="reset,hover",
                                  x_axis_label=v[-1][0],
@@ -278,7 +278,7 @@ class ClimPlots:
         for k in list(sorted(n_dict.keys())):
             v = n_dict[k]
             # Creating fig inst in dict for plot k
-            t_fig_dict[k] = figure(title=k.split(",")[-1][0:-1],    
+            t_fig_dict[k] = figure(title=k.split(",")[-1].replace(".txt","").replace("_", " "),    
                                    height=315)
 
             # Sort by x-axis(dates) in order to ensure a
@@ -317,13 +317,13 @@ class ClimPlots:
                 line_a = Line(x="x", y="y",
                               line_color='blue', line_width=6)
                 circle_renderer = t_fig_dict[k].add_glyph(cds_dict[k+'2'], line_a)
-                _update_legend(plot=t_fig_dict[k], legend_name=k + " avg data", glyph_renderer=circle_renderer)
+                _update_legend(plot=t_fig_dict[k], legend_name=k .replace(".txt","").replace("_", " ")+ " avg data", glyph_renderer=circle_renderer)
                 t_fig_dict[k].add_tools(HoverTool(tooltips=tooltips, renderers=[circle_renderer]))
             # Plot raw data
             line_r = Line(x="x", y="y",
                           line_color='red')
             circle_renderer2 = t_fig_dict[k].add_glyph(cds_dict[k+'1'], line_r)
-            _update_legend(plot=t_fig_dict[k], legend_name=k + " raw data", glyph_renderer=circle_renderer2)
+            _update_legend(plot=t_fig_dict[k], legend_name=k.replace(".txt","").replace("_", " ") + " raw data", glyph_renderer=circle_renderer2)
             t_fig_dict[k].add_tools(HoverTool(tooltips=tooltips, renderers=[circle_renderer2]))
 
         # Unpack the fig instances in dict plot as a vertical stack of
@@ -370,7 +370,7 @@ class ClimPlots:
                         zip(date_a, vals_a)
 
                     ),
-                    index=[k]
+                    index=[k.replace(".txt","").replace("_", " ")]
             )
 
             p = HeatMap(df, title='avg timeseries heat map',
@@ -383,7 +383,7 @@ class ClimPlots:
                         zip(date, vals)
 
                     ),
-                    index=[k]
+                    index=[k.replace(".txt","").replace("_", " ")]
         )
 
         p = HeatMap(df, title='raw timeseries heat map',
