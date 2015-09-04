@@ -1,4 +1,5 @@
 from IPython.display import HTML
+import os
 
 # Folium allows a link between leaflet and python
 # which permits ease of use of tiles in notebook
@@ -21,7 +22,7 @@ def inline_map(map):
     map._build_map()
     return HTML('<iframe srcdoc="{srcdoc}" style="width: 100%; height: 510px; border: none"></iframe>'.format(srcdoc=map.HTML.replace('"', '&quot;')))
  
-def embed_map(map, path="map.html"):
+def embed_map(map, path="metadata/map.html"):
     """
     Embeds a linked iframe to the map into the IPython notebook.
     
@@ -29,4 +30,16 @@ def embed_map(map, path="map.html"):
     This method should work for all maps (as long as they use relative urls).
     """
     map.create_map(path=path)
+    return HTML('<iframe src="files/{path}" style="width: 100%; height: 510px; border: none"></iframe>'.format(path=path))
+
+def embed_cloropleth(map, path="metadata/map.html"):
+    """
+    Embeds a linked iframe to the map into the IPython notebook.
+    
+    Note: this method will not capture the source of the map into the notebook.
+    This method should work for all maps (as long as they use relative urls).
+    """
+    map.create_map(path=path)
+    os.popen("mv data.json metadata")
+    os.popen("mv leaflet-dvf.markers.min.js metadata")
     return HTML('<iframe src="files/{path}" style="width: 100%; height: 510px; border: none"></iframe>'.format(path=path))
