@@ -22,7 +22,7 @@ def inline_map(map):
     map._build_map()
     return HTML('<iframe srcdoc="{srcdoc}" style="width: 100%; height: 510px; border: none"></iframe>'.format(srcdoc=map.HTML.replace('"', '&quot;')))
  
-def embed_map(map, path="metadata/map.html"):
+def embed_map(map, path="build-data/map.html"):
     """
     Embeds a linked iframe to the map into the IPython notebook.
     
@@ -32,7 +32,7 @@ def embed_map(map, path="metadata/map.html"):
     map.create_map(path=path)
     return HTML('<iframe src="files/{path}" style="width: 100%; height: 510px; border: none"></iframe>'.format(path=path))
 
-def embed_cloropleth(map, path="metadata/map.html"):
+def embed_cloropleth(map, path="build-data/map.html"):
     """
     Embeds a linked iframe to the map into the IPython notebook.
     
@@ -40,6 +40,6 @@ def embed_cloropleth(map, path="metadata/map.html"):
     This method should work for all maps (as long as they use relative urls).
     """
     map.create_map(path=path)
-    os.popen("mv data.json metadata")
-    os.popen("mv leaflet-dvf.markers.min.js metadata")
+    os.popen("mv data.json build-data")
+    os.popen("mv leaflet-dvf.markers.min.js build-data")
     return HTML('<iframe src="files/{path}" style="width: 100%; height: 510px; border: none"></iframe>'.format(path=path))
