@@ -1,28 +1,27 @@
 import numpy as np
 import scipy as s
-from bokeh.browserlib import view
-from bokeh.document import Document
-from bokeh.embed import file_html
+from scipy.ndimage.filters import convolve1d
+import pandas as pd
+
 from bokeh.models.glyphs import Circle, Text
 from bokeh.models import (
-    BasicTicker, ColumnDataSource, Grid, GridPlot, LinearAxis,
-    DataRange1d, PanTool, Plot, WheelZoomTool, HoverTool, Line
+    ColumnDataSource, HoverTool, Line
 )
 from bokeh.charts import TimeSeries, HeatMap
 from bokeh.palettes import YlOrRd9 as palette
 from bokeh.plotting_helpers import _update_legend
-from bokeh.resources import INLINE
-from bokeh.sampledata.iris import flowers
 from bokeh.plotting import *
-from bokeh.io import gridplot, output_file, show, vplot
+from bokeh.io import gridplot, vplot
+
 import re
+
 from os import listdir
 from os.path import isfile, join
+
 from itertools import product
 from collections import OrderedDict
-from scipy.ndimage.filters import convolve1d
+
 from dds_lab.datasets import climate
-import pandas as pd
 
 
 def read_tags(path):
@@ -278,7 +277,7 @@ class ClimPlots:
         for k in list(sorted(n_dict.keys())):
             v = n_dict[k]
             # Creating fig inst in dict for plot k
-            t_fig_dict[k] = figure(title=k.split(",")[-1].replace(".txt","").replace("_", " "),    
+            t_fig_dict[k] = figure(title=k.split(",")[-1].replace(".txt", "").replace("_", " "),
                                    height=290)
 
             # Sort by x-axis(dates) in order to ensure a
@@ -316,15 +315,22 @@ class ClimPlots:
                 # k + " avg data"
                 line_a = Line(x="x", y="y",
                               line_color='blue', line_width=6)
-                circle_renderer = t_fig_dict[k].add_glyph(cds_dict[k+'2'], line_a)
-                _update_legend(plot=t_fig_dict[k], legend_name=k .replace(".txt","").replace("_", " ")+ " avg data", glyph_renderer=circle_renderer)
-                t_fig_dict[k].add_tools(HoverTool(tooltips=tooltips, renderers=[circle_renderer]))
+                circle_renderer = t_fig_dict[k].add_glyph(cds_dict[k+'2'],
+                                                          line_a)
+                _update_legend(plot=t_fig_dict[k],
+                               legend_name=k .replace(".txt", "").replace(
+                    "_", " ") + " avg data", glyph_renderer=circle_renderer)
+                t_fig_dict[k].add_tools(
+                    HoverTool(tooltips=tooltips, renderers=[circle_renderer]))
             # Plot raw data
             line_r = Line(x="x", y="y",
                           line_color='red')
             circle_renderer2 = t_fig_dict[k].add_glyph(cds_dict[k+'1'], line_r)
-            _update_legend(plot=t_fig_dict[k], legend_name=k.replace(".txt","").replace("_", " ") + " raw data", glyph_renderer=circle_renderer2)
-            t_fig_dict[k].add_tools(HoverTool(tooltips=tooltips, renderers=[circle_renderer2]))
+            _update_legend(plot=t_fig_dict[k],
+                           legend_name=k.replace(".txt", "").replace(
+                "_", " ") + " raw data", glyph_renderer=circle_renderer2)
+            t_fig_dict[k].add_tools(
+                HoverTool(tooltips=tooltips, renderers=[circle_renderer2]))
 
         # Unpack the fig instances in dict plot as a vertical stack of
         # horizontal plots
@@ -362,32 +368,30 @@ class ClimPlots:
         if moving_avg:
             # Moving averaged filter data
             vals_a = self.causal_avg_filter(vals)
-            date_a =list(map(str,date[self.radius:]))
+            date_a = list(map(str, date[self.radius:]))
             # Plot moving averaged filtered data
             # k + " avg data"
             df = pd.DataFrame(
-                    dict(
-                        zip(date_a, vals_a)
+                dict(
+                    zip(date_a, vals_a)
 
-                    ),
-                    index=[k.replace(".txt","").replace("_", " ")]
+                ),
+                index=[k.replace(".txt", "").replace("_", " ")]
             )
 
             p = HeatMap(df, title='avg timeseries heat map',
                         width=900, height=315, palette=palette)
-            return p 
+            return p
         # Plot raw data
         date = list(map(str, date))
         df = pd.DataFrame(
-                    dict(
-                        zip(date, vals)
+            dict(
+                zip(date, vals)
 
-                    ),
-                    index=[k.replace(".txt","").replace("_", " ")]
+            ),
+            index=[k.replace(".txt", "").replace("_", " ")]
         )
 
         p = HeatMap(df, title='raw timeseries heat map',
                     width=900, height=315, palette=palette)
-        return p 
-
-
+        return p
