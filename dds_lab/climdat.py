@@ -3,14 +3,13 @@ import scipy as s
 from scipy.ndimage.filters import convolve1d
 import pandas as pd
 
-from bokeh.models.glyphs import Circle, Text
 from bokeh.models import (
     ColumnDataSource, HoverTool, Line
 )
-from bokeh.charts import TimeSeries, HeatMap
+from bokeh.charts import  HeatMap
 from bokeh.palettes import YlOrRd9 as palette
 from bokeh.plotting_helpers import _update_legend
-from bokeh.plotting import *
+from bokeh.plotting import figure
 from bokeh.io import gridplot, vplot
 
 import re
@@ -62,7 +61,6 @@ def parse_time_series(html_tags_files, txt):
     a dictionary which contains the year as keys
     """
     prod_dict = {}
-    t_dict = OrderedDict()
     for p in txt:
         prod_dict[str(p)] = extract(html_tags_files[str(p)])
     return prod_dict
@@ -237,7 +235,6 @@ class ClimPlots:
             )
 
             # All 3 plots
-            hover = HoverTool()
             s1 = fig_dict[k].scatter(np.array(v[0])[:, 1], np.array(v[1])[:, 1],
                                      fill_color='red', size=13, source=cds_dict[k + '1'])
             s1.select(dict(type=HoverTool)).tooltips = {
@@ -248,7 +245,7 @@ class ClimPlots:
                 "x": "$x", "y": "$y", "year": "@desc"}
             s3 = fig_dict[k].scatter(np.array(v[4])[:, 1], np.array(v[5])[:, 1],
                                      fill_color='blue', size=7, source=cds_dict[k+'3'])
-            s1.select(dict(type=HoverTool)).tooltips = {
+            s3.select(dict(type=HoverTool)).tooltips = {
                 "x": "$x", "y": "$y", "year": "@desc"}
 
         # List of figures
@@ -359,11 +356,6 @@ class ClimPlots:
 
         date = np.array(tmp)[:, 0]
         vals = np.array(tmp)[:, 1]
-
-        tooltips = OrderedDict([
-            ("time", "@x"),
-            ("value", "@y"),
-        ])
 
         if moving_avg:
             # Moving averaged filter data
