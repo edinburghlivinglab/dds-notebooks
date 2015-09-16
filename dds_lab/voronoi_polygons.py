@@ -11,8 +11,11 @@ import pandas as pd
 """
 This module generates a geojson which has a voronoi tessalation
 on a given geographical space depending on the input centroids
-which should be in lat and long
+which should be in lat and long. This is used later on as input
+to a folium choreopleth function which draws these using the tessalation
+as the catchment area boundaries for the random variable being colored.
 """
+
 
 def gen_feature_collection(ids, polygons):
     """
@@ -77,11 +80,9 @@ def neigh_vor_gen(fil):
     """
     df = pd.read_csv(hood + "/" + fil)
     geo_hotel = df
-    print(df)
     points = np.array([list(map(float, x.split(",")))[::-1]
                        for x in df["Location"]])
     ids = [x for x in df["Name"]]
-    print(points)
     pols = gen_voronoi_polygons(points)
 
     vor_json = gen_feature_collection(ids, pols)
