@@ -1,7 +1,13 @@
-from bokeh.plotting import show, figure
-from bokeh.models import HoverTool, ColumnDataSource, Circle, Text
+from bokeh.plotting import figure
+from bokeh.models import HoverTool, ColumnDataSource, Circle
 from collections import OrderedDict
 import numpy as np
+
+"""
+This module contains helper functions to draw binary tree like data
+from adjencency_list representations in bokeh. In order to generalize
+to any graph please look at the python package networkX or igraph.
+"""
 
 
 def find_height(node_key, adjencency_list):
@@ -14,7 +20,6 @@ def find_height(node_key, adjencency_list):
     if node_key not in adjencency_list:
         return 0
     else:
-        # So much for avoiding nasty recursion
         return max([(find_height(x, adjencency_list) + 1)
                     for x in adjencency_list[node_key]])
 
@@ -48,7 +53,7 @@ def level_dict(adj_list, curr_elems, order=0):
     d.update(level_dict(adj_list,
                         new_elems,
                         order=order + 1)
-            )
+             )
     return d
 
 
@@ -60,7 +65,7 @@ def get_tree_plot(adjencency_list, names, info, title):
         print("Please provide an adjencency_list along with data")
         fig_null = figure(title=title)
         # To suppress no glyph bug message:
-        fig_null.line(x=[0,1],y=[0,1], line_color="white")
+        fig_null.line(x=[0, 1], y=[0, 1], line_color="white")
 
         # Keep the same format TODO: abstract
         fig_null.xgrid.grid_line_color = None
@@ -93,8 +98,6 @@ def get_tree_plot(adjencency_list, names, info, title):
     level = 0
     # Keeping track of parents
     dist_dict = {}
-    linesx = []
-    linesy = []
 
     fig = figure(
         title=title,
@@ -108,6 +111,7 @@ def get_tree_plot(adjencency_list, names, info, title):
     textsx.append(0 - 0.18)
     textsy.append(0-0.07)
     texts.append(root)
+    # Creating the x , y coordinates for the tree.
     for lev in o.keys():
         number_of_nodes = len(o[lev])
         left_right = [level_dist, -level_dist] * number_of_nodes
@@ -123,7 +127,7 @@ def get_tree_plot(adjencency_list, names, info, title):
                 fig.line([dist_dict[level_memeber], 0],
                          [level, level + 1])
                 initial_x_manhatan += 2*abs(const) / (number_of_nodes - 1)
-            elif lev !=0:
+            elif lev != 0:
                 side_factor = left_right[side_index]
                 xdist = dist_dict[parent] + side_factor
                 dist_dict[level_memeber] = float(xdist)
@@ -138,7 +142,7 @@ def get_tree_plot(adjencency_list, names, info, title):
         level -= 1
         level_dist /= 1.5
 
-    
+    # Removing cartesian plot like features from figure
     fig.xgrid.grid_line_color = None
     fig.ygrid.grid_line_color = None
     fig.axis.major_label_text_font_size = "0pt"
@@ -148,7 +152,6 @@ def get_tree_plot(adjencency_list, names, info, title):
     fig.outline_line_color = "white"
     fig.xaxis.axis_line_color = "white"
     fig.yaxis.axis_line_color = "white"
-
 
     source = ColumnDataSource(
         data=dict(
@@ -168,12 +171,16 @@ def get_tree_plot(adjencency_list, names, info, title):
         ("info", "@info"),
     ])
     fig.add_tools(HoverTool(tooltips=tooltips, renderers=[circle_renderer]))
-    fig.text(x=textsx,y=textsy,text=texts)
+    fig.text(x=textsx, y=textsy, text=texts)
 
     return fig, adjencency_list
 
 
 def adjecency_list_exercise():
+    """
+    Execercise to get students to come up with an adjecency list
+    for a dsiplayed network (tree).
+    """
     names = ["Sentence",
              "Noun phrase",
              "Verb phrase",
@@ -188,13 +195,14 @@ def adjecency_list_exercise():
             "the ball",
             "the",
             "ball"]
-    # the adjecency list is more or less exactly the same as our table without the information collumn:
+    # the adjecency list is more or less exactly the same as our table without
+    # the information collumn:
     adjecency_list = {"S": ["NP", "VP"],
                       "VP": ["V", "NP`"],
                       "NP`": ["D", "N"]}
-    #Generate tree plot
+    # Generate tree plot
     fig, ad_list = get_tree_plot(adjecency_list,
-                                names=names,
-                                info=info,
-                                title="Parse Tree")
+                                 names=names,
+                                 info=info,
+                                 title="Parse Tree")
     return fig

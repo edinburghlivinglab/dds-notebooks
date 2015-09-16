@@ -6,8 +6,13 @@ from json import loads, dumps
 import shapely.geometry
 import shapely.ops
 import shapely
-from os import popen
 import pandas as pd
+
+"""
+This module generates a geojson which has a voronoi tessalation
+on a given geographical space depending on the input centroids
+which should be in lat and long
+"""
 
 def gen_feature_collection(ids, polygons):
     """
@@ -18,7 +23,7 @@ def gen_feature_collection(ids, polygons):
     feature_list = []
     for i, poly in iterable:
         # print(poly)
-        po = gj.Polygon([list(map(list,poly))])
+        po = gj.Polygon([list(map(list, poly))])
         # print(po)
         feature = gj.Feature(geometry=po)
         # print(feature)
@@ -26,6 +31,7 @@ def gen_feature_collection(ids, polygons):
         feature_list.append(feature)
         # print(feature)
     return gj.FeatureCollection(feature_list)
+
 
 def gen_voronoi_polygons(points):
     """
@@ -46,21 +52,24 @@ def gen_voronoi_polygons(points):
         pols.append(tmp)
     return pols
 
+
 def hotel_vor_gen():
     """
     Creates voronoi tessalation of hotel data
     """
     jstring = open(hotel + "/hotel.json", 'r').read()
     geo_hotel = loads(jstring)
-    points = np.array([x["geometry"]["coordinates"] for x in geo_hotel["features"]])
+    points = np.array([x["geometry"]["coordinates"]
+                       for x in geo_hotel["features"]])
     ids = [x["properties"]["hotel"] for x in geo_hotel["features"]]
-    
+
     pols = gen_voronoi_polygons(points)
 
     vor_json = gen_feature_collection(ids, pols)
     out_json = dumps(vor_json)
     # popen()
     open(hotel + "/vor.json", 'w').write(out_json)
+
 
 def neigh_vor_gen(fil):
     """
@@ -69,7 +78,8 @@ def neigh_vor_gen(fil):
     df = pd.read_csv(hood + "/" + fil)
     geo_hotel = df
     print(df)
-    points = np.array([list(map(float, x.split(",")))[::-1] for x in df["Location"]])
+    points = np.array([list(map(float, x.split(",")))[::-1]
+                       for x in df["Location"]])
     ids = [x for x in df["Name"]]
     print(points)
     pols = gen_voronoi_polygons(points)
@@ -79,6 +89,6 @@ def neigh_vor_gen(fil):
     # popen()
     open(hood + ("/%svor.json" % fil.split(".")[0]), 'w').write(out_json)
 
-    
+
 if __name__ == '__main__':
     hotel_vor_gen()

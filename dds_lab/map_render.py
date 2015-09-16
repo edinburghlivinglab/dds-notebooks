@@ -1,16 +1,11 @@
 from IPython.display import HTML
 import os
 
-# Folium allows a link between leaflet and python
-# which permits ease of use of tiles in notebook
-# http://folium.readthedocs.org/en/latest/
-# TODO: using requests contruct API which allows address display on map.
-# You can see all the facilities folium allows here https://github.com/python-visualization/folium
-# Crazy notebook visualizations from the creator of folium:
-#     http://nbviewer.ipython.org/gist/wrobstory/1eb8cb704a52d18b9ee8/Up%20and%20Down%20PyData%202014.ipynb
-# There are limitations using folium that do not allow the use of js-customized html maps like the one used 
-# in TestMap within this directory. A way around it could be to hack folium (time consuming)
-# but I am trying to get in contact with the creator to see how he worked around HTML reloading in notebook
+"""
+This module contains fucntions that take in
+folium map objects and render them in the dds notebooks
+"""
+
  
 def inline_map(map):
     """

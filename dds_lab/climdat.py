@@ -1,12 +1,11 @@
 import numpy as np
-import scipy as s
 from scipy.ndimage.filters import convolve1d
 import pandas as pd
 
 from bokeh.models import (
     ColumnDataSource, HoverTool, Line
 )
-from bokeh.charts import  HeatMap
+from bokeh.charts import HeatMap
 from bokeh.palettes import YlOrRd9 as palette
 from bokeh.plotting_helpers import _update_legend
 from bokeh.plotting import figure
@@ -21,6 +20,15 @@ from itertools import product
 from collections import OrderedDict
 
 from dds_lab.datasets import climate
+
+
+"""
+This module parses and displays the climate data variables from SEPA
+as:
+- Scatter plot matrices
+- Heat maps 
+- Time series
+"""
 
 
 def read_tags(path):
@@ -67,6 +75,10 @@ def parse_time_series(html_tags_files, txt):
 
 
 def pair_data(html_tags1, html_tags2, order, split_by=2010):
+    """
+    Pairs data from different climate variables by corresponding years
+    in order to be able to display them in scatter plots.
+    """
 
     # obtain years and values for every tag in both data sets and place them in
     # dictionary data structure since this is probably one ofthe most efficient
@@ -260,7 +272,8 @@ class ClimPlots:
     def plot_time_series(self, moving_avg=False):
         """
         Plots time series and moving average filter
-        when moving_avg set to true
+        when moving_avg set to true. This plot is currently done for
+        3 climate variables.
         """
         t_fig_dict = dict()
 
