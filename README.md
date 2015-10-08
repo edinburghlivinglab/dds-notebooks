@@ -1,6 +1,8 @@
 # IPython Notebooks for Data, Design and Society
 
-## These notebooks are intended for a new undergraduate course at the University of Edinburgh called [Data, Design and Society](http://edin.ac/1KukGVu).
+## Overview
+
+These notebooks are intended for a new undergraduate course at the University of Edinburgh called [Data, Design and Society](http://edin.ac/1KukGVu).
 
 
 ## Bokeh / Ipython set-up:
