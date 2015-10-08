@@ -2,7 +2,7 @@
 
 ## Overview
 
-These notebooks are intended for a new undergraduate course at the University of Edinburgh called [Data, Design and Society](http://edin.ac/1KukGVu).
+These notebooks are intended for a new undergraduate course at the [University of Edinburgh](http://www.ed.ac.uk) called [Data, Design and Society](http://edin.ac/1KukGVu).
 
 
 ## Bokeh / Ipython set-up:
