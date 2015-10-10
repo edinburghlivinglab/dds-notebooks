@@ -1,24 +1,34 @@
 import numpy as np
-import scipy as s
-from bokeh.browserlib import view
-from bokeh.document import Document
-from bokeh.embed import file_html
-from bokeh.models.glyphs import Circle, Text
+from scipy.ndimage.filters import convolve1d
+import pandas as pd
+
 from bokeh.models import (
-    BasicTicker, ColumnDataSource, Grid, GridPlot, LinearAxis,
-    DataRange1d, PanTool, Plot, WheelZoomTool, HoverTool
+    ColumnDataSource, HoverTool, Line
 )
-from bokeh.charts import TimeSeries
-from bokeh.resources import INLINE
-from bokeh.sampledata.iris import flowers
-from bokeh.plotting import *
-from bokeh.io import gridplot, output_file, show, vplot
+from bokeh.charts import HeatMap
+from bokeh.palettes import YlOrRd9 as palette
+from bokeh.plotting_helpers import _update_legend
+from bokeh.plotting import figure
+from bokeh.io import gridplot, vplot
+
 import re
+
 from os import listdir
 from os.path import isfile, join
+
 from itertools import product
 from collections import OrderedDict
-from scipy.ndimage.filters import convolve1d
+
+from dds_lab.datasets import climate
+
+
+"""
+This module parses and displays the climate data variables from SEPA
+as:
+- Scatter plot matrices
+- Heat maps 
+- Time series
+"""
 
 
 def read_tags(path):
@@ -59,13 +69,16 @@ def parse_time_series(html_tags_files, txt):
     a dictionary which contains the year as keys
     """
     prod_dict = {}
-    t_dict = OrderedDict()
     for p in txt:
         prod_dict[str(p)] = extract(html_tags_files[str(p)])
     return prod_dict
 
 
 def pair_data(html_tags1, html_tags2, order, split_by=2010):
+    """
+    Pairs data from different climate variables by corresponding years
+    in order to be able to display them in scatter plots.
+    """
 
     # obtain years and values for every tag in both data sets and place them in
     # dictionary data structure since this is probably one ofthe most efficient
@@ -139,7 +152,7 @@ class ClimPlots:
     and the 
     """
 
-    def __init__(self, txt, path="../data/SPRI/climate_timeseries/"):
+    def __init__(self, txt, path=climate):
         self.txt = txt
         self.path = path
         self.prod_dict = OrderedDict()
@@ -199,7 +212,7 @@ class ClimPlots:
 
             v[-1][0] = v[-1][0].replace(".txt", "").replace("_", " ")
             v[-1][1] = v[-1][1].replace(".txt", "").replace("_", " ")
-            fig_dict[k] = figure(width=300, plot_height=300, title=str(v[-1][0]) + " vs "+str(v[-1][1]),
+            fig_dict[k] = figure(width=220, plot_height=220, title=str(v[-1][0]) + " vs "+str(v[-1][1]),
                                  title_text_font_size='8pt',
                                  tools="reset,hover",
                                  x_axis_label=v[-1][0],
@@ -234,7 +247,6 @@ class ClimPlots:
             )
 
             # All 3 plots
-            hover = HoverTool()
             s1 = fig_dict[k].scatter(np.array(v[0])[:, 1], np.array(v[1])[:, 1],
                                      fill_color='red', size=13, source=cds_dict[k + '1'])
             s1.select(dict(type=HoverTool)).tooltips = {
@@ -245,7 +257,7 @@ class ClimPlots:
                 "x": "$x", "y": "$y", "year": "@desc"}
             s3 = fig_dict[k].scatter(np.array(v[4])[:, 1], np.array(v[5])[:, 1],
                                      fill_color='blue', size=7, source=cds_dict[k+'3'])
-            s1.select(dict(type=HoverTool)).tooltips = {
+            s3.select(dict(type=HoverTool)).tooltips = {
                 "x": "$x", "y": "$y", "year": "@desc"}
 
         # List of figures
@@ -260,17 +272,23 @@ class ClimPlots:
     def plot_time_series(self, moving_avg=False):
         """
         Plots time series and moving average filter
-        when moving_avg set to true
+        when moving_avg set to true. This plot is currently done for
+        3 climate variables.
         """
-        t_fig_dict = {}
+        t_fig_dict = dict()
+
         # Parse individual time series
         n_dict = parse_time_series(self.html_tags, self.txt)
-        series = []
+
+        series = list()
+
+        cds_dict = dict()
+
         for k in list(sorted(n_dict.keys())):
             v = n_dict[k]
             # Creating fig inst in dict for plot k
-            t_fig_dict[k] = figure(title=k.split(",")[-1][0:-1],
-                                   tools=[HoverTool()])
+            t_fig_dict[k] = figure(title=k.split(",")[-1].replace(".txt", "").replace("_", " "),
+                                   height=290)
 
             # Sort by x-axis(dates) in order to ensure a
             # sound plot
@@ -281,21 +299,104 @@ class ClimPlots:
 
             date = np.array(tmp)[:, 0]
             vals = np.array(tmp)[:, 1]
+
+            tooltips = OrderedDict([
+                ("time", "@x"),
+                ("value", "@y"),
+            ])
+            cds_dict[k+'1'] = ColumnDataSource(
+                data=dict(
+                    x=date,
+                    y=vals,
+                )
+            )
             if moving_avg:
                 # Moving averaged filter data
                 vals_a = self.causal_avg_filter(vals)
                 date_a = date[self.radius:]
 
+                cds_dict[k+'2'] = ColumnDataSource(
+                    data=dict(
+                        x=date_a,
+                        y=vals_a,
+                    )
+                )
                 # Plot moving averaged filtered data
-                t_fig_dict[k].line(date_a, vals_a,
-                                   legend=k + " avg data",
-                                   color='blue', line_width=6)
+                # k + " avg data"
+                line_a = Line(x="x", y="y",
+                              line_color='blue', line_width=6)
+                circle_renderer = t_fig_dict[k].add_glyph(cds_dict[k+'2'],
+                                                          line_a)
+                _update_legend(plot=t_fig_dict[k],
+                               legend_name=k .replace(".txt", "").replace(
+                    "_", " ") + " avg data", glyph_renderer=circle_renderer)
+                t_fig_dict[k].add_tools(
+                    HoverTool(tooltips=tooltips, renderers=[circle_renderer]))
             # Plot raw data
-            t_fig_dict[k].line(date, vals,
-                               legend=k + " raw data", color='red')
+            line_r = Line(x="x", y="y",
+                          line_color='red')
+            circle_renderer2 = t_fig_dict[k].add_glyph(cds_dict[k+'1'], line_r)
+            _update_legend(plot=t_fig_dict[k],
+                           legend_name=k.replace(".txt", "").replace(
+                "_", " ") + " raw data", glyph_renderer=circle_renderer2)
+            t_fig_dict[k].add_tools(
+                HoverTool(tooltips=tooltips, renderers=[circle_renderer2]))
 
         # Unpack the fig instances in dict plot as a vertical stack of
         # horizontal plots
         v = vplot(*list(t_fig_dict.values()))
 
         return v
+
+    def plot_time_series_heatMap(self, moving_avg=False):
+        """
+        Plots time series Heat map or moving average filter
+        when moving_avg set to true
+        """
+
+        # Parse individual time series
+        n_dict = parse_time_series(self.html_tags, self.txt)
+
+        k = list(n_dict.keys())[0]
+        v = n_dict[k]
+
+        # Sort by x-axis(dates) in order to ensure a
+        # sound plot
+        tmp = list(v.items())
+        tmp.sort()
+
+        np.array(tmp)
+
+        date = np.array(tmp)[:, 0]
+        vals = np.array(tmp)[:, 1]
+
+        if moving_avg:
+            # Moving averaged filter data
+            vals_a = self.causal_avg_filter(vals)
+            date_a = list(map(str, date[self.radius:]))
+            # Plot moving averaged filtered data
+            # k + " avg data"
+            df = pd.DataFrame(
+                dict(
+                    zip(date_a, vals_a)
+
+                ),
+                index=[k.replace(".txt", "").replace("_", " ")]
+            )
+
+            p = HeatMap(df, title='avg timeseries heat map',
+                        width=900, height=315, palette=palette)
+            return p
+        # Plot raw data
+        date = list(map(str, date))
+        df = pd.DataFrame(
+            dict(
+                zip(date, vals)
+
+            ),
+            index=[k.replace(".txt", "").replace("_", " ")]
+        )
+
+        p = HeatMap(df, title='raw timeseries heat map',
+                    width=900, height=315, palette=palette)
+        return p
