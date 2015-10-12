@@ -1,0 +1,18 @@
+<data>
+  <message>
+    <to>James</to>
+    <to>Ewan</to>
+    <from>Arno</from>
+    <heading>Reminder</heading>
+    <body>Cycling to Cramond today!</body>
+    <date>13/10/2015</date>
+  </message>
+  <message>
+    <to>Arno</to>
+    <to>Ewan</to>
+    <from>James</from>
+    <heading>Re: Reminder</heading>
+    <body>Let's walk instead</body>
+    <date>14/10/2015</date>
+  </message>
+</data>
