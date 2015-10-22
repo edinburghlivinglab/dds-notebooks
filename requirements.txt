@@ -54,3 +54,4 @@ notebook>=4.0.4
 folium>=0.1.5
 gitpython>=1.0.1
 shapely
+lxml>=3.3.3
