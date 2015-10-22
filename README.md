@@ -4,7 +4,6 @@
 
 These notebooks are intended for a new undergraduate course at the [University of Edinburgh](http://www.ed.ac.uk) called [Data, Design and Society](http://edin.ac/1KukGVu).
 
-
 ## Bokeh / Ipython set-up:
 
 The project is currently set up as a Python package.  Within a virtual environment
