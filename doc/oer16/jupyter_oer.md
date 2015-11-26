@@ -1,17 +1,35 @@
-# JupyterHub as an OER Platwform
+# JupyterHub as an OER Platform
 
-We have been experimenting with cross-disciplinary courses at both the undergraduate and Masters level, adopting a blended learning approach: face-to-face, real-time engagements will be supported by a variety of computer-mediated learning materials. One of our important goals is to help students with little or no programming experience to become comfortable with basic data analysis and visualisation tasks. This has led us to
- to experiment with a framework based on [iPython](http://ipython.org) and [JupyterHub](https://github.com/jupyter/jupyterhub). This approach has several attractive features:
+We have been experimenting with cross-disciplinary courses at both the
+undergraduate and Masters level, adopting a blended learning approach:
+face-to-face, real-time engagements will be supported by a variety of
+computer-mediated learning materials. One of our important goals is to help
+students with little or no programming experience to become comfortable
+with basic data analysis and visualisation tasks. This has led us to to
+experiment with a framework based on [iPython](http://ipython.org) and
+[JupyterHub](https://github.com/jupyter/jupyterhub). This approach has
+several attractive features:
 
-* it offers a browser-based 'notebook' with support for rich text, executable code blocks and interactive data visualisation;
-* it allows students to receive the same learning materials but experiment with them on an individual basis within a standardised environment;
+* it offers a browser-based 'notebook' with support for rich text, 
+executable code blocks and interactive data visualisation;
+* it allows students to receive the same learning materials but experiment 
+with them on an individual basis within a standardised environment;
 * the components are all open source and actively maintained;
-* since the platform is made available as a service, students are not required to download and install the necessary software; in additions we are able to ensure that all required libraries are present, together with any customisations that we want to make available.
+* since the platform is made available as a service, students are not 
+required to download and install the necessary software; in additions we 
+are able to ensure that all required libraries are present, together with 
+any customisations that we want to make available.
 
 [FRANCISCO] Use of Bokeh and Folium
 
 ### Bokeh (Visualization API)
-Bokeh is a python web targeted visualization library that displays D3.js like plots. The idea behind bokeh is that it provides very simple commands to do very beautiful and versatile plots outputting this in a browser renderable format. The bokeh project is extemely active on facebook and it aims to be scalable over visualizing big data sets. In terms of education here are some useful features I found whilst working on this project:
+
+Bokeh is a python web targeted visualization library that displays D3.js
+like plots. The idea behind bokeh is that it provides very simple commands
+to do very beautiful and versatile plots outputting this in a browser
+renderable format. The bokeh project is extemely active on facebook and it
+aims to be scalable over visualizing big data sets. In terms of education
+here are some useful features I found whilst working on this project:
 
 * Easy to use artists tools that allow you to draw almost anything in your plots;
 * Inline js to add extra interactivity to plots;
@@ -20,6 +38,7 @@ Bokeh is a python web targeted visualization library that displays D3.js like pl
 * Really nice labels and hover tools.
 
 Some of the specific plots we worked on:
+
 * Heatmaps;
 * Scatter plot matrices;
 * Scatter plots;
@@ -28,7 +47,14 @@ Some of the specific plots we worked on:
 
 ### Folium (MAP Rendering API)
 
-Follium is a python wrapper around leaflet.js ! those of you who know what this mean and like python are probably shivering in exitement at the sound of this. leaflet.js is an extremely rich browser based map drawing tool which allows all sorts of plots analysis and visualizations over customized maps.  Folium provides an extremely friendly python interface to leaflet.js similar to that of Bokeh and D3.js which allows us to create beautiful map visualizations with very trivial commands.  Some of the plots we exploited were:
+Follium is a python wrapper around leaflet.js ! those of you who know what
+this mean and like python are probably shivering in exitement at the sound
+of this. leaflet.js is an extremely rich browser based map drawing tool
+which allows all sorts of plots analysis and visualizations over customized
+maps.  Folium provides an extremely friendly python interface to leaflet.js
+similar to that of Bokeh and D3.js which allows us to create beautiful map
+visualizations with very trivial commands.  Some of the plots we exploited
+were:
 
 * Ploting data as markers that contain information labels on the map;
 * Choropleth/ Voronoi Tessallation displaying how data changes accross Edinburgh.
@@ -41,7 +67,48 @@ Some of the advantages of Folium to this project are:
 
 [EWAN] Adding metadata to notebooks
 
+### Trial Service
 [GAVIN] We have implemented a trial service running on self-managed server in our university, based on Docker
+
+Points to cover:
+
+* Inspiration from Jess Hamrick's work
+* Docker for scalability, prototyping and transferability
+* Some of the specifics:
+    * Volumes for persistent storage and backups; and connecting datasets
+    * Temporary notebook demonstration service
+    * Auto-updates for notebook repository
+    * Security concerns
+* Connection to University authentication
+* Possibilities
+
+Using Docker to power a JupyterHub service is something we were interested
+in due to the success of the [Jessica Hamrick's JupyterHub deployment for
+Computational Models of Cognition][hamrick]. However, we couldn't simply
+adapt their elastic cloud setup because we don't have access to an elastic
+cloud. We wanted something we could run on a single server, and worry about
+scaling later.
+
+Using Docker for this is still preferable for fast prototyping the
+configuration of the server, and keeping the configuration hierarchical. In
+our [server configuration repository][serverconfig], the huge stack of
+scientific packages required to run the notebooks is contained in a
+Dockerfile, so it's possible for motivated students to run their own
+Jupyter instance independently on whatever computer they might like to use.
+The same Dockerfile is then reused for the JupyterHub server
+configurations.
+
+There are two main server configurations we've been working on. The first
+is a centralised JupyterHub instance, in line with the standard
+configuration described in the JupyterHub repository. Each student has a
+persistent account with storage, and server instances will persist. For
+demonstration, we have also built a temporary notebook server using the
+[Jupyter tmpnb repository][tmpnb], which is currently running at:
+`http://livinglab.ngrok.io/`. 
+
+[hamrick]: https://developer.rackspace.com/blog/deploying-jupyterhub-for-education/
+[serverconfig]: https://github.com/edinburghlivinglab/livinglab-hubserver
+[tmpnb]: tmphhhh://github.com/jupyter/tmpnb 
 
 [BEN/GAVIN] Migration to University wide VM-based service; authentication approach
 
