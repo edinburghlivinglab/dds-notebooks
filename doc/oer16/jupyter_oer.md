@@ -112,3 +112,15 @@ demonstration, we have also built a temporary notebook server using the
 
 [BEN/GAVIN] Migration to University wide VM-based service; authentication approach
 
+JuyterHub has a extendable authentication architecture that allows deployments to override default authentication strategies with custom Authenticator modules.
+Authenticators already exist for popular identity providers such as Github OAuth, Google OAuth and MediaWiki OAuth.
+To support institutional access at the University using a single sign-on service (EASE) based on the CoSign system, we deploy JupyerHub behind an Apache proxy server, allowing us to use existing Apache CoSign modules that are well understood and supported by the University.
+
+The Apache server provides a public facing SSL port, which redirects requests to the JupyterHub server instance running on a private port on the same virtual machine. 
+
+If the user has not already obtained a valid JupyterHub session, the Apache proxy redirects the user to the University's EASE Single Sign-on webpage and validates the user's credentials using a secure channel. 
+The Co-Sign service then passes the request back to the Apache proxy server, which now has access to the REMOTE_USER environment variable which was set by the CoSign service with the provided username. The Apache server uses this variable to set an addition request header and then proxies the request to the JupyterHub instance. Now that the user is authenticated and the username is available to JupyterHub in a request header, it is possible to authenticate the user to Jupyterhub with a simple Authenticator plugin such as Magnus Hagdorn's REMOTE_USER Authenticator.
+  
+
+  
+ 
