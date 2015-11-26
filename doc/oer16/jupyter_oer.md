@@ -10,6 +10,35 @@ We have been experimenting with cross-disciplinary courses at both the undergrad
 
 [FRANCISCO] Use of Bokeh and Folium
 
+### Bokeh (Visualization API)
+Bokeh is a python web targeted visualization library that displays D3.js like plots. The idea behind bokeh is that it provides very simple commands to do very beautiful and versatile plots outputting this in a browser renderable format. The bokeh project is extemely active on facebook and it aims to be scalable over visualizing big data sets. In terms of education here are some useful features I found whilst working on this project:
+
+* Easy to use artists tools that allow you to draw almost anything in your plots;
+* Inline js to add extra interactivity to plots;
+* Widgets that also make plots interactive;
+* Sync extremely well with Ipython notebook rendering beautiful and dynamic graphs ! (unlike matplotlib).
+* Really nice labels and hover tools.
+
+Some of the specific plots we worked on:
+* Heatmaps;
+* Scatter plot matrices;
+* Scatter plots;
+* Timeseries and smoothed time series;
+* Binary trees.
+
+### Folium (MAP Rendering API)
+
+Follium is a python wrapper around leaflet.js ! those of you who know what this mean and like python are probably shivering in exitement at the sound of this. leaflet.js is an extremely rich browser based map drawing tool which allows all sorts of plots analysis and visualizations over customized maps.  Folium provides an extremely friendly python interface to leaflet.js similar to that of Bokeh and D3.js which allows us to create beautiful map visualizations with very trivial commands.  Some of the plots we exploited were:
+
+* Ploting data as markers that contain information labels on the map;
+* Choropleth/ Voronoi Tessallation displaying how data changes accross Edinburgh.
+
+Some of the advantages of Folium to this project are:
+* Smooth integration and display with ipython notebook;
+* Light syntax;
+* Reasonable diversity of displays on map.
+
+
 [EWAN] Adding metadata to notebooks
 
 [GAVIN] We have implemented a trial service running on self-managed server in our university, based on Docker
