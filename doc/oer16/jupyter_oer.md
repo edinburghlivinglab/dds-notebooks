@@ -68,19 +68,6 @@ Some of the advantages of Folium to this project are:
 [EWAN] Adding metadata to notebooks
 
 ### Trial Service
-[GAVIN] We have implemented a trial service running on self-managed server in our university, based on Docker
-
-Points to cover:
-
-* Inspiration from Jess Hamrick's work
-* Docker for scalability, prototyping and transferability
-* Some of the specifics:
-    * Volumes for persistent storage and backups; and connecting datasets
-    * Temporary notebook demonstration service
-    * Auto-updates for notebook repository
-    * Security concerns
-* Connection to University authentication
-* Possibilities
 
 Using Docker to power a JupyterHub service is something we were interested
 in due to the success of the [Jessica Hamrick's JupyterHub deployment for
@@ -96,7 +83,8 @@ scientific packages required to run the notebooks is contained in a
 Dockerfile, so it's possible for motivated students to run their own
 Jupyter instance independently on whatever computer they might like to use.
 The same Dockerfile is then reused for the JupyterHub server
-configurations.
+configurations. Working in this way, we can easily transfer the server to
+new hardware, and build upon the work we've already done.
 
 There are two main server configurations we've been working on. The first
 is a centralised JupyterHub instance, in line with the standard
@@ -104,23 +92,59 @@ configuration described in the JupyterHub repository. Each student has a
 persistent account with storage, and server instances will persist. For
 demonstration, we have also built a temporary notebook server using the
 [Jupyter tmpnb repository][tmpnb], which is currently running at:
-`http://livinglab.ngrok.io/`. 
+`http://livinglab.ngrok.io/`. This simply serves each new visitor a new
+Jupyter notebook instance, and removes the instance after the user is
+finished.
+
+Each time a new temporary Jupyter instance is created, it uses a script in
+the `dds_notebooks` repository to keep notebooks up to date. Making this as
+seamless as possible for new users that may not be familiar with git was a
+concern. From the user perspective, any file that is updated remotely will
+be silently updated, as long as the user _hasn't edited it_. If they have,
+we make sure to move the edited file before updating with the remote
+changes. This is integrated with the static JupyterHub image as well,
+running as a cron job by default.
+
+Docker volumes are used to manage user home directories in the static case,
+allowing for seamless changes to potentially the entire operating system.
+These are also used to link in datasets that the students can access at a
+shared location inside the container.
+
+Potentially, this server could be extended to include programming languages
+beyond Python, as Jupyter is now agnostic to the language used in the
+kernel. And, thanks to the dockerised development work, we could run
+independent systems with different courses; or we are free to develop a
+distributed system offering data science in the cloud to the entire
+University.
 
 [hamrick]: https://developer.rackspace.com/blog/deploying-jupyterhub-for-education/
 [serverconfig]: https://github.com/edinburghlivinglab/livinglab-hubserver
 [tmpnb]: tmphhhh://github.com/jupyter/tmpnb 
 
-[BEN/GAVIN] Migration to University wide VM-based service; authentication approach
+### Building a University-Wide Service
 
-JuyterHub has a extendable authentication architecture that allows deployments to override default authentication strategies with custom Authenticator modules.
-Authenticators already exist for popular identity providers such as Github OAuth, Google OAuth and MediaWiki OAuth.
-To support institutional access at the University using a single sign-on service (EASE) based on the CoSign system, we deploy JupyerHub behind an Apache proxy server, allowing us to use existing Apache CoSign modules that are well understood and supported by the University.
+JuyterHub has a extendable authentication architecture that allows
+deployments to override default authentication strategies with custom
+Authenticator modules.  Authenticators already exist for popular identity
+providers such as Github OAuth, Google OAuth and MediaWiki OAuth.  To
+support institutional access at the University using a single sign-on
+service (EASE) based on the CoSign system, we deploy JupyerHub behind an
+Apache proxy server, allowing us to use existing Apache CoSign modules that
+are well understood and supported by the University.
 
-The Apache server provides a public facing SSL port, which redirects requests to the JupyterHub server instance running on a private port on the same virtual machine. 
+The Apache server provides a public facing SSL port, which redirects
+requests to the JupyterHub server instance running on a private port on the
+same virtual machine. 
 
-If the user has not already obtained a valid JupyterHub session, the Apache proxy redirects the user to the University's EASE Single Sign-on webpage and validates the user's credentials using a secure channel. 
-The Co-Sign service then passes the request back to the Apache proxy server, which now has access to the REMOTE_USER environment variable which was set by the CoSign service with the provided username. The Apache server uses this variable to set an addition request header and then proxies the request to the JupyterHub instance. Now that the user is authenticated and the username is available to JupyterHub in a request header, it is possible to authenticate the user to Jupyterhub with a simple Authenticator plugin such as Magnus Hagdorn's REMOTE_USER Authenticator.
+If the user has not already obtained a valid JupyterHub session, the Apache
+proxy redirects the user to the University's EASE Single Sign-on webpage
+and validates the user's credentials using a secure channel.  The Co-Sign
+service then passes the request back to the Apache proxy server, which now
+has access to the REMOTE_USER environment variable which was set by the
+CoSign service with the provided username. The Apache server uses this
+variable to set an addition request header and then proxies the request to
+the JupyterHub instance. Now that the user is authenticated and the
+username is available to JupyterHub in a request header, it is possible to
+authenticate the user to Jupyterhub with a simple Authenticator plugin such
+as Magnus Hagdorn's REMOTE_USER Authenticator.
   
-
-  
- 
