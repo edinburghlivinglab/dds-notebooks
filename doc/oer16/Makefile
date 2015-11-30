@@ -1,6 +1,12 @@
 ABSTRACT := jupyter_oer_abstract_v2.md
-OUTPUT := jupyter_oer_abstract_v2.pdf
+PDF := jupyter_oer_abstract_v2.pdf
+TEXT := jupyter_oer_abstract_v2.txt
+
 BIBTEX := abstract.bib
 
-doc:
-	pandoc --filter pandoc-citeproc $(ABSTRACT) --biblio $(BIBTEX) -o $(OUTPUT)
+pdf:
+	pandoc --filter pandoc-citeproc $(ABSTRACT) --biblio $(BIBTEX) -o $(PDF)
+
+
+text:
+	pandoc --filter pandoc-citeproc $(ABSTRACT) --biblio $(BIBTEX) -o $(TEXT)
