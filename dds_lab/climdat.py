@@ -5,7 +5,10 @@ import pandas as pd
 from bokeh.models import (
     ColumnDataSource, HoverTool, Line
 )
-from bokeh.charts import HeatMap
+try:
+    from bokeh.charts import HeatMap
+except ImportError:
+    from bokeh._legacy_charts import HeatMap
 from bokeh.palettes import YlOrRd9 as palette
 from bokeh.plotting_helpers import _update_legend
 from bokeh.plotting import figure
