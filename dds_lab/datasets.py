@@ -1,4 +1,5 @@
 import os
+from nltk.corpus import TwitterCorpusReader
 
 data_dir = "../data"
 
@@ -7,3 +8,7 @@ schools = os.path.join(data_dir, "opendatascotland/tutorial_1/schools.csv")
 climate = os.path.join(data_dir, "SPRI/climate_timeseries/")
 hotel = os.path.join(data_dir, "hotels")
 hood = os.path.join(data_dir, "neighbourhood")
+twitter_files = os.path.join(data_dir, "twitter")
+
+
+
