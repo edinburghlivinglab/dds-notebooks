@@ -1,6 +1,3 @@
-import numpy as np
-from scipy.ndimage.filters import convolve1d
-import pandas as pd
 
 from bokeh.models import (
     ColumnDataSource, HoverTool, Line
@@ -13,6 +10,8 @@ from bokeh.palettes import YlOrRd9 as palette
 from bokeh.plotting_helpers import _update_legend
 from bokeh.plotting import figure
 from bokeh.io import gridplot, vplot
+import bokeh.models as bkm
+#from bokeh.objects import HoverTool 
 
 import re
 
@@ -249,20 +248,18 @@ class ClimPlots:
                 )
             )
 
-            # All 3 plots
-            s1 = fig_dict[k].scatter(np.array(v[0])[:, 1], np.array(v[1])[:, 1],
-                                     fill_color='red', size=13, source=cds_dict[k + '1'])
-            s1.select(dict(type=HoverTool)).tooltips = {
-                "x": "$x", "y": "$y", "year": "@desc"}
-            s2 = fig_dict[k].scatter(np.array(v[2])[:, 1], np.array(v[3])[:, 1],
-                                     fill_color='green', size=10, source=cds_dict[k + '2'])
-            s2.select(dict(type=HoverTool)).tooltips = {
-                "x": "$x", "y": "$y", "year": "@desc"}
-            s3 = fig_dict[k].scatter(np.array(v[4])[:, 1], np.array(v[5])[:, 1],
-                                     fill_color='blue', size=7, source=cds_dict[k+'3'])
-            s3.select(dict(type=HoverTool)).tooltips = {
-                "x": "$x", "y": "$y", "year": "@desc"}
 
+            s1 = fig_dict[k].circle(np.array(v[0])[:, 1], np.array(v[1])[:, 1],
+                                     fill_color='red', size=13, source=cds_dict[k + '1'])
+            fig_dict[k].add_tools(HoverTool(renderers=[s1], tooltips={"x": "$x", "y": "$y", "year": "@desc"}))
+    
+            s2 = fig_dict[k].circle(np.array(v[2])[:, 1], np.array(v[3])[:, 1],
+                                     fill_color='green', size=10, source=cds_dict[k + '2'])
+            fig_dict[k].add_tools(HoverTool(renderers=[s2], tooltips={"x": "$x", "y": "$y", "year": "@desc"}))
+            
+            s3 = fig_dict[k].circle(np.array(v[4])[:, 1], np.array(v[5])[:, 1],
+                                     fill_color='blue', size=7, source=cds_dict[k+'3'])
+            fig_dict[k].add_tools(HoverTool(renderers=[s3], tooltips={"x": "$x", "y": "$y", "year": "@desc"}))
         # List of figures
         f_vals = list(fig_dict.values())
 
